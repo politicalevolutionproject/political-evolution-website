@@ -3,357 +3,357 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Political Evolution Project - Transforming How We Organize for Change</title>
+<title>Political Evolution Project - Transforming How We Organize for Change</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
 <style>
 /* --- Base Styles and Variables --- */
 :root {
-    /* Specified color palette */
-    --primary-color: #2c3e50;        /* Dark slate blue */
-    --secondary-color: #e74c3c;      /* Reddish-orange */
-    --accent-color: #3498db;         /* Bright blue */
-    --evolution-color: #27ae60;      /* Green */
-    --light-bg: #ecf0f1;             /* Very light grey */
-    --text-dark: #2c3e50;            /* Same as primary */
-    --text-light: #7f8c8d;           /* Medium grey */
-    --success-color: #27ae60;        /* Same as evolution color */
-    --warm-neutral: #bdc3c7;         /* Light grey for accents */
-    
-    /* Specified gradients */
-    --gradient-1: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
-    --gradient-2: linear-gradient(135deg, #e74c3c 0%, #f39c12 100%);
-    --gradient-3: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+    /* Specified color palette */
+    --primary-color: #2c3e50;        /* Dark slate blue */
+    --secondary-color: #e74c3c;      /* Reddish-orange */
+    --accent-color: #3498db;         /* Bright blue */
+    --evolution-color: #27ae60;      /* Green */
+    --light-bg: #ecf0f1;             /* Very light grey */
+    --text-dark: #2c3e50;            /* Same as primary */
+    --text-light: #7f8c8d;           /* Medium grey */
+    --success-color: #27ae60;        /* Same as evolution color */
+    --warm-neutral: #bdc3c7;         /* Light grey for accents */
+    
+    /* Specified gradients */
+    --gradient-1: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+    --gradient-2: linear-gradient(135deg, #e74c3c 0%, #f39c12 100%);
+    --gradient-3: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 html {
-    scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
 body {
-    font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    line-height: 1.7;
-    color: var(--text-dark);
-    background-color: var(--light-bg);
-    font-weight: 400;
+    font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    line-height: 1.7;
+    color: var(--text-dark);
+    background-color: var(--light-bg);
+    font-weight: 400;
 }
 
 /* Typography */
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Playfair Display', Georgia, serif;
-    font-weight: 700;
-    line-height: 1.2;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 700;
+    line-height: 1.2;
 }
 
 /* --- Header and Navigation --- */
 header {
-    background: var(--primary-color);
-    color: white;
-    padding: 1rem 0;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 10px rgba(44, 62, 80, 0.1);
+    background: var(--primary-color);
+    color: white;
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(44, 62, 80, 0.1);
 }
 
 nav {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .logo {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.6rem;
-    font-weight: 700;
-    letter-spacing: -0.5px;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
 }
 
 .nav-links {
-    list-style: none;
-    display: flex;
-    gap: 2.5rem;
+    list-style: none;
+    display: flex;
+    gap: 2.5rem;
 }
 
 .nav-links a {
-    color: white;
-    text-decoration: none;
-    transition: all 0.3s;
-    font-size: 1rem;
-    font-weight: 500;
-    letter-spacing: 0.5px;
-    position: relative;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s;
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    position: relative;
 }
 
 .nav-links a:not(.apply-btn)::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background-color: var(--accent-color);
-    transition: width 0.3s;
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--accent-color);
+    transition: width 0.3s;
 }
 
 .nav-links a:not(.apply-btn):hover::after {
-    width: 100%;
+    width: 100%;
 }
 
 .nav-links .apply-btn {
-    background: #f39c12;
-    color: white;
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
+    background: #f39c12;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
 }
 
 .nav-links .apply-btn:hover {
-    background: #e67e22;
-    transform: translateY(-2px);
+    background: #e67e22;
+    transform: translateY(-2px);
 }
 
 /* --- Hamburger Menu --- */
 .hamburger {
-    display: none;
-    cursor: pointer;
-    flex-direction: column;
-    gap: 5px;
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
 }
 
 .hamburger .bar {
-    width: 25px;
-    height: 3px;
-    background-color: white;
-    border-radius: 5px;
-    transition: all 0.3s ease-in-out;
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
 }
 
 /* --- Main Content --- */
 main {
-    padding-top: 70px;
+    padding-top: 70px;
 }
 
 .hero {
-    background: var(--gradient-1);
-    color: white;
-    padding: 5rem 2rem;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
+    background: var(--gradient-1);
+    color: white;
+    padding: 5rem 2rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
 }
 
 .hero::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle, rgba(52, 152, 219, 0.1) 0%, transparent 70%);
-    animation: pulse 20s infinite;
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(52, 152, 219, 0.1) 0%, transparent 70%);
+    animation: pulse 20s infinite;
 }
 
 @keyframes pulse {
-    0%, 100% { transform: scale(1); opacity: 0.5; }
-    50% { transform: scale(1.1); opacity: 0.3; }
+    0%, 100% { transform: scale(1); opacity: 0.5; }
+    50% { transform: scale(1.1); opacity: 0.3; }
 }
 
 .hero-content {
-    position: relative;
-    z-index: 1;
+    position: relative;
+    z-index: 1;
 }
 
 .hero h1 {
-    font-size: 3.5rem;
-    margin-bottom: 1.5rem;
-    letter-spacing: -1px;
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    letter-spacing: -1px;
 }
 
 .hero p {
-    font-size: 1.4rem;
-    max-width: 800px;
-    margin: 0 auto 2rem;
-    font-weight: 300;
-    line-height: 1.8;
+    font-size: 1.4rem;
+    max-width: 800px;
+    margin: 0 auto 2rem;
+    font-weight: 300;
+    line-height: 1.8;
 }
 
 .evolution-path {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-    margin: 3rem 0;
-    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin: 3rem 0;
+    flex-wrap: wrap;
 }
 
 .evolution-step {
-    background: rgba(255,255,255,0.15);
-    padding: 1rem 2rem;
-    border-radius: 30px;
-    backdrop-filter: blur(10px);
-    font-weight: 600;
-    letter-spacing: 0.5px;
+    background: rgba(255,255,255,0.15);
+    padding: 1rem 2rem;
+    border-radius: 30px;
+    backdrop-filter: blur(10px);
+    font-weight: 600;
+    letter-spacing: 0.5px;
 }
 
 .evolution-arrow {
-    font-size: 2rem;
-    color: var(--accent-color);
+    font-size: 2rem;
+    color: var(--accent-color);
 }
 
 .cta-buttons {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    flex-wrap: wrap;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 .btn {
-    padding: 1rem 2.5rem;
-    text-decoration: none;
-    border-radius: 30px;
-    font-weight: 600;
-    transition: all 0.3s;
-    display: inline-block;
-    border: none;
-    cursor: pointer;
-    letter-spacing: 0.5px;
-    font-size: 1rem;
+    padding: 1rem 2.5rem;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: all 0.3s;
+    display: inline-block;
+    border: none;
+    cursor: pointer;
+    letter-spacing: 0.5px;
+    font-size: 1rem;
 }
 
 .btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
 }
 
 .btn-primary {
-    background: var(--secondary-color);
-    color: white;
+    background: var(--secondary-color);
+    color: white;
 }
 
 .btn-secondary {
-    background: white;
-    color: var(--primary-color);
+    background: white;
+    color: var(--primary-color);
 }
 
 .btn-evolution {
-    background: var(--evolution-color);
-    color: white;
+    background: var(--evolution-color);
+    color: white;
 }
 
 /* --- Content Sections --- */
 .section {
-    padding: 5rem 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
+    padding: 5rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .section:nth-child(even) {
-    background: white;
+    background: white;
 }
 
 h2 {
-    font-size: 3rem;
-    margin-bottom: 2.5rem;
-    color: var(--primary-color);
-    text-align: center;
-    letter-spacing: -1px;
+    font-size: 3rem;
+    margin-bottom: 2.5rem;
+    color: var(--primary-color);
+    text-align: center;
+    letter-spacing: -1px;
 }
 
 h3 {
-    font-size: 2rem;
-    margin: 2rem 0 1rem;
-    color: var(--secondary-color);
-    letter-spacing: -0.5px;
+    font-size: 2rem;
+    margin: 2rem 0 1rem;
+    color: var(--secondary-color);
+    letter-spacing: -0.5px;
 }
 
 /* --- Journey Section --- */
 .journey-timeline {
-    position: relative;
-    padding: 2rem 0;
-    max-width: 900px;
-    margin: 0 auto;
+    position: relative;
+    padding: 2rem 0;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
 .timeline-item {
-    display: flex;
-    gap: 2rem;
-    margin-bottom: 3rem;
-    align-items: flex-start;
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    align-items: flex-start;
 }
 
 .timeline-marker {
-    width: 60px;
-    height: 60px;
-    background: var(--gradient-2);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-weight: bold;
-    flex-shrink: 0;
-    font-size: 1.5rem;
-    font-family: 'Playfair Display', serif;
+    width: 60px;
+    height: 60px;
+    background: var(--gradient-2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    flex-shrink: 0;
+    font-size: 1.5rem;
+    font-family: 'Playfair Display', serif;
 }
 
 .timeline-content {
-    flex: 1;
-    background: white;
-    padding: 2rem;
-    border-radius: 12px;
-    box-shadow: 0 3px 15px rgba(44, 62, 80, 0.08);
-    border: 1px solid rgba(189, 195, 199, 0.3);
+    flex: 1;
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 3px 15px rgba(44, 62, 80, 0.08);
+    border: 1px solid rgba(189, 195, 199, 0.3);
 }
 
-.timeline-content h3 { 
-    margin-top: 0; 
-    color: var(--primary-color);
+.timeline-content h3 { 
+    margin-top: 0; 
+    color: var(--primary-color);
 }
 
 /* --- Learning Pathways --- */
 .pathways-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 2rem;
-    margin-top: 3rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
 }
 
 .pathway-card {
-    background: white;
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: 0 5px 20px rgba(44, 62, 80, 0.08);
-    transition: all 0.3s;
-    display: flex;
-    flex-direction: column;
-    border: 1px solid rgba(189, 195, 199, 0.2);
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(44, 62, 80, 0.08);
+    transition: all 0.3s;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgba(189, 195, 199, 0.2);
 }
 
 .pathway-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 30px rgba(44, 62, 80, 0.12);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(44, 62, 80, 0.12);
 }
 
 .pathway-header {
-    padding: 2.5rem 2rem;
-    color: white;
+    padding: 2.5rem 2rem;
+    color: white;
 }
 
-.pathway-header h3 { 
-    color: white; 
-    margin-top: 0;
-    font-size: 1.8rem;
+.pathway-header h3 { 
+    color: white; 
+    margin-top: 0;
+    font-size: 1.8rem;
 }
 
 .recognition-header { background: var(--gradient-2); }
@@ -361,408 +361,409 @@ h3 {
 .transformation-header { background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%); }
 
 .pathway-content {
-    padding: 2rem;
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
+    padding: 2rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
 }
 
-.pathway-content ul { 
-    list-style: none; 
-    padding: 0; 
+.pathway-content ul { 
+    list-style: none; 
+    padding: 0; 
 }
 
-.pathway-content li { 
-    padding: 0.5rem 0;
-    color: var(--text-dark);
+.pathway-content li { 
+    padding: 0.5rem 0;
+    color: var(--text-dark);
 }
 
-.pathway-content .btn { 
-    margin-top: auto; 
-    width: 100%;
-    text-align: center;
+.pathway-content .btn { 
+    margin-top: auto; 
+    width: 100%;
+    text-align: center;
 }
 
 /* --- Assessment Tool --- */
 .assessment-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
 }
 
 .assessment-tool {
-    background: white;
-    border-radius: 12px;
-    padding: 2.5rem;
-    box-shadow: 0 3px 15px rgba(44, 62, 80, 0.08);
-    border: 1px solid rgba(189, 195, 199, 0.2);
+    background: white;
+    border-radius: 12px;
+    padding: 2.5rem;
+    box-shadow: 0 3px 15px rgba(44, 62, 80, 0.08);
+    border: 1px solid rgba(189, 195, 199, 0.2);
 }
 
 .assessment-header {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
 }
 
-.assessment-header h3 { 
-    margin: 0;
-    color: var(--primary-color);
+.assessment-header h3 { 
+    margin: 0;
+    color: var(--primary-color);
 }
 
-.assessment-icon { 
-    font-size: 2.5rem; 
+.assessment-icon { 
+    font-size: 2.5rem; 
 }
 
-.question { 
-    margin-bottom: 2rem; 
+.question { 
+    margin-bottom: 2rem; 
 }
 
-.question label { 
-    display: block; 
-    margin-bottom: 0.5rem; 
-    font-weight: 600;
-    color: var(--text-dark);
+.question label { 
+    display: block; 
+    margin-bottom: 0.5rem; 
+    font-weight: 600;
+    color: var(--text-dark);
 }
 
-.slider { 
-    width: 100%; 
-    margin: 1rem 0; 
-    cursor: pointer;
-    accent-color: var(--accent-color);
+.slider { 
+    width: 100%; 
+    margin: 1rem 0; 
+    cursor: pointer;
+    accent-color: var(--accent-color);
 }
 
-.slider-labels { 
-    display: flex; 
-    justify-content: space-between; 
-    font-size: 0.9rem; 
-    color: var(--text-light); 
+.slider-labels { 
+    display: flex; 
+    justify-content: space-between; 
+    font-size: 0.9rem; 
+    color: var(--text-light); 
 }
 
 /* --- Resources Grid --- */
 .resources-categories {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
 }
 
 .resource-category {
-    background: white;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 3px 15px rgba(44, 62, 80, 0.08);
-    border: 1px solid rgba(189, 195, 199, 0.2);
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 3px 15px rgba(44, 62, 80, 0.08);
+    border: 1px solid rgba(189, 195, 199, 0.2);
 }
 
-.category-header { 
-    padding: 1.5rem; 
-    background: var(--gradient-1); 
-    color: white; 
+.category-header { 
+    padding: 1.5rem; 
+    background: var(--gradient-1); 
+    color: white; 
 }
 
-.category-header h3 { 
-    color: white; 
-    margin: 0; 
-    font-size: 1.5rem; 
+.category-header h3 { 
+    color: white; 
+    margin: 0; 
+    font-size: 1.5rem; 
 }
 
-.category-items { 
-    padding: 1.5rem; 
+.category-items { 
+    padding: 1.5rem; 
 }
 
-.resource-item { 
-    display: flex; 
-    align-items: center; 
-    padding: 1rem; 
-    margin-bottom: 0.5rem; 
-    background: var(--light-bg); 
-    border-radius: 8px; 
-    transition: all 0.3s;
-    font-weight: 500;
+.resource-item { 
+    display: flex; 
+    align-items: center; 
+    padding: 1rem; 
+    margin-bottom: 0.5rem; 
+    background: var(--light-bg); 
+    border-radius: 8px; 
+    transition: all 0.3s;
+    font-weight: 500;
 }
 
-.resource-item:hover { 
-    background: #bdc3c7; 
-    transform: translateX(5px); 
+.resource-item:hover { 
+    background: #bdc3c7; 
+    transform: translateX(5px); 
 }
 
 /* --- Community Features --- */
 .community-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
 }
 
 .community-card {
-    background: white;
-    border-radius: 12px;
-    padding: 2.5rem 2rem;
-    box-shadow: 0 3px 15px rgba(44, 62, 80, 0.08);
-    text-align: center;
-    transition: all 0.3s;
-    border: 1px solid rgba(189, 195, 199, 0.2);
+    background: white;
+    border-radius: 12px;
+    padding: 2.5rem 2rem;
+    box-shadow: 0 3px 15px rgba(44, 62, 80, 0.08);
+    text-align: center;
+    transition: all 0.3s;
+    border: 1px solid rgba(189, 195, 199, 0.2);
 }
 
-.community-card:hover { 
-    transform: translateY(-5px); 
-    box-shadow: 0 8px 25px rgba(44, 62, 80, 0.12); 
+.community-card:hover { 
+    transform: translateY(-5px); 
+    box-shadow: 0 8px 25px rgba(44, 62, 80, 0.12); 
 }
 
-.community-icon { 
-    font-size: 3.5rem; 
-    margin-bottom: 1rem; 
-    color: var(--evolution-color); 
+.community-icon { 
+    font-size: 3.5rem; 
+    margin-bottom: 1rem; 
+    color: var(--evolution-color); 
 }
 
-.community-card h3 { 
-    color: var(--primary-color); 
+.community-card h3 { 
+    color: var(--primary-color); 
 }
 
 /* --- Action Framework --- */
 .action-framework {
-    background: white;
-    border-radius: 16px;
-    padding: 3rem;
-    box-shadow: 0 5px 20px rgba(44, 62, 80, 0.08);
-    margin: 2rem 0;
-    border: 1px solid rgba(189, 195, 199, 0.2);
+    background: white;
+    border-radius: 16px;
+    padding: 3rem;
+    box-shadow: 0 5px 20px rgba(44, 62, 80, 0.08);
+    margin: 2rem 0;
+    border: 1px solid rgba(189, 195, 199, 0.2);
 }
 
 .framework-steps {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
 }
 
 .framework-step {
-    text-align: center;
-    padding: 2rem 1rem;
-    background: var(--light-bg);
-    border-radius: 12px;
-    transition: all 0.3s;
-    border: 2px solid transparent;
+    text-align: center;
+    padding: 2rem 1rem;
+    background: var(--light-bg);
+    border-radius: 12px;
+    transition: all 0.3s;
+    border: 2px solid transparent;
 }
 
 .framework-step:hover {
-    background: var(--evolution-color);
-    color: white;
-    transform: scale(1.05);
-    border-color: var(--evolution-color);
+    background: var(--evolution-color);
+    color: white;
+    transform: scale(1.05);
+    border-color: var(--evolution-color);
 }
 
-.step-number { 
-    font-size: 3rem; 
-    font-weight: 700; 
-    color: var(--accent-color); 
-    margin-bottom: 1rem; 
-    transition: color 0.3s;
-    font-family: 'Playfair Display', serif;
+.step-number { 
+    font-size: 3rem; 
+    font-weight: 700; 
+    color: var(--accent-color); 
+    margin-bottom: 1rem; 
+    transition: color 0.3s;
+    font-family: 'Playfair Display', serif;
 }
 
-.framework-step:hover .step-number { 
-    color: white; 
+.framework-step:hover .step-number { 
+    color: white; 
 }
 
 /* --- Quote Highlights --- */
 .quote {
-    font-size: 1.4rem;
-    font-style: italic;
-    color: var(--primary-color);
-    border-left: 4px solid var(--accent-color);
-    padding-left: 2rem;
-    margin: 3rem auto;
-    max-width: 800px;
-    text-align: left;
-    font-family: 'Playfair Display', serif;
-    line-height: 1.8;
+    font-size: 1.4rem;
+    font-style: italic;
+    color: var(--primary-color);
+    border-left: 4px solid var(--accent-color);
+    padding-left: 2rem;
+    margin: 3rem auto;
+    max-width: 800px;
+    text-align: left;
+    font-family: 'Playfair Display', serif;
+    line-height: 1.8;
 }
 
 /* --- Footer --- */
 footer {
-    background: var(--primary-color);
-    color: white;
-    padding: 4rem 2rem 2rem;
+    background: var(--primary-color);
+    color: white;
+    padding: 4rem 2rem 2rem;
 }
 
 .footer-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 3rem;
-    margin-bottom: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+    margin-bottom: 2rem;
 }
 
-.footer-section h4 { 
-    margin-bottom: 1rem; 
-    color: var(--accent-color);
-    font-family: 'Playfair Display', serif;
-    font-size: 1.3rem;
+.footer-section h4 { 
+    margin-bottom: 1rem; 
+    color: var(--accent-color);
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
 }
 
-.footer-links { 
-    list-style: none; 
+.footer-links { 
+    list-style: none; 
 }
 
-.footer-links li { 
-    margin-bottom: 0.5rem; 
+.footer-links li { 
+    margin-bottom: 0.5rem; 
 }
 
-.footer-links a { 
-    color: rgba(255, 255, 255, 0.9); 
-    text-decoration: none; 
-    transition: all 0.3s;
-    font-weight: 400;
+.footer-links a { 
+    color: rgba(255, 255, 255, 0.9); 
+    text-decoration: none; 
+    transition: all 0.3s;
+    font-weight: 400;
 }
 
-.footer-links a:hover { 
-    color: var(--accent-color);
-    transform: translateX(5px);
-    display: inline-block;
+.footer-links a:hover { 
+    color: var(--accent-color);
+    transform: translateX(5px);
+    display: inline-block;
 }
 
-.footer-bottom { 
-    text-align: center; 
-    padding-top: 2rem; 
-    border-top: 1px solid rgba(255,255,255,0.1);
-    font-weight: 300;
+.footer-bottom { 
+    text-align: center; 
+    padding-top: 2rem; 
+    border-top: 1px solid rgba(255,255,255,0.1);
+    font-weight: 300;
 }
 
 /* --- Responsive Design --- */
 @media (max-width: 768px) {
-    .hero h1 { font-size: 2.5rem; }
-    .hero p { font-size: 1.2rem; }
-    h2 { font-size: 2.2rem; }
-    
-    .evolution-path { flex-direction: column; gap: 0.5rem; }
-    .evolution-arrow { transform: rotate(90deg); margin: 0.5rem 0; }
-    
-    .nav-links {
-        position: fixed;
-        right: -100%;
-        top: 70px;
-        gap: 0;
-        flex-direction: column;
-        background-color: var(--primary-color);
-        width: 100%;
-        text-align: center;
-        transition: 0.3s;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    }
-    
-    .nav-links.active {
-        right: 0;
-    }
-    
-    .nav-links li {
-        padding: 1.5rem 0;
-    }
-    
-    .nav-links a {
-        font-size: 1.2rem;
-    }
-    
-    .nav-links a:not(.apply-btn)::after {
-        display: none;
-    }
-    
-    .nav-links .apply-btn {
-        margin: 0 auto;
-        display: inline-block;
-    }
-    
-    .hamburger {
-        display: flex;
-    }
-    
-    .hamburger.active .bar:nth-child(2) { opacity: 0; }
-    .hamburger.active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
-    .hamburger.active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+    .hero h1 { font-size: 2.5rem; }
+    .hero p { font-size: 1.2rem; }
+    h2 { font-size: 2.2rem; }
+    
+    .evolution-path { flex-direction: column; gap: 0.5rem; }
+    .evolution-arrow { transform: rotate(90deg); margin: 0.5rem 0; }
+    
+    .nav-links {
+        position: fixed;
+        right: -100%;
+        top: 70px;
+        gap: 0;
+        flex-direction: column;
+        background-color: var(--primary-color);
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    
+    .nav-links.active {
+        right: 0;
+    }
+    
+    .nav-links li {
+        padding: 1.5rem 0;
+    }
+    
+    .nav-links a {
+        font-size: 1.2rem;
+    }
+    
+    .nav-links a:not(.apply-btn)::after {
+        display: none;
+    }
+    
+    .nav-links .apply-btn {
+        margin: 0 auto;
+        display: inline-block;
+    }
+    
+    .hamburger {
+        display: flex;
+    }
+    
+    .hamburger.active .bar:nth-child(2) { opacity: 0; }
+    .hamburger.active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    .hamburger.active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
 }
 
 /* --- Interactive Elements --- */
-.tab-container { 
-    margin: 2rem 0; 
+.tab-container { 
+    margin: 2rem 0; 
 }
 
-.tab-buttons { 
-    display: flex; 
-    gap: 1rem; 
-    margin-bottom: 2rem; 
-    flex-wrap: wrap; 
+.tab-buttons { 
+    display: flex; 
+    gap: 1rem; 
+    margin-bottom: 2rem; 
+    flex-wrap: wrap; 
 }
 
 .tab-button {
-    padding: 0.8rem 1.5rem;
-    border: 2px solid #bdc3c7;
-    background: white;
-    color: var(--primary-color);
-    border-radius: 30px;
-    cursor: pointer;
-    transition: all 0.3s;
-    font-weight: 600;
-    letter-spacing: 0.5px;
+    padding: 0.8rem 1.5rem;
+    border: 2px solid #bdc3c7;
+    background: white;
+    color: var(--primary-color);
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: 600;
+    letter-spacing: 0.5px;
 }
 
 .tab-button:hover {
-    border-color: var(--accent-color);
+    border-color: var(--accent-color);
 }
 
-.tab-button.active { 
-    background: var(--primary-color); 
-    color: white;
-    border-color: var(--primary-color);
+.tab-button.active { 
+    background: var(--primary-color); 
+    color: white;
+    border-color: var(--primary-color);
 }
 
-.tab-content { 
-    display: none; 
-    animation: fadeIn 0.5s; 
+.tab-content { 
+    display: none; 
+    animation: fadeIn 0.5s; 
 }
 
-.tab-content.active { 
-    display: block; 
+.tab-content.active { 
+    display: block; 
 }
 
-@keyframes fadeIn { 
-    from { opacity: 0; transform: translateY(10px); } 
-    to { opacity: 1; transform: translateY(0); } 
+@keyframes fadeIn { 
+    from { opacity: 0; transform: translateY(10px); } 
+    to { opacity: 1; transform: translateY(0); } 
 }
 
 /* Pilot Announcement */
 .pilot-announcement {
-    background: rgba(255, 255, 255, 0.1);
-    padding: 1.5rem;
-    border-radius: 12px;
-    margin: 2rem 0;
-    backdrop-filter: blur(10px);
-    border: 2px solid rgba(243, 156, 18, 0.3);
-    animation: pulse-border 3s infinite;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin: 2rem 0;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(243, 156, 18, 0.3);
+    animation: pulse-border 3s infinite;
 }
 
 @keyframes pulse-border {
-    0%, 100% { border-color: rgba(243, 156, 18, 0.3); }
-    50% { border-color: rgba(243, 156, 18, 0.6); }
+    0%, 100% { border-color: rgba(243, 156, 18, 0.3); }
+    50% { border-color: rgba(243, 156, 18, 0.6); }
 }
 
 /* Pilot Info Cards */
 .pilot-info-card {
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .pilot-info-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 20px rgba(44, 62, 80, 0.1);
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(44, 62, 80, 0.1);
 }
 </style>
 </head>
 <body>
+<!-- Header and Navigation -->
 <header>
 <nav>
-<div class="logo">The Political Evolution Project</div>
+<div class="logo">Political Evolution Project</div>
 <ul class="nav-links">
 <li><a href="#pilot-signup" class="apply-btn">Apply Now</a></li>
 <li><a href="#journey">Journey</a></li>
@@ -779,14 +780,16 @@ footer {
 </div>
 </nav>
 </header>
+<!-- Main Content -->
 <main>
+<!-- Hero Section -->
 <section class="hero">
 <div class="hero-content">
 <h1>Transforming How We Organize for Change</h1>
 <p>From exposing exploitation to building abundance—comprehensive political education and resources for creating movements that multiply power rather than extract it.</p>
 <div class="pilot-announcement">
-    <h3 style="color: #f39c12; margin-bottom: 0.5rem;">🚀 Pilot Program Launch</h3>
-    <p style="font-size: 1.1rem; margin-bottom: 1rem;">Join our first virtual cohort starting September 7, 2025 • Limited to 25 participants</p>
+    <h3 style="color: #f39c12; margin-bottom: 0.5rem;">🚀 Pilot Program Launch</h3>
+    <p style="font-size: 1.1rem; margin-bottom: 1rem;">Join our first virtual cohort starting September 7, 2025 • Limited to 25 participants</p>
 </div>
 <div class="evolution-path">
 <div class="evolution-step">Recognition</div>
@@ -802,10 +805,12 @@ footer {
 </div>
 </div>
 </section>
+<!-- Journey Section -->
 <section id="journey" class="section">
 <h2>The Evolution Journey</h2>
 <p style="text-align: center; max-width: 800px; margin: 0 auto 2rem; font-size: 1.2rem; color: var(--text-dark);">This project began with a personal revelation about exploitation in political organizing and has grown into a comprehensive educational platform for transforming our political ecosystem. Follow the journey that connects individual empowerment to systemic change.</p>
 <div class="journey-timeline">
+<!-- Timeline items remain the same -->
 <div class="timeline-item">
 <div class="timeline-marker">1</div>
 <div class="timeline-content">
@@ -831,162 +836,166 @@ footer {
 <div class="timeline-marker">4</div>
 <div class="timeline-content">
 <h3>Building Alternatives</h3>
-<p>Documenting the political evolution happening in communities nationwide. Moving beyond partisan gridlock to collaborative problem-solving. Creating frameworks for abundance-based organizing.</p>
+<p>Documenting the political evolution happening in communities worldwide. Moving beyond partisan gridlock to collaborative problem-solving. Creating frameworks for abundance-based organizing.</p>
 </div>
 </div>
 </div>
 </section>
 
+<!-- Pilot Program Signup Section -->
 <section id="pilot-signup" class="section" style="background-color: white;">
 <h2>Join the First Cohort</h2>
 <p style="text-align: center; max-width: 800px; margin: 0 auto 2rem; font-size: 1.2rem;">Be part of the transformative first cohort of the Political Evolution Project. This pilot program is designed for organizers ready to move from extraction to empowerment.</p>
 
 <div class="pilot-info-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin: 3rem 0;">
-    <div class="pilot-info-card" style="text-align: center; padding: 2rem; background: var(--light-bg); border-radius: 12px; transition: all 0.3s; cursor: pointer;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 5px 20px rgba(44, 62, 80, 0.1)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
-        <h3 style="color: var(--primary-color); margin-bottom: 1rem;">📅 Start Date</h3>
-        <p style="font-size: 1.3rem; font-weight: 600; color: var(--accent-color);">September 7, 2025</p>
-        <p>12-week virtual journey</p>
-    </div>
-    <div class="pilot-info-card" style="text-align: center; padding: 2rem; background: var(--light-bg); border-radius: 12px; transition: all 0.3s; cursor: pointer;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 5px 20px rgba(44, 62, 80, 0.1)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
-        <h3 style="color: var(--primary-color); margin-bottom: 1rem;">👥 Limited Spots</h3>
-        <p style="font-size: 1.3rem; font-weight: 600; color: var(--secondary-color);">25 Participants</p>
-        <p>Small cohort for deep engagement</p>
-    </div>
-    <div class="pilot-info-card" style="text-align: center; padding: 2rem; background: var(--light-bg); border-radius: 12px; transition: all 0.3s; cursor: pointer;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 5px 20px rgba(44, 62, 80, 0.1)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
-        <h3 style="color: var(--primary-color); margin-bottom: 1rem;">💡 Format</h3>
-        <p style="font-size: 1.3rem; font-weight: 600; color: var(--evolution-color);">100% Virtual</p>
-        <p>Weekly online sessions via Zoom</p>
-    </div>
-    <div class="pilot-info-card" style="text-align: center; padding: 2rem; background: var(--light-bg); border-radius: 12px; transition: all 0.3s; cursor: pointer;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 5px 20px rgba(44, 62, 80, 0.1)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
-        <h3 style="color: var(--primary-color); margin-bottom: 1rem;">🎯 Investment</h3>
-        <p style="font-size: 1.3rem; font-weight: 600; color: var(--accent-color);">FREE for Pilot</p>
-        <p>Your commitment is your contribution</p>
-    </div>
+    <div class="pilot-info-card" style="text-align: center; padding: 2rem; background: var(--light-bg); border-radius: 12px; transition: all 0.3s; cursor: pointer;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 5px 20px rgba(44, 62, 80, 0.1)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+        <h3 style="color: var(--primary-color); margin-bottom: 1rem;">📅 Start Date</h3>
+        <p style="font-size: 1.3rem; font-weight: 600; color: var(--accent-color);">September 7, 2025</p>
+        <p>12-week virtual journey</p>
+    </div>
+    <div class="pilot-info-card" style="text-align: center; padding: 2rem; background: var(--light-bg); border-radius: 12px; transition: all 0.3s; cursor: pointer;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 5px 20px rgba(44, 62, 80, 0.1)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+        <h3 style="color: var(--primary-color); margin-bottom: 1rem;">👥 Limited Spots</h3>
+        <p style="font-size: 1.3rem; font-weight: 600; color: var(--secondary-color);">25 Participants</p>
+        <p>Small cohort for deep engagement</p>
+    </div>
+    <div class="pilot-info-card" style="text-align: center; padding: 2rem; background: var(--light-bg); border-radius: 12px; transition: all 0.3s; cursor: pointer;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 5px 20px rgba(44, 62, 80, 0.1)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+        <h3 style="color: var(--primary-color); margin-bottom: 1rem;">💡 Format</h3>
+        <p style="font-size: 1.3rem; font-weight: 600; color: var(--evolution-color);">100% Virtual</p>
+        <p>Weekly online sessions via Zoom</p>
+    </div>
+    <div class="pilot-info-card" style="text-align: center; padding: 2rem; background: var(--light-bg); border-radius: 12px; transition: all 0.3s; cursor: pointer;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 5px 20px rgba(44, 62, 80, 0.1)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+        <h3 style="color: var(--primary-color); margin-bottom: 1rem;">🎯 Investment</h3>
+        <p style="font-size: 1.3rem; font-weight: 600; color: var(--accent-color);">FREE for Pilot</p>
+        <p>Your commitment is your contribution</p>
+    </div>
 </div>
 
 <div class="pilot-description" style="max-width: 800px; margin: 0 auto 3rem;">
-    <h3 style="text-align: center; margin-bottom: 2rem;">What You'll Experience</h3>
-    <ul style="list-style: none; padding: 0;">
-        <li style="padding: 1rem; margin-bottom: 1rem; background: var(--light-bg); border-radius: 8px; border-left: 4px solid var(--accent-color);">
-            <strong>Comprehensive Political Education:</strong> Master frameworks for understanding power, economics, and organizing strategy
-        </li>
-        <li style="padding: 1rem; margin-bottom: 1rem; background: var(--light-bg); border-radius: 8px; border-left: 4px solid var(--secondary-color);">
-            <strong>Practical Tools & Skills:</strong> Learn power mapping, campaign planning, and abundance-based organizing methods
-        </li>
-        <li style="padding: 1rem; margin-bottom: 1rem; background: var(--light-bg); border-radius: 8px; border-left: 4px solid var(--evolution-color);">
-            <strong>Community & Support:</strong> Join a cohort of committed organizers building the future of political movements
-        </li>
-        <li style="padding: 1rem; margin-bottom: 1rem; background: var(--light-bg); border-radius: 8px; border-left: 4px solid var(--accent-color);">
-            <strong>Direct Mentorship:</strong> Weekly virtual sessions with Carrie Clendening and guest facilitators
-        </li>
-    </ul>
-    
-    <h3 style="text-align: center; margin: 3rem 0 2rem;">Who Should Apply</h3>
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
-        <div style="padding: 1.5rem; background: #27ae6010; border-radius: 8px; border: 1px solid #27ae6030;">
-            <h4 style="color: var(--evolution-color); margin-bottom: 0.5rem;">✓ You Should Apply If:</h4>
-            <ul style="margin: 0; padding-left: 1.5rem;">
-                <li>You've experienced exploitation in organizing</li>
-                <li>You're ready to build alternatives</li>
-                <li>You can commit 2-3 hours weekly</li>
-                <li>You have reliable internet access</li>
-                <li>You want to transform your community</li>
-                <li>You're open to new approaches</li>
-            </ul>
-        </div>
-        <div style="padding: 1.5rem; background: #e74c3c10; border-radius: 8px; border: 1px solid #e74c3c30;">
-            <h4 style="color: var(--secondary-color); margin-bottom: 0.5rem;">✗ This May Not Be For You If:</h4>
-            <ul style="margin: 0; padding-left: 1.5rem;">
-                <li>You're looking for quick fixes</li>
-                <li>You can't commit to the full program</li>
-                <li>You're not ready to challenge systems</li>
-                <li>You prefer traditional organizing only</li>
-                <li>You're not open to collaboration</li>
-            </ul>
-        </div>
-    </div>
+    <h3 style="text-align: center; margin-bottom: 2rem;">What You'll Experience</h3>
+    <ul style="list-style: none; padding: 0;">
+        <li style="padding: 1rem; margin-bottom: 1rem; background: var(--light-bg); border-radius: 8px; border-left: 4px solid var(--accent-color);">
+            <strong>Comprehensive Political Education:</strong> Master frameworks for understanding power, economics, and organizing strategy
+        </li>
+        <li style="padding: 1rem; margin-bottom: 1rem; background: var(--light-bg); border-radius: 8px; border-left: 4px solid var(--secondary-color);">
+            <strong>Practical Tools & Skills:</strong> Learn power mapping, campaign planning, and abundance-based organizing methods
+        </li>
+        <li style="padding: 1rem; margin-bottom: 1rem; background: var(--light-bg); border-radius: 8px; border-left: 4px solid var(--evolution-color);">
+            <strong>Community & Support:</strong> Join a cohort of committed organizers building the future of political movements
+        </li>
+        <li style="padding: 1rem; margin-bottom: 1rem; background: var(--light-bg); border-radius: 8px; border-left: 4px solid var(--accent-color);">
+            <strong>Direct Mentorship:</strong> Weekly virtual sessions with Carrie Clendening and guest facilitators
+        </li>
+    </ul>
+    
+    <h3 style="text-align: center; margin: 3rem 0 2rem;">Who Should Apply</h3>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
+        <div style="padding: 1.5rem; background: #27ae6010; border-radius: 8px; border: 1px solid #27ae6030;">
+            <h4 style="color: var(--evolution-color); margin-bottom: 0.5rem;">✓ You Should Apply If:</h4>
+            <ul style="margin: 0; padding-left: 1.5rem;">
+                <li>You've experienced exploitation in organizing</li>
+                <li>You're ready to build alternatives</li>
+                <li>You can commit 2-3 hours weekly</li>
+                <li>You have reliable internet access</li>
+                <li>You want to transform your community</li>
+                <li>You're open to new approaches</li>
+            </ul>
+        </div>
+        <div style="padding: 1.5rem; background: #e74c3c10; border-radius: 8px; border: 1px solid #e74c3c30;">
+            <h4 style="color: var(--secondary-color); margin-bottom: 0.5rem;">✗ This May Not Be For You If:</h4>
+            <ul style="margin: 0; padding-left: 1.5rem;">
+                <li>You're looking for quick fixes</li>
+                <li>You can't commit to the full program</li>
+                <li>You're not ready to challenge systems</li>
+                <li>You prefer traditional organizing only</li>
+                <li>You're not open to collaboration</li>
+            </ul>
+        </div>
+    </div>
 </div>
 
 <div class="signup-form-container" style="max-width: 600px; margin: 0 auto; background: white; padding: 3rem; border-radius: 16px; box-shadow: 0 5px 20px rgba(44, 62, 80, 0.1); border: 2px solid var(--accent-color);">
-    <h3 style="text-align: center; margin-bottom: 2rem; color: var(--primary-color);">Apply for the First Cohort</h3>
-    <form id="pilot-signup-form" action="mailto:carrie@politicalevolutionproject.org" method="post" enctype="text/plain">
-        <div style="margin-bottom: 1.5rem;">
-            <label for="name" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-dark);">Full Name *</label>
-            <input type="text" id="name" name="name" required style="width: 100%; padding: 0.8rem; border: 2px solid #bdc3c7; border-radius: 8px; font-size: 1rem; transition: border-color 0.3s;">
-        </div>
-        <div style="margin-bottom: 1.5rem;">
-            <label for="email" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-dark);">Email Address *</label>
-            <input type="email" id="email" name="email" required style="width: 100%; padding: 0.8rem; border: 2px solid #bdc3c7; border-radius: 8px; font-size: 1rem; transition: border-color 0.3s;">
-        </div>
-        <div style="margin-bottom: 1.5rem;">
-            <label for="location" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-dark);">Location (City, State) *</label>
-            <input type="text" id="location" name="location" required style="width: 100%; padding: 0.8rem; border: 2px solid #bdc3c7; border-radius: 8px; font-size: 1rem; transition: border-color 0.3s;">
-        </div>
-        <div style="margin-bottom: 1.5rem;">
-            <label for="phone" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-dark);">Phone Number</label>
-            <input type="text" id="phone" name="phone" style="width: 100%; padding: 0.8rem; border: 2px solid #bdc3c7; border-radius: 8px; font-size: 1rem; transition: border-color 0.3s;">
-        </div>
-        <div style="margin-bottom: 1.5rem;">
-            <label for="experience" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-dark);">Tell us about your organizing experience and why you want to join *</label>
-            <textarea id="experience" name="experience" rows="4" required style="width: 100%; padding: 0.8rem; border: 2px solid #bdc3c7; border-radius: 8px; font-size: 1rem; resize: vertical; transition: border-color 0.3s;"></textarea>
-        </div>
-        <div style="margin-bottom: 2rem;">
-            <label for="commitment" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-dark);">Can you commit to weekly 2-hour virtual sessions for 12 weeks? *</label>
-            <select id="commitment" name="commitment" required style="width: 100%; padding: 0.8rem; border: 2px solid #bdc3c7; border-radius: 8px; font-size: 1rem; transition: border-color 0.3s;">
-                <option value="">Select...</option>
-                <option value="yes">Yes, I can commit</option>
-                <option value="maybe">I need to check my schedule</option>
-                <option value="no">No, but I'm interested in future cohorts</option>
-            </select>
-        </div>
-        <button type="submit" class="btn btn-primary" style="width: 100%; font-size: 1.1rem; padding: 1.2rem;">Submit Application</button>
-    </form>
+    <h3 style="text-align: center; margin-bottom: 2rem; color: var(--primary-color);">Apply for the First Cohort</h3>
+    <form id="pilot-signup-form" onsubmit="handleSignup(event)">
+        <div style="margin-bottom: 1.5rem;">
+            <label for="name" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-dark);">Full Name *</label>
+            <input type="text" id="name" name="name" required style="width: 100%; padding: 0.8rem; border: 2px solid #bdc3c7; border-radius: 8px; font-size: 1rem; transition: border-color 0.3s;">
+        </div>
+        <div style="margin-bottom: 1.5rem;">
+            <label for="email" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-dark);">Email Address *</label>
+            <input type="email" id="email" name="email" required style="width: 100%; padding: 0.8rem; border: 2px solid #bdc3c7; border-radius: 8px; font-size: 1rem; transition: border-color 0.3s;">
+        </div>
+        <div style="margin-bottom: 1.5rem;">
+            <label for="location" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-dark);">Location (City, State) *</label>
+            <input type="text" id="location" name="location" required style="width: 100%; padding: 0.8rem; border: 2px solid #bdc3c7; border-radius: 8px; font-size: 1rem; transition: border-color 0.3s;">
+        </div>
+        <div style="margin-bottom: 1.5rem;">
+            <label for="organization" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-dark);">Current Organization (if any)</label>
+            <input type="text" id="organization" name="organization" style="width: 100%; padding: 0.8rem; border: 2px solid #bdc3c7; border-radius: 8px; font-size: 1rem; transition: border-color 0.3s;">
+        </div>
+        <div style="margin-bottom: 1.5rem;">
+            <label for="experience" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-dark);">Tell us about your organizing experience and why you want to join *</label>
+            <textarea id="experience" name="experience" rows="4" required style="width: 100%; padding: 0.8rem; border: 2px solid #bdc3c7; border-radius: 8px; font-size: 1rem; resize: vertical; transition: border-color 0.3s;"></textarea>
+        </div>
+        <div style="margin-bottom: 2rem;">
+            <label for="commitment" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-dark);">Can you commit to weekly 2-hour virtual sessions for 12 weeks? *</label>
+            <select id="commitment" name="commitment" required style="width: 100%; padding: 0.8rem; border: 2px solid #bdc3c7; border-radius: 8px; font-size: 1rem; transition: border-color 0.3s;">
+                <option value="">Select...</option>
+                <option value="yes">Yes, I can commit</option>
+                <option value="maybe">I need to check my schedule</option>
+                <option value="no">No, but I'm interested in future cohorts</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width: 100%; font-size: 1.1rem; padding: 1.2rem;">Submit Application</button>
+    </form>
+    <div id="signup-message" style="margin-top: 1.5rem; padding: 1rem; border-radius: 8px; display: none;"></div>
 </div>
 
 <div style="text-align: center; margin-top: 3rem;">
-    <p style="color: var(--text-light); font-style: italic;">Applications reviewed on a rolling basis. We'll contact you within 7 days.</p>
-    <p style="margin-top: 1rem; padding: 1rem 2rem; background: #f39c1220; border-radius: 8px; display: inline-block; font-weight: 600; color: var(--text-dark);">
-        ⏰ Priority deadline: August 15, 2025
-    </p>
+    <p style="color: var(--text-light); font-style: italic;">Applications reviewed on a rolling basis. We'll contact you within 7 days.</p>
+    <p style="margin-top: 1rem; padding: 1rem 2rem; background: #f39c1220; border-radius: 8px; display: inline-block; font-weight: 600; color: var(--text-dark);">
+        ⏰ Priority deadline: August 15, 2025
+    </p>
 </div>
 </section>
 
-
+<!-- Learning Pathways Section -->
 <section id="pathways" class="section" style="background-color: white;">
 <h2>Choose Your Learning Path</h2>
 <p style="text-align: center; max-width: 800px; margin: 0 auto 2rem; font-size: 1.2rem;">Structured learning paths tailored to your journey from awareness to action.</p>
 
 <div style="text-align: center; padding: 3rem; background: var(--light-bg); border-radius: 16px; max-width: 700px; margin: 0 auto;">
-    <h3 style="color: var(--accent-color); margin-bottom: 1rem; font-size: 2rem;">🚧 Coming Soon</h3>
-    <p style="font-size: 1.3rem; color: var(--text-dark); margin-bottom: 1.5rem;">Learning Paths will be available in <strong>Late 2025</strong></p>
-    <p style="color: var(--text-light); line-height: 1.8; margin-bottom: 2rem;">After our pilot cohort, we'll launch three comprehensive learning paths based on participant feedback and proven methodologies:</p>
-    
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; text-align: left;">
-        <div style="padding: 1.5rem; background: white; border-radius: 8px; border: 2px solid #e74c3c30;">
-            <h4 style="color: var(--secondary-color); margin-bottom: 0.5rem;">🔍 Recognition Path</h4>
-            <p style="color: var(--text-light); font-size: 0.95rem;">For those experiencing exploitation in their organizing</p>
-        </div>
-        <div style="padding: 1.5rem; background: white; border-radius: 8px; border: 2px solid #3498db30;">
-            <h4 style="color: var(--accent-color); margin-bottom: 0.5rem;">💡 Understanding Path</h4>
-            <p style="color: var(--text-light); font-size: 0.95rem;">For those ready to see systemic patterns</p>
-        </div>
-        <div style="padding: 1.5rem; background: white; border-radius: 8px; border: 2px solid #27ae6030;">
-            <h4 style="color: var(--evolution-color); margin-bottom: 0.5rem;">🌱 Transformation Path</h4>
-            <p style="color: var(--text-light); font-size: 0.95rem;">For those building alternatives</p>
-        </div>
-    </div>
-    
-    <p style="margin-top: 2rem; padding: 1rem; background: #f39c1220; border-radius: 8px; color: var(--text-dark);">
-        <strong>Pilot participants will help shape these learning paths</strong> through their experiences and feedback
-    </p>
-    
-    <a href="#pilot-signup" class="btn btn-evolution" style="margin-top: 2rem;">Be Part of the Foundation</a>
+    <h3 style="color: var(--accent-color); margin-bottom: 1rem; font-size: 2rem;">🚧 Coming Soon</h3>
+    <p style="font-size: 1.3rem; color: var(--text-dark); margin-bottom: 1.5rem;">Learning Paths will be available in <strong>Late 2025</strong></p>
+    <p style="color: var(--text-light); line-height: 1.8; margin-bottom: 2rem;">After our pilot cohort, we'll launch three comprehensive learning paths based on participant feedback and proven methodologies:</p>
+    
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; text-align: left;">
+        <div style="padding: 1.5rem; background: white; border-radius: 8px; border: 2px solid #e74c3c30;">
+            <h4 style="color: var(--secondary-color); margin-bottom: 0.5rem;">🔍 Recognition Path</h4>
+            <p style="color: var(--text-light); font-size: 0.95rem;">For those experiencing exploitation in their organizing</p>
+        </div>
+        <div style="padding: 1.5rem; background: white; border-radius: 8px; border: 2px solid #3498db30;">
+            <h4 style="color: var(--accent-color); margin-bottom: 0.5rem;">💡 Understanding Path</h4>
+            <p style="color: var(--text-light); font-size: 0.95rem;">For those ready to see systemic patterns</p>
+        </div>
+        <div style="padding: 1.5rem; background: white; border-radius: 8px; border: 2px solid #27ae6030;">
+            <h4 style="color: var(--evolution-color); margin-bottom: 0.5rem;">🌱 Transformation Path</h4>
+            <p style="color: var(--text-light); font-size: 0.95rem;">For those building alternatives</p>
+        </div>
+    </div>
+    
+    <p style="margin-top: 2rem; padding: 1rem; background: #f39c1220; border-radius: 8px; color: var(--text-dark);">
+        <strong>Pilot participants will help shape these learning paths</strong> through their experiences and feedback
+    </p>
+    
+    <a href="#pilot-signup" class="btn btn-evolution" style="margin-top: 2rem;">Be Part of the Foundation</a>
 </div>
 </section>
+<!-- Tools Section -->
 <section id="tools" class="section">
 <h2>Tools for Transformation</h2>
 <p style="text-align: center; max-width: 800px; margin: 0 auto 2rem; font-size: 1.2rem;">Practical resources to assess your current situation and build better alternatives. These evidence-based tools help you move from recognition to action.</p>
 <div class="assessment-container">
+<!-- Assessment tools remain the same -->
 <div class="assessment-tool">
 <div class="assessment-header">
 <span class="assessment-icon">📊</span>
@@ -1042,46 +1051,48 @@ footer {
 </div>
 </section>
 
+<!-- Resources Section -->
 <section id="resources" class="section" style="background-color: white;">
 <h2>Free Political Education Resources</h2>
 <p style="text-align: center; max-width: 800px; margin: 0 auto 2rem; font-size: 1.2rem;">Comprehensive materials for understanding and transforming our political systems. All resources will be freely available because knowledge is power, and power should be shared.</p>
 
 <div style="text-align: center; padding: 3rem; background: var(--light-bg); border-radius: 16px; max-width: 700px; margin: 0 auto;">
-    <h3 style="color: var(--accent-color); margin-bottom: 1rem; font-size: 2rem;">🚧 Coming Soon</h3>
-    <p style="font-size: 1.3rem; color: var(--text-dark); margin-bottom: 1.5rem;">Resources will be available in <strong>Late 2025</strong></p>
-    <p style="color: var(--text-light); line-height: 1.8;">We're currently developing comprehensive educational materials based on insights from our pilot cohort. These resources will include:</p>
-    
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin: 2rem 0; text-align: left;">
-        <div style="padding: 1.5rem; background: white; border-radius: 8px;">
-            <h4 style="color: var(--primary-color); margin-bottom: 0.5rem;">📚 Educational Materials</h4>
-            <ul style="color: var(--text-light); font-size: 0.95rem; padding-left: 1.5rem;">
-                <li>Political Education Curricula</li>
-                <li>Understanding Neoliberalism Guide</li>
-                <li>Abundance Economics Primer</li>
-            </ul>
-        </div>
-        <div style="padding: 1.5rem; background: white; border-radius: 8px;">
-            <h4 style="color: var(--primary-color); margin-bottom: 0.5rem;">🛠️ Practical Tools</h4>
-            <ul style="color: var(--text-light); font-size: 0.95rem; padding-left: 1.5rem;">
-                <li>Power Mapping Templates</li>
-                <li>Campaign Planning Toolkit</li>
-                <li>Coalition Building Framework</li>
-            </ul>
-        </div>
-        <div style="padding: 1.5rem; background: white; border-radius: 8px;">
-            <h4 style="color: var(--primary-color); margin-bottom: 0.5rem;">🔍 Research Resources</h4>
-            <ul style="color: var(--text-light); font-size: 0.95rem; padding-left: 1.5rem;">
-                <li>Organization Research Guide</li>
-                <li>Political Finance Decoder</li>
-                <li>Evolution Case Studies</li>
-            </ul>
-        </div>
-    </div>
-    
-    <a href="#pilot-signup" class="btn btn-primary" style="margin-top: 2rem;">Join the Pilot to Get Early Access</a>
+    <h3 style="color: var(--accent-color); margin-bottom: 1rem; font-size: 2rem;">🚧 Coming Soon</h3>
+    <p style="font-size: 1.3rem; color: var(--text-dark); margin-bottom: 1.5rem;">Resources will be available in <strong>Late 2025</strong></p>
+    <p style="color: var(--text-light); line-height: 1.8;">We're currently developing comprehensive educational materials based on insights from our pilot cohort. These resources will include:</p>
+    
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin: 2rem 0; text-align: left;">
+        <div style="padding: 1.5rem; background: white; border-radius: 8px;">
+            <h4 style="color: var(--primary-color); margin-bottom: 0.5rem;">📚 Educational Materials</h4>
+            <ul style="color: var(--text-light); font-size: 0.95rem; padding-left: 1.5rem;">
+                <li>Political Education Curricula</li>
+                <li>Understanding Neoliberalism Guide</li>
+                <li>Abundance Economics Primer</li>
+            </ul>
+        </div>
+        <div style="padding: 1.5rem; background: white; border-radius: 8px;">
+            <h4 style="color: var(--primary-color); margin-bottom: 0.5rem;">🛠️ Practical Tools</h4>
+            <ul style="color: var(--text-light); font-size: 0.95rem; padding-left: 1.5rem;">
+                <li>Power Mapping Templates</li>
+                <li>Campaign Planning Toolkit</li>
+                <li>Coalition Building Framework</li>
+            </ul>
+        </div>
+        <div style="padding: 1.5rem; background: white; border-radius: 8px;">
+            <h4 style="color: var(--primary-color); margin-bottom: 0.5rem;">🔍 Research Resources</h4>
+            <ul style="color: var(--text-light); font-size: 0.95rem; padding-left: 1.5rem;">
+                <li>Organization Research Guide</li>
+                <li>Political Finance Decoder</li>
+                <li>Evolution Case Studies</li>
+            </ul>
+        </div>
+    </div>
+    
+    <a href="#pilot-signup" class="btn btn-primary" style="margin-top: 2rem;">Join the Pilot to Get Early Access</a>
 </div>
 </section>
 
+<!-- Action Framework Section -->
 <section class="section">
 <h2>Your Path to Political Evolution</h2>
 <p style="text-align: center; max-width: 800px; margin: 0 auto 2rem; font-size: 1.2rem;">Transform understanding into action with this step-by-step framework. Each stage builds on the previous, creating a sustainable journey from awareness to systemic change.</p>
@@ -1116,39 +1127,40 @@ footer {
 </div>
 </section>
 
+<!-- Community Section -->
 <section id="community" class="section" style="background-color: white;">
 <h2>Join the Evolution</h2>
 <p style="text-align: center; max-width: 800px; margin: 0 auto 2rem; font-size: 1.2rem;">Connect with a growing movement of organizers transforming how we create political change.</p>
 
 <div style="text-align: center; padding: 3rem; background: var(--light-bg); border-radius: 16px; max-width: 700px; margin: 0 auto;">
-    <h3 style="color: var(--accent-color); margin-bottom: 1rem; font-size: 2rem;">🚧 Coming Soon</h3>
-    <p style="font-size: 1.3rem; color: var(--text-dark); margin-bottom: 1.5rem;">Community features will launch in <strong>Late 2025</strong></p>
-    <p style="color: var(--text-light); line-height: 1.8; margin-bottom: 2rem;">After our pilot cohort, we'll open community spaces for organizers ready to transform political movements together:</p>
-    
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; text-align: left; margin-bottom: 2rem;">
-        <div style="padding: 1.5rem; background: white; border-radius: 8px; border: 2px solid #27ae6030;">
-            <h4 style="color: var(--evolution-color); margin-bottom: 0.5rem;">🤝 Monthly Evolution Circles</h4>
-            <p style="color: var(--text-light); font-size: 0.95rem;">Virtual gatherings to discuss resources and strategize together</p>
-        </div>
-        <div style="padding: 1.5rem; background: white; border-radius: 8px; border: 2px solid #3498db30;">
-            <h4 style="color: var(--accent-color); margin-bottom: 0.5rem;">💡 Local Innovation Labs</h4>
-            <p style="color: var(--text-light); font-size: 0.95rem;">Connect with others experimenting with new forms of organizing</p>
-        </div>
-        <div style="padding: 1.5rem; background: white; border-radius: 8px; border: 2px solid #f39c1230;">
-            <h4 style="color: #f39c12; margin-bottom: 0.5rem;">📢 Story Sharing Network</h4>
-            <p style="color: var(--text-light); font-size: 0.95rem;">Document and share political evolution in your community</p>
-        </div>
-        <div style="padding: 1.5rem; background: white; border-radius: 8px; border: 2px solid #e74c3c30;">
-            <h4 style="color: var(--secondary-color); margin-bottom: 0.5rem;">🎓 Facilitator Training</h4>
-            <p style="color: var(--text-light); font-size: 0.95rem;">Learn to lead political education sessions in your area</p>
-        </div>
-    </div>
-    
-    <p style="padding: 1rem; background: #27ae6020; border-radius: 8px; color: var(--text-dark);">
-        <strong>Pilot participants will be founding members</strong> of our community spaces
-    </p>
-    
-    <a href="#pilot-signup" class="btn btn-evolution" style="margin-top: 2rem;">Join the Pilot Program</a>
+    <h3 style="color: var(--accent-color); margin-bottom: 1rem; font-size: 2rem;">🚧 Coming Soon</h3>
+    <p style="font-size: 1.3rem; color: var(--text-dark); margin-bottom: 1.5rem;">Community features will launch in <strong>Late 2025</strong></p>
+    <p style="color: var(--text-light); line-height: 1.8; margin-bottom: 2rem;">After our pilot cohort, we'll open community spaces for organizers ready to transform political movements together:</p>
+    
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; text-align: left; margin-bottom: 2rem;">
+        <div style="padding: 1.5rem; background: white; border-radius: 8px; border: 2px solid #27ae6030;">
+            <h4 style="color: var(--evolution-color); margin-bottom: 0.5rem;">🤝 Monthly Evolution Circles</h4>
+            <p style="color: var(--text-light); font-size: 0.95rem;">Virtual gatherings to discuss resources and strategize together</p>
+        </div>
+        <div style="padding: 1.5rem; background: white; border-radius: 8px; border: 2px solid #3498db30;">
+            <h4 style="color: var(--accent-color); margin-bottom: 0.5rem;">💡 Local Innovation Labs</h4>
+            <p style="color: var(--text-light); font-size: 0.95rem;">Connect with others experimenting with new forms of organizing</p>
+        </div>
+        <div style="padding: 1.5rem; background: white; border-radius: 8px; border: 2px solid #f39c1230;">
+            <h4 style="color: #f39c12; margin-bottom: 0.5rem;">📢 Story Sharing Network</h4>
+            <p style="color: var(--text-light); font-size: 0.95rem;">Document and share political evolution in your community</p>
+        </div>
+        <div style="padding: 1.5rem; background: white; border-radius: 8px; border: 2px solid #e74c3c30;">
+            <h4 style="color: var(--secondary-color); margin-bottom: 0.5rem;">🎓 Facilitator Training</h4>
+            <p style="color: var(--text-light); font-size: 0.95rem;">Learn to lead political education sessions in your area</p>
+        </div>
+    </div>
+    
+    <p style="padding: 1rem; background: #27ae6020; border-radius: 8px; color: var(--text-dark);">
+        <strong>Pilot participants will be founding members</strong> of our community spaces
+    </p>
+    
+    <a href="#pilot-signup" class="btn btn-evolution" style="margin-top: 2rem;">Join the Pilot Program</a>
 </div>
 
 <div class="quote">
@@ -1156,6 +1168,7 @@ footer {
 </div>
 </section>
 
+<!-- About Section -->
 <section id="about" class="section">
 <h2>About the Project</h2>
 <div class="tab-container">
@@ -1186,7 +1199,7 @@ footer {
 </div>
 <div id="panel-founder" class="tab-content" role="tabpanel" tabindex="0" aria-labelledby="tab-founder">
 <h3>About Carrie Clendening</h3>
-<p>I'm a West Virginia mother, organizer, and political educator who believes that political change shouldn't require accepting exploitation. My journey from MomsRising Hub Leader to founder of this project taught me that recognizing problems is only the first step—we must also build alternatives.</p>
+<p>I'm a West Virginia mother, organizer, and educator who believes that political change shouldn't require accepting exploitation. My journey from MomsRising Hub Leader to founder of this project taught me that recognizing problems is only the first step—we must also build alternatives.</p>
 <p>My background includes grassroots organizing, political education curriculum development, and firsthand experience with how progressive organizations can perpetuate the very power imbalances they claim to fight. But more importantly, I've seen what's possible when people have the tools and knowledge to organize authentically.</p>
 <p>This project represents my commitment to sharing everything I've learned about building genuine political power. From detailed curricula to practical tools to frameworks for understanding systemic change, these resources are freely given to everyone ready to transform how we organize.</p>
 <p>Contact: carrie@politicalevolutionproject.org | 304-881-4404</p>
@@ -1194,8 +1207,10 @@ footer {
 </div>
 </section>
 </main>
+<!-- Footer -->
 <footer>
 <div class="footer-content">
+<!-- Footer sections remain the same -->
 <div class="footer-section">
 <h4>Explore</h4>
 <ul class="footer-links">
@@ -1235,7 +1250,7 @@ footer {
 </div>
 <div class="footer-bottom">
 <p>"Your labor has value. Your voice matters. You deserve organizing opportunities that empower rather than exploit you."</p>
-<p style="margin-top: 1rem;">© <span id="current-year"></span> The Political Evolution Project. All resources freely available under Creative Commons.</p>
+<p style="margin-top: 1rem;">© <span id="current-year"></span> Political Evolution Project. All resources freely available under Creative Commons.</p>
 </div>
 </footer>
 <script>
@@ -1343,17 +1358,45 @@ document.getElementById('evolution-result').innerHTML = `
 // --- Dynamic Footer Year ---
 document.getElementById('current-year').textContent = new Date().getFullYear();
 
+// --- Pilot Signup Form Handler ---
+function handleSignup(event) {
+    event.preventDefault();
+    
+    const form = event.target;
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData);
+    
+    // Here you would normally send the data to your server
+    // For now, we'll show a success message
+    
+    const messageDiv = document.getElementById('signup-message');
+    messageDiv.style.display = 'block';
+    messageDiv.style.backgroundColor = '#27ae6020';
+    messageDiv.style.borderLeft = '4px solid #27ae60';
+    messageDiv.style.color = '#27ae60';
+    messageDiv.innerHTML = `
+        <h4 style="margin-bottom: 0.5rem;">Application Received!</h4>
+        <p>Thank you, ${data.name}. We've received your application for the first cohort of the Political Evolution Project. We'll review your application and contact you at ${data.email} within 7 days.</p>
+    `;
+    
+    // Reset form
+    form.reset();
+    
+    // Scroll to message
+    messageDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+
 // Add input focus effects
 document.addEventListener('DOMContentLoaded', function() {
-    const inputs = document.querySelectorAll('input, textarea, select');
-    inputs.forEach(input => {
-        input.addEventListener('focus', function() {
-            this.style.borderColor = '#3498db';
-        });
-        input.addEventListener('blur', function() {
-            this.style.borderColor = '#bdc3c7';
-        });
-    });
+    const inputs = document.querySelectorAll('input, textarea, select');
+    inputs.forEach(input => {
+        input.addEventListener('focus', function() {
+            this.style.borderColor = '#3498db';
+        });
+        input.addEventListener('blur', function() {
+            this.style.borderColor = '#bdc3c7';
+        });
+    });
 });
 </script>
 </body>
