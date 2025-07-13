@@ -96,7 +96,7 @@ nav {
     position: relative;
 }
 
-.nav-links a::after {
+.nav-links a:not(.apply-btn)::after {
     content: '';
     position: absolute;
     bottom: -5px;
@@ -107,8 +107,20 @@ nav {
     transition: width 0.3s;
 }
 
-.nav-links a:hover::after {
+.nav-links a:not(.apply-btn):hover::after {
     width: 100%;
+}
+
+.nav-links .apply-btn {
+    background: #f39c12;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+}
+
+.nav-links .apply-btn:hover {
+    background: #e67e22;
+    transform: translateY(-2px);
 }
 
 /* --- Hamburger Menu --- */
@@ -654,8 +666,13 @@ footer {
         font-size: 1.2rem;
     }
     
-    .nav-links a::after {
+    .nav-links a:not(.apply-btn)::after {
         display: none;
+    }
+    
+    .nav-links .apply-btn {
+        margin: 0 auto;
+        display: inline-block;
     }
     
     .hamburger {
@@ -714,14 +731,41 @@ footer {
     from { opacity: 0; transform: translateY(10px); } 
     to { opacity: 1; transform: translateY(0); } 
 }
+
+/* Pilot Announcement */
+.pilot-announcement {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin: 2rem 0;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(243, 156, 18, 0.3);
+    animation: pulse-border 3s infinite;
+}
+
+@keyframes pulse-border {
+    0%, 100% { border-color: rgba(243, 156, 18, 0.3); }
+    50% { border-color: rgba(243, 156, 18, 0.6); }
+}
+
+/* Pilot Info Cards */
+.pilot-info-card {
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.pilot-info-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(44, 62, 80, 0.1);
+}
 </style>
 </head>
 <body>
 <!-- Header and Navigation -->
 <header>
 <nav>
-<div class="logo">The Political Evolution Project</div>
+<div class="logo">Political Evolution Project</div>
 <ul class="nav-links">
+<li><a href="#pilot-signup" class="apply-btn">Apply Now</a></li>
 <li><a href="#journey">Journey</a></li>
 <li><a href="#pathways">Learning</a></li>
 <li><a href="#tools">Tools</a></li>
@@ -743,6 +787,10 @@ footer {
 <div class="hero-content">
 <h1>Transforming How We Organize for Change</h1>
 <p>From exposing exploitation to building abundance—comprehensive political education and resources for creating movements that multiply power rather than extract it.</p>
+<div class="pilot-announcement">
+    <h3 style="color: #f39c12; margin-bottom: 0.5rem;">🚀 Pilot Program Launch</h3>
+    <p style="font-size: 1.1rem; margin-bottom: 1rem;">Join our first virtual cohort starting September 7, 2025 • Limited to 25 participants</p>
+</div>
 <div class="evolution-path">
 <div class="evolution-step">Recognition</div>
 <div class="evolution-arrow">→</div>
@@ -751,9 +799,9 @@ footer {
 <div class="evolution-step">Transformation</div>
 </div>
 <div class="cta-buttons">
-<a href="#resources" class="btn btn-primary">Access Free Resources</a>
+<a href="#pilot-signup" class="btn btn-primary" style="background: #f39c12;">Apply for First Cohort</a>
 <a href="#tools" class="btn btn-secondary">Assessment Tools</a>
-<a href="#pathways" class="btn btn-evolution">Start Learning</a>
+<a href="#about" class="btn btn-evolution">Learn More</a>
 </div>
 </div>
 </section>
@@ -793,60 +841,153 @@ footer {
 </div>
 </div>
 </section>
+
+<!-- Pilot Program Signup Section -->
+<section id="pilot-signup" class="section" style="background-color: white;">
+<h2>Join the First Cohort</h2>
+<p style="text-align: center; max-width: 800px; margin: 0 auto 2rem; font-size: 1.2rem;">Be part of the transformative first cohort of the Political Evolution Project. This pilot program is designed for organizers ready to move from extraction to empowerment.</p>
+
+<div class="pilot-info-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin: 3rem 0;">
+    <div class="pilot-info-card" style="text-align: center; padding: 2rem; background: var(--light-bg); border-radius: 12px; transition: all 0.3s; cursor: pointer;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 5px 20px rgba(44, 62, 80, 0.1)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+        <h3 style="color: var(--primary-color); margin-bottom: 1rem;">📅 Start Date</h3>
+        <p style="font-size: 1.3rem; font-weight: 600; color: var(--accent-color);">September 7, 2025</p>
+        <p>12-week virtual journey</p>
+    </div>
+    <div class="pilot-info-card" style="text-align: center; padding: 2rem; background: var(--light-bg); border-radius: 12px; transition: all 0.3s; cursor: pointer;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 5px 20px rgba(44, 62, 80, 0.1)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+        <h3 style="color: var(--primary-color); margin-bottom: 1rem;">👥 Limited Spots</h3>
+        <p style="font-size: 1.3rem; font-weight: 600; color: var(--secondary-color);">25 Participants</p>
+        <p>Small cohort for deep engagement</p>
+    </div>
+    <div class="pilot-info-card" style="text-align: center; padding: 2rem; background: var(--light-bg); border-radius: 12px; transition: all 0.3s; cursor: pointer;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 5px 20px rgba(44, 62, 80, 0.1)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+        <h3 style="color: var(--primary-color); margin-bottom: 1rem;">💡 Format</h3>
+        <p style="font-size: 1.3rem; font-weight: 600; color: var(--evolution-color);">100% Virtual</p>
+        <p>Weekly online sessions via Zoom</p>
+    </div>
+    <div class="pilot-info-card" style="text-align: center; padding: 2rem; background: var(--light-bg); border-radius: 12px; transition: all 0.3s; cursor: pointer;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 5px 20px rgba(44, 62, 80, 0.1)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+        <h3 style="color: var(--primary-color); margin-bottom: 1rem;">🎯 Investment</h3>
+        <p style="font-size: 1.3rem; font-weight: 600; color: var(--accent-color);">FREE for Pilot</p>
+        <p>Your commitment is your contribution</p>
+    </div>
+</div>
+
+<div class="pilot-description" style="max-width: 800px; margin: 0 auto 3rem;">
+    <h3 style="text-align: center; margin-bottom: 2rem;">What You'll Experience</h3>
+    <ul style="list-style: none; padding: 0;">
+        <li style="padding: 1rem; margin-bottom: 1rem; background: var(--light-bg); border-radius: 8px; border-left: 4px solid var(--accent-color);">
+            <strong>Comprehensive Political Education:</strong> Master frameworks for understanding power, economics, and organizing strategy
+        </li>
+        <li style="padding: 1rem; margin-bottom: 1rem; background: var(--light-bg); border-radius: 8px; border-left: 4px solid var(--secondary-color);">
+            <strong>Practical Tools & Skills:</strong> Learn power mapping, campaign planning, and abundance-based organizing methods
+        </li>
+        <li style="padding: 1rem; margin-bottom: 1rem; background: var(--light-bg); border-radius: 8px; border-left: 4px solid var(--evolution-color);">
+            <strong>Community & Support:</strong> Join a cohort of committed organizers building the future of political movements
+        </li>
+        <li style="padding: 1rem; margin-bottom: 1rem; background: var(--light-bg); border-radius: 8px; border-left: 4px solid var(--accent-color);">
+            <strong>Direct Mentorship:</strong> Weekly virtual sessions with Carrie Clendening and guest facilitators
+        </li>
+    </ul>
+    
+    <h3 style="text-align: center; margin: 3rem 0 2rem;">Who Should Apply</h3>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
+        <div style="padding: 1.5rem; background: #27ae6010; border-radius: 8px; border: 1px solid #27ae6030;">
+            <h4 style="color: var(--evolution-color); margin-bottom: 0.5rem;">✓ You Should Apply If:</h4>
+            <ul style="margin: 0; padding-left: 1.5rem;">
+                <li>You've experienced exploitation in organizing</li>
+                <li>You're ready to build alternatives</li>
+                <li>You can commit 2-3 hours weekly</li>
+                <li>You have reliable internet access</li>
+                <li>You want to transform your community</li>
+                <li>You're open to new approaches</li>
+            </ul>
+        </div>
+        <div style="padding: 1.5rem; background: #e74c3c10; border-radius: 8px; border: 1px solid #e74c3c30;">
+            <h4 style="color: var(--secondary-color); margin-bottom: 0.5rem;">✗ This May Not Be For You If:</h4>
+            <ul style="margin: 0; padding-left: 1.5rem;">
+                <li>You're looking for quick fixes</li>
+                <li>You can't commit to the full program</li>
+                <li>You're not ready to challenge systems</li>
+                <li>You prefer traditional organizing only</li>
+                <li>You're not open to collaboration</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="signup-form-container" style="max-width: 600px; margin: 0 auto; background: white; padding: 3rem; border-radius: 16px; box-shadow: 0 5px 20px rgba(44, 62, 80, 0.1); border: 2px solid var(--accent-color);">
+    <h3 style="text-align: center; margin-bottom: 2rem; color: var(--primary-color);">Apply for the First Cohort</h3>
+    <form id="pilot-signup-form" onsubmit="handleSignup(event)">
+        <div style="margin-bottom: 1.5rem;">
+            <label for="name" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-dark);">Full Name *</label>
+            <input type="text" id="name" name="name" required style="width: 100%; padding: 0.8rem; border: 2px solid #bdc3c7; border-radius: 8px; font-size: 1rem; transition: border-color 0.3s;">
+        </div>
+        <div style="margin-bottom: 1.5rem;">
+            <label for="email" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-dark);">Email Address *</label>
+            <input type="email" id="email" name="email" required style="width: 100%; padding: 0.8rem; border: 2px solid #bdc3c7; border-radius: 8px; font-size: 1rem; transition: border-color 0.3s;">
+        </div>
+        <div style="margin-bottom: 1.5rem;">
+            <label for="location" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-dark);">Location (City, State) *</label>
+            <input type="text" id="location" name="location" required style="width: 100%; padding: 0.8rem; border: 2px solid #bdc3c7; border-radius: 8px; font-size: 1rem; transition: border-color 0.3s;">
+        </div>
+        <div style="margin-bottom: 1.5rem;">
+            <label for="organization" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-dark);">Current Organization (if any)</label>
+            <input type="text" id="organization" name="organization" style="width: 100%; padding: 0.8rem; border: 2px solid #bdc3c7; border-radius: 8px; font-size: 1rem; transition: border-color 0.3s;">
+        </div>
+        <div style="margin-bottom: 1.5rem;">
+            <label for="experience" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-dark);">Tell us about your organizing experience and why you want to join *</label>
+            <textarea id="experience" name="experience" rows="4" required style="width: 100%; padding: 0.8rem; border: 2px solid #bdc3c7; border-radius: 8px; font-size: 1rem; resize: vertical; transition: border-color 0.3s;"></textarea>
+        </div>
+        <div style="margin-bottom: 2rem;">
+            <label for="commitment" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-dark);">Can you commit to weekly 2-hour virtual sessions for 12 weeks? *</label>
+            <select id="commitment" name="commitment" required style="width: 100%; padding: 0.8rem; border: 2px solid #bdc3c7; border-radius: 8px; font-size: 1rem; transition: border-color 0.3s;">
+                <option value="">Select...</option>
+                <option value="yes">Yes, I can commit</option>
+                <option value="maybe">I need to check my schedule</option>
+                <option value="no">No, but I'm interested in future cohorts</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width: 100%; font-size: 1.1rem; padding: 1.2rem;">Submit Application</button>
+    </form>
+    <div id="signup-message" style="margin-top: 1.5rem; padding: 1rem; border-radius: 8px; display: none;"></div>
+</div>
+
+<div style="text-align: center; margin-top: 3rem;">
+    <p style="color: var(--text-light); font-style: italic;">Applications reviewed on a rolling basis. We'll contact you within 7 days.</p>
+    <p style="margin-top: 1rem; padding: 1rem 2rem; background: #f39c1220; border-radius: 8px; display: inline-block; font-weight: 600; color: var(--text-dark);">
+        ⏰ Priority deadline: August 15, 2025
+    </p>
+</div>
+</section>
+
 <!-- Learning Pathways Section -->
 <section id="pathways" class="section" style="background-color: white;">
 <h2>Choose Your Learning Path</h2>
-<p style="text-align: center; max-width: 800px; margin: 0 auto 2rem; font-size: 1.2rem;">Whether you're recognizing exploitation for the first time or ready to build systemic alternatives, we have resources tailored to your journey. Each pathway provides structured learning to help you develop from awareness to action.</p>
-<div class="pathways-grid">
-<!-- Pathway cards remain the same -->
-<div class="pathway-card">
-<div class="pathway-header recognition-header">
-<h3>Recognition Path</h3>
-<p>For those experiencing exploitation</p>
-</div>
-<div class="pathway-content">
-<p>Learn to identify when volunteering becomes exploitation, understand the hidden costs of emotional labor, and develop tools for protecting yourself while still making change.</p>
-<h4>Key Resources:</h4>
-<ul>
-<li>• Exploitation Assessment Tool</li>
-<li>• Emotional Labor Guide</li>
-<li>• Financial Transparency Toolkit</li>
-</ul>
-<a href="#tools" class="btn btn-primary">Start Recognition</a>
-</div>
-</div>
-<div class="pathway-card">
-<div class="pathway-header understanding-header">
-<h3>Understanding Path</h3>
-<p>For those ready to see systemic patterns</p>
-</div>
-<div class="pathway-content">
-<p>Dive deeper into how neoliberalism shapes our movements. Explore the connections between organizational exploitation and broader economic systems.</p>
-<h4>Key Resources:</h4>
-<ul>
-<li>• Neoliberalism Decoder</li>
-<li>• Power Mapping Templates</li>
-<li>• Systems Analysis Framework</li>
-</ul>
-<a href="#resources" class="btn btn-primary" style="background: var(--accent-color);">Deepen Understanding</a>
-</div>
-</div>
-<div class="pathway-card">
-<div class="pathway-header transformation-header">
-<h3>Transformation Path</h3>
-<p>For those building alternatives</p>
-</div>
-<div class="pathway-content">
-<p>Move from critique to creation. Learn abundance-based organizing, build cross-partisan coalitions, and develop new models that multiply rather than extract power.</p>
-<h4>Key Resources:</h4>
-<ul>
-<li>• Abundance Organizing Guide</li>
-<li>• Coalition Building Framework</li>
-<li>• Alternative Models Library</li>
-</ul>
-<a href="#community" class="btn btn-evolution">Join Transformation</a>
-</div>
-</div>
+<p style="text-align: center; max-width: 800px; margin: 0 auto 2rem; font-size: 1.2rem;">Structured learning paths tailored to your journey from awareness to action.</p>
+
+<div style="text-align: center; padding: 3rem; background: var(--light-bg); border-radius: 16px; max-width: 700px; margin: 0 auto;">
+    <h3 style="color: var(--accent-color); margin-bottom: 1rem; font-size: 2rem;">🚧 Coming Soon</h3>
+    <p style="font-size: 1.3rem; color: var(--text-dark); margin-bottom: 1.5rem;">Learning Paths will be available in <strong>Late 2025</strong></p>
+    <p style="color: var(--text-light); line-height: 1.8; margin-bottom: 2rem;">After our pilot cohort, we'll launch three comprehensive learning paths based on participant feedback and proven methodologies:</p>
+    
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; text-align: left;">
+        <div style="padding: 1.5rem; background: white; border-radius: 8px; border: 2px solid #e74c3c30;">
+            <h4 style="color: var(--secondary-color); margin-bottom: 0.5rem;">🔍 Recognition Path</h4>
+            <p style="color: var(--text-light); font-size: 0.95rem;">For those experiencing exploitation in their organizing</p>
+        </div>
+        <div style="padding: 1.5rem; background: white; border-radius: 8px; border: 2px solid #3498db30;">
+            <h4 style="color: var(--accent-color); margin-bottom: 0.5rem;">💡 Understanding Path</h4>
+            <p style="color: var(--text-light); font-size: 0.95rem;">For those ready to see systemic patterns</p>
+        </div>
+        <div style="padding: 1.5rem; background: white; border-radius: 8px; border: 2px solid #27ae6030;">
+            <h4 style="color: var(--evolution-color); margin-bottom: 0.5rem;">🌱 Transformation Path</h4>
+            <p style="color: var(--text-light); font-size: 0.95rem;">For those building alternatives</p>
+        </div>
+    </div>
+    
+    <p style="margin-top: 2rem; padding: 1rem; background: #f39c1220; border-radius: 8px; color: var(--text-dark);">
+        <strong>Pilot participants will help shape these learning paths</strong> through their experiences and feedback
+    </p>
+    
+    <a href="#pilot-signup" class="btn btn-evolution" style="margin-top: 2rem;">Be Part of the Foundation</a>
 </div>
 </section>
 <!-- Tools Section -->
@@ -913,68 +1054,41 @@ footer {
 <!-- Resources Section -->
 <section id="resources" class="section" style="background-color: white;">
 <h2>Free Political Education Resources</h2>
-<p style="text-align: center; max-width: 800px; margin: 0 auto 2rem; font-size: 1.2rem;">Comprehensive materials for understanding and transforming our political systems. All resources are freely available because knowledge is power, and power should be shared.</p>
-<div class="resources-categories">
-<div class="resource-category">
-<div class="category-header">
-<h3>📚 Educational Materials</h3>
-</div>
-<div class="category-items">
-<div class="resource-item">
-<span>Political Education Curricula</span>
-</div>
-<div class="resource-item">
-<span>Understanding Neoliberalism Guide</span>
-</div>
-<div class="resource-item">
-<span>Abundance Economics Primer</span>
-</div>
-<div class="resource-item">
-<span>Cross-Partisan Organizing Manual</span>
-</div>
-<a href="#" class="btn btn-secondary" style="margin-top: 1rem; width: 100%;">Access Library</a>
-</div>
-</div>
-<div class="resource-category">
-<div class="category-header">
-<h3>🛠️ Practical Tools</h3>
-</div>
-<div class="category-items">
-<div class="resource-item">
-<span>Power Mapping Templates</span>
-</div>
-<div class="resource-item">
-<span>Campaign Planning Toolkit</span>
-</div>
-<div class="resource-item">
-<span>Meeting Facilitation Guides</span>
-</div>
-<div class="resource-item">
-<span>Coalition Building Framework</span>
-</div>
-<a href="#" class="btn btn-secondary" style="margin-top: 1rem; width: 100%;">Get Tools</a>
-</div>
-</div>
-<div class="resource-category">
-<div class="category-header">
-<h3>🔍 Research Resources</h3>
-</div>
-<div class="category-items">
-<div class="resource-item">
-<span>Organization Research Guide</span>
-</div>
-<div class="resource-item">
-<span>Political Finance Decoder</span>
-</div>
-<div class="resource-item">
-<span>Community Assessment Tools</span>
-</div>
-<div class="resource-item">
-<span>Evolution Case Studies</span>
-</div>
-<a href="#" class="btn btn-secondary" style="margin-top: 1rem; width: 100%;">Start Research</a>
-</div>
-</div>
+<p style="text-align: center; max-width: 800px; margin: 0 auto 2rem; font-size: 1.2rem;">Comprehensive materials for understanding and transforming our political systems. All resources will be freely available because knowledge is power, and power should be shared.</p>
+
+<div style="text-align: center; padding: 3rem; background: var(--light-bg); border-radius: 16px; max-width: 700px; margin: 0 auto;">
+    <h3 style="color: var(--accent-color); margin-bottom: 1rem; font-size: 2rem;">🚧 Coming Soon</h3>
+    <p style="font-size: 1.3rem; color: var(--text-dark); margin-bottom: 1.5rem;">Resources will be available in <strong>Late 2025</strong></p>
+    <p style="color: var(--text-light); line-height: 1.8;">We're currently developing comprehensive educational materials based on insights from our pilot cohort. These resources will include:</p>
+    
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin: 2rem 0; text-align: left;">
+        <div style="padding: 1.5rem; background: white; border-radius: 8px;">
+            <h4 style="color: var(--primary-color); margin-bottom: 0.5rem;">📚 Educational Materials</h4>
+            <ul style="color: var(--text-light); font-size: 0.95rem; padding-left: 1.5rem;">
+                <li>Political Education Curricula</li>
+                <li>Understanding Neoliberalism Guide</li>
+                <li>Abundance Economics Primer</li>
+            </ul>
+        </div>
+        <div style="padding: 1.5rem; background: white; border-radius: 8px;">
+            <h4 style="color: var(--primary-color); margin-bottom: 0.5rem;">🛠️ Practical Tools</h4>
+            <ul style="color: var(--text-light); font-size: 0.95rem; padding-left: 1.5rem;">
+                <li>Power Mapping Templates</li>
+                <li>Campaign Planning Toolkit</li>
+                <li>Coalition Building Framework</li>
+            </ul>
+        </div>
+        <div style="padding: 1.5rem; background: white; border-radius: 8px;">
+            <h4 style="color: var(--primary-color); margin-bottom: 0.5rem;">🔍 Research Resources</h4>
+            <ul style="color: var(--text-light); font-size: 0.95rem; padding-left: 1.5rem;">
+                <li>Organization Research Guide</li>
+                <li>Political Finance Decoder</li>
+                <li>Evolution Case Studies</li>
+            </ul>
+        </div>
+    </div>
+    
+    <a href="#pilot-signup" class="btn btn-primary" style="margin-top: 2rem;">Join the Pilot to Get Early Access</a>
 </div>
 </section>
 
@@ -1016,35 +1130,41 @@ footer {
 <!-- Community Section -->
 <section id="community" class="section" style="background-color: white;">
 <h2>Join the Evolution</h2>
-<p style="text-align: center; max-width: 800px; margin: 0 auto 2rem; font-size: 1.2rem;">Connect with a growing movement of organizers transforming how we create political change. Find support, share experiences, and build the future together.</p>
-<div class="community-grid">
-<div class="community-card">
-<div class="community-icon">🤝</div>
-<h3>Monthly Evolution Circles</h3>
-<p>Virtual gatherings every first Thursday to discuss resources, share experiences, and strategize together.</p>
-<a href="#" class="btn btn-evolution">Join Next Circle</a>
+<p style="text-align: center; max-width: 800px; margin: 0 auto 2rem; font-size: 1.2rem;">Connect with a growing movement of organizers transforming how we create political change.</p>
+
+<div style="text-align: center; padding: 3rem; background: var(--light-bg); border-radius: 16px; max-width: 700px; margin: 0 auto;">
+    <h3 style="color: var(--accent-color); margin-bottom: 1rem; font-size: 2rem;">🚧 Coming Soon</h3>
+    <p style="font-size: 1.3rem; color: var(--text-dark); margin-bottom: 1.5rem;">Community features will launch in <strong>Late 2025</strong></p>
+    <p style="color: var(--text-light); line-height: 1.8; margin-bottom: 2rem;">After our pilot cohort, we'll open community spaces for organizers ready to transform political movements together:</p>
+    
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; text-align: left; margin-bottom: 2rem;">
+        <div style="padding: 1.5rem; background: white; border-radius: 8px; border: 2px solid #27ae6030;">
+            <h4 style="color: var(--evolution-color); margin-bottom: 0.5rem;">🤝 Monthly Evolution Circles</h4>
+            <p style="color: var(--text-light); font-size: 0.95rem;">Virtual gatherings to discuss resources and strategize together</p>
+        </div>
+        <div style="padding: 1.5rem; background: white; border-radius: 8px; border: 2px solid #3498db30;">
+            <h4 style="color: var(--accent-color); margin-bottom: 0.5rem;">💡 Local Innovation Labs</h4>
+            <p style="color: var(--text-light); font-size: 0.95rem;">Connect with others experimenting with new forms of organizing</p>
+        </div>
+        <div style="padding: 1.5rem; background: white; border-radius: 8px; border: 2px solid #f39c1230;">
+            <h4 style="color: #f39c12; margin-bottom: 0.5rem;">📢 Story Sharing Network</h4>
+            <p style="color: var(--text-light); font-size: 0.95rem;">Document and share political evolution in your community</p>
+        </div>
+        <div style="padding: 1.5rem; background: white; border-radius: 8px; border: 2px solid #e74c3c30;">
+            <h4 style="color: var(--secondary-color); margin-bottom: 0.5rem;">🎓 Facilitator Training</h4>
+            <p style="color: var(--text-light); font-size: 0.95rem;">Learn to lead political education sessions in your area</p>
+        </div>
+    </div>
+    
+    <p style="padding: 1rem; background: #27ae6020; border-radius: 8px; color: var(--text-dark);">
+        <strong>Pilot participants will be founding members</strong> of our community spaces
+    </p>
+    
+    <a href="#pilot-signup" class="btn btn-evolution" style="margin-top: 2rem;">Join the Pilot Program</a>
 </div>
-<div class="community-card">
-<div class="community-icon">💡</div>
-<h3>Local Innovation Labs</h3>
-<p>Connect with others in your area experimenting with new forms of political organization.</p>
-<a href="#" class="btn btn-evolution">Find Your Lab</a>
-</div>
-<div class="community-card">
-<div class="community-icon">📢</div>
-<h3>Story Sharing Network</h3>
-<p>Document and share examples of political evolution happening in your community.</p>
-<a href="#" class="btn btn-evolution">Share Your Story</a>
-</div>
-<div class="community-card">
-<div class="community-icon">🎓</div>
-<h3>Facilitator Training</h3>
-<p>Learn to lead political education sessions using our materials in your community.</p>
-<a href="#" class="btn btn-evolution">Get Trained</a>
-</div>
-</div>
+
 <div class="quote">
-"The future belongs to those who can cooperate most effectively within our evolving ecosystem. Let's build that future together."
+"The future belongs to those who can cooperate most effectively within our evolving ecosystem. Join our first cohort and help build that future together."
 </div>
 </section>
 
@@ -1060,7 +1180,7 @@ footer {
 </div>
 <div id="panel-story" class="tab-content active" role="tabpanel" tabindex="0" aria-labelledby="tab-story">
 <h3>From Personal Experience to Collective Transformation</h3>
-<p>The Political Evolution Project began with a moment of painful clarity about exploitation in political organizing. What started as an investigation into one organization's practices revealed patterns that run throughout our political systems—from how we organize campaigns to how we imagine solutions to our biggest challenges.</p>
+<p>The The Political Evolution Project began with a moment of painful clarity about exploitation in political organizing. What started as an investigation into one organization's practices revealed patterns that run throughout our political systems—from how we organize campaigns to how we imagine solutions to our biggest challenges.</p>
 <p>This project has evolved from exposing problems to building alternatives. We're documenting the transformation of our political ecosystem from rigid partisan competition to collaborative problem-solving, from scarcity thinking to abundance creation, from extraction to empowerment.</p>
 <p>Every resource shared, every story told, and every connection made through this project contributes to a larger movement: transforming how we organize for change in the 21st century.</p>
 </div>
@@ -1082,7 +1202,7 @@ footer {
 <p>I'm a West Virginia mother, organizer, and educator who believes that political change shouldn't require accepting exploitation. My journey from MomsRising Hub Leader to founder of this project taught me that recognizing problems is only the first step—we must also build alternatives.</p>
 <p>My background includes grassroots organizing, political education curriculum development, and firsthand experience with how progressive organizations can perpetuate the very power imbalances they claim to fight. But more importantly, I've seen what's possible when people have the tools and knowledge to organize authentically.</p>
 <p>This project represents my commitment to sharing everything I've learned about building genuine political power. From detailed curricula to practical tools to frameworks for understanding systemic change, these resources are freely given to everyone ready to transform how we organize.</p>
-<p>Contact: carrie@politicalevolutionproject.org</p>
+<p>Contact: carrie@politicalevolutionproject.org | 304-881-4404</p>
 </div>
 </div>
 </section>
@@ -1115,7 +1235,7 @@ footer {
 <li><a href="#">Newsletter Signup</a></li>
 <li><a href="#community">Local Groups</a></li>
 <li><a href="#">Social Media</a></li>
-<li><a href="mailto:ccwv2024@gmail.com">Contact Us</a></li>
+<li><a href="mailto:carrie@politicalevolutionproject.org">Contact Us</a></li>
 </ul>
 </div>
 <div class="footer-section">
@@ -1237,6 +1357,47 @@ document.getElementById('evolution-result').innerHTML = `
 }
 // --- Dynamic Footer Year ---
 document.getElementById('current-year').textContent = new Date().getFullYear();
+
+// --- Pilot Signup Form Handler ---
+function handleSignup(event) {
+    event.preventDefault();
+    
+    const form = event.target;
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData);
+    
+    // Here you would normally send the data to your server
+    // For now, we'll show a success message
+    
+    const messageDiv = document.getElementById('signup-message');
+    messageDiv.style.display = 'block';
+    messageDiv.style.backgroundColor = '#27ae6020';
+    messageDiv.style.borderLeft = '4px solid #27ae60';
+    messageDiv.style.color = '#27ae60';
+    messageDiv.innerHTML = `
+        <h4 style="margin-bottom: 0.5rem;">Application Received!</h4>
+        <p>Thank you, ${data.name}. We've received your application for the first cohort of the Political Evolution Project. We'll review your application and contact you at ${data.email} within 7 days.</p>
+    `;
+    
+    // Reset form
+    form.reset();
+    
+    // Scroll to message
+    messageDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+
+// Add input focus effects
+document.addEventListener('DOMContentLoaded', function() {
+    const inputs = document.querySelectorAll('input, textarea, select');
+    inputs.forEach(input => {
+        input.addEventListener('focus', function() {
+            this.style.borderColor = '#3498db';
+        });
+        input.addEventListener('blur', function() {
+            this.style.borderColor = '#bdc3c7';
+        });
+    });
+});
 </script>
 </body>
 </html>
