@@ -915,39 +915,11 @@ footer {
 
 <div class="signup-form-container" style="max-width: 600px; margin: 0 auto; background: white; padding: 3rem; border-radius: 16px; box-shadow: 0 5px 20px rgba(44, 62, 80, 0.1); border: 2px solid var(--accent-color);">
     <h3 style="text-align: center; margin-bottom: 2rem; color: var(--primary-color);">Apply for the First Cohort</h3>
-    <form id="pilot-signup-form" onsubmit="handleSignup(event)">
-        <div style="margin-bottom: 1.5rem;">
-            <label for="name" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-dark);">Full Name *</label>
-            <input type="text" id="name" name="name" required style="width: 100%; padding: 0.8rem; border: 2px solid #bdc3c7; border-radius: 8px; font-size: 1rem; transition: border-color 0.3s;">
-        </div>
-        <div style="margin-bottom: 1.5rem;">
-            <label for="email" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-dark);">Email Address *</label>
-            <input type="email" id="email" name="email" required style="width: 100%; padding: 0.8rem; border: 2px solid #bdc3c7; border-radius: 8px; font-size: 1rem; transition: border-color 0.3s;">
-        </div>
-        <div style="margin-bottom: 1.5rem;">
-            <label for="location" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-dark);">Location (City, State) *</label>
-            <input type="text" id="location" name="location" required style="width: 100%; padding: 0.8rem; border: 2px solid #bdc3c7; border-radius: 8px; font-size: 1rem; transition: border-color 0.3s;">
-        </div>
-        <div style="margin-bottom: 1.5rem;">
-            <label for="organization" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-dark);">Current Organization (if any)</label>
-            <input type="text" id="organization" name="organization" style="width: 100%; padding: 0.8rem; border: 2px solid #bdc3c7; border-radius: 8px; font-size: 1rem; transition: border-color 0.3s;">
-        </div>
-        <div style="margin-bottom: 1.5rem;">
-            <label for="experience" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-dark);">Tell us about your organizing experience and why you want to join *</label>
-            <textarea id="experience" name="experience" rows="4" required style="width: 100%; padding: 0.8rem; border: 2px solid #bdc3c7; border-radius: 8px; font-size: 1rem; resize: vertical; transition: border-color 0.3s;"></textarea>
-        </div>
-        <div style="margin-bottom: 2rem;">
-            <label for="commitment" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-dark);">Can you commit to weekly 2-hour virtual sessions for 12 weeks? *</label>
-            <select id="commitment" name="commitment" required style="width: 100%; padding: 0.8rem; border: 2px solid #bdc3c7; border-radius: 8px; font-size: 1rem; transition: border-color 0.3s;">
-                <option value="">Select...</option>
-                <option value="yes">Yes, I can commit</option>
-                <option value="maybe">I need to check my schedule</option>
-                <option value="no">No, but I'm interested in future cohorts</option>
-            </select>
-        </div>
-        <button type="submit" class="btn btn-primary" style="width: 100%; font-size: 1.1rem; padding: 1.2rem;">Submit Application</button>
-    </form>
-    <div id="signup-message" style="margin-top: 1.5rem; padding: 1rem; border-radius: 8px; display: none;"></div>
+    <p style="text-align: center; color: var(--text-dark); margin-bottom: 2rem;">Ready to join us in transforming how we organize for change? Click below to complete your application.</p>
+    <div style="text-align: center;">
+        <a href="https://forms.gle/SaPRipFHXEXFgkrE8" class="btn btn-primary" style="font-size: 1.1rem; padding: 1.2rem 3rem; display: inline-block;" target="_blank" rel="noopener noreferrer">Complete Application Form</a>
+    </div>
+    <p style="text-align: center; margin-top: 2rem; color: var(--text-light); font-size: 0.95rem;">You'll be redirected to our secure Google Form to submit your application.</p>
 </div>
 
 <div style="text-align: center; margin-top: 3rem;">
@@ -1330,74 +1302,4 @@ const abundance = document.getElementById('abundance-slider').value;
 const evolutionScore = (parseInt(collaboration) + parseInt(openness) + parseInt(abundance)) / 3;
 let result, color, next, pathway;
 if (evolutionScore < 35) {
-result = 'Your community is in early stages of political evolution.';
-color = '#e74c3c';
-next = 'Start with small experiments in cross-partisan collaboration.';
-pathway = 'Recognition';
-} else if (evolutionScore < 65) {
-result = 'Promising signs of evolution emerging in your community.';
-color = '#f39c12';
-next = 'Build on existing collaborations and introduce abundance thinking.';
-pathway = 'Understanding';
-} else {
-result = 'Your community shows strong evolutionary potential!';
-color = '#27ae60';
-next = 'Document and share your successes to inspire others.';
-pathway = 'Transformation';
-}
-document.getElementById('evolution-result').innerHTML = `
-<div style="padding: 1.5rem; background: ${color}20; border-left: 4px solid ${color}; border-radius: 8px; margin-top: 1rem;">
-<h4 style="color: ${color}; margin-bottom: 0.5rem; font-family: 'Playfair Display', serif;">Evolution Assessment</h4>
-<p style="margin-bottom: 1rem;">${result}</p>
-<p style="margin-top: 1rem;"><strong>Next Step:</strong> ${next}</p>
-<p style="margin-top: 1rem;"><strong>Recommended Pathway:</strong> ${pathway} Path</p>
-<a href="#pathways" class="btn btn-evolution" style="margin-top: 1rem;">Explore Learning Path</a>
-</div>
-`;
-}
-// --- Dynamic Footer Year ---
-document.getElementById('current-year').textContent = new Date().getFullYear();
-
-// --- Pilot Signup Form Handler ---
-function handleSignup(event) {
-    event.preventDefault();
-    
-    const form = event.target;
-    const formData = new FormData(form);
-    const data = Object.fromEntries(formData);
-    
-    // Here you would normally send the data to your server
-    // For now, we'll show a success message
-    
-    const messageDiv = document.getElementById('signup-message');
-    messageDiv.style.display = 'block';
-    messageDiv.style.backgroundColor = '#27ae6020';
-    messageDiv.style.borderLeft = '4px solid #27ae60';
-    messageDiv.style.color = '#27ae60';
-    messageDiv.innerHTML = `
-        <h4 style="margin-bottom: 0.5rem;">Application Received!</h4>
-        <p>Thank you, ${data.name}. We've received your application for the first cohort of the Political Evolution Project. We'll review your application and contact you at ${data.email} within 7 days.</p>
-    `;
-    
-    // Reset form
-    form.reset();
-    
-    // Scroll to message
-    messageDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
-}
-
-// Add input focus effects
-document.addEventListener('DOMContentLoaded', function() {
-    const inputs = document.querySelectorAll('input, textarea, select');
-    inputs.forEach(input => {
-        input.addEventListener('focus', function() {
-            this.style.borderColor = '#3498db';
-        });
-        input.addEventListener('blur', function() {
-            this.style.borderColor = '#bdc3c7';
-        });
-    });
-});
-</script>
-</body>
-</html>
+result = 'Your community is in early stages of
