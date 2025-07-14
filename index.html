@@ -10,27 +10,16 @@
     <style>
         /* --- Base Styles and Variables --- */
         :root {
-            /* Specified color palette */
             --primary-color: #2c3e50;
-            /* Dark slate blue */
             --secondary-color: #e74c3c;
-            /* Reddish-orange */
             --accent-color: #3498db;
-            /* Bright blue */
             --evolution-color: #27ae60;
-            /* Green */
             --light-bg: #ecf0f1;
-            /* Very light grey */
             --text-dark: #2c3e50;
-            /* Same as primary */
             --text-light: #7f8c8d;
-            /* Medium grey */
             --success-color: #27ae60;
-            /* Same as evolution color */
             --warm-neutral: #bdc3c7;
-            /* Light grey for accents */
 
-            /* Specified gradients */
             --gradient-1: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
             --gradient-2: linear-gradient(135deg, #e74c3c 0%, #f39c12 100%);
             --gradient-3: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
@@ -55,12 +44,7 @@
         }
 
         /* Typography */
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6 {
+        h1, h2, h3, h4, h5, h6 {
             font-family: 'Playfair Display', Georgia, serif;
             font-weight: 700;
             line-height: 1.2;
@@ -179,17 +163,8 @@
         }
 
         @keyframes pulse {
-
-            0%,
-            100% {
-                transform: scale(1);
-                opacity: 0.5;
-            }
-
-            50% {
-                transform: scale(1.1);
-                opacity: 0.3;
-            }
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.1); opacity: 0.3; }
         }
 
         .hero-content {
@@ -259,20 +234,9 @@
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
         }
 
-        .btn-primary {
-            background: var(--secondary-color);
-            color: white;
-        }
-
-        .btn-secondary {
-            background: white;
-            color: var(--primary-color);
-        }
-
-        .btn-evolution {
-            background: var(--evolution-color);
-            color: white;
-        }
+        .btn-primary { background: var(--secondary-color); color: white; }
+        .btn-secondary { background: white; color: var(--primary-color); }
+        .btn-evolution { background: var(--evolution-color); color: white; }
 
         /* --- Content Sections --- */
         .section {
@@ -343,8 +307,54 @@
             margin-top: 0;
             color: var(--primary-color);
         }
+        
+        /* --- Why Evolve Section --- */
+        .evolution-theory-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+        .evolution-card {
+            background: var(--light-bg);
+            padding: 2rem;
+            border-radius: 12px;
+        }
+        .evolution-card.competition { border-left: 5px solid var(--secondary-color); }
+        .evolution-card.asteroid { border-left: 5px solid var(--accent-color); }
+        .evolution-card.collaboration { border-left: 5px solid var(--evolution-color); }
+        .evolution-card h3 { margin-top: 0; }
+        .evolution-card.competition h3 { color: var(--secondary-color); }
+        .evolution-card.asteroid h3 { color: var(--accent-color); }
+        .evolution-card.collaboration h3 { color: var(--evolution-color); }
+        .evolution-card ul { padding-left: 1.5rem; margin-top: 1rem; }
+        .evolution-card li { margin-bottom: 0.5rem; }
+        
+        .strategy-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        .strategy-card {
+            padding: 2rem;
+            border: 1px solid #ddd;
+            border-radius: 12px;
+            text-align: center;
+        }
+        .strategy-card h4 {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+        .strategy-card.experimenter {
+            border-top: 5px solid var(--evolution-color);
+        }
+        .quote.evolution {
+            margin-top: 4rem;
+            border-color: var(--evolution-color);
+        }
 
-        /* Pilot Info Cards */
+
+        /* --- Pilot Info Cards --- */
         .pilot-info-card {
             text-align: center;
             padding: 2rem;
@@ -387,14 +397,8 @@
             color: var(--primary-color);
         }
 
-        .assessment-icon {
-            font-size: 2.5rem;
-        }
-
-        .question {
-            margin-bottom: 2rem;
-        }
-
+        .assessment-icon { font-size: 2.5rem; }
+        .question { margin-bottom: 2rem; }
         .question label {
             display: block;
             margin-bottom: 0.5rem;
@@ -504,10 +508,7 @@
             padding: 0;
         }
 
-        .footer-links li {
-            margin-bottom: 0.5rem;
-        }
-
+        .footer-links li { margin-bottom: 0.5rem; }
         .footer-links a {
             color: rgba(255, 255, 255, 0.9);
             text-decoration: none;
@@ -529,10 +530,7 @@
         }
 
         /* --- Interactive Elements --- */
-        .tab-container {
-            margin: 2rem 0;
-        }
-
+        .tab-container { margin: 2rem 0; }
         .tab-buttons {
             display: flex;
             gap: 1rem;
@@ -552,10 +550,7 @@
             letter-spacing: 0.5px;
         }
 
-        .tab-button:hover {
-            border-color: var(--accent-color);
-        }
-
+        .tab-button:hover { border-color: var(--accent-color); }
         .tab-button.active {
             background: var(--primary-color);
             color: white;
@@ -566,21 +561,10 @@
             display: none;
             animation: fadeIn 0.5s;
         }
-
-        .tab-content.active {
-            display: block;
-        }
-
+        .tab-content.active { display: block; }
         @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(10px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         /* Pilot Announcement */
@@ -595,40 +579,18 @@
         }
 
         @keyframes pulse-border {
-
-            0%,
-            100% {
-                border-color: rgba(243, 156, 18, 0.3);
-            }
-
-            50% {
-                border-color: rgba(243, 156, 18, 0.6);
-            }
+            0%, 100% { border-color: rgba(243, 156, 18, 0.3); }
+            50% { border-color: rgba(243, 156, 18, 0.6); }
         }
 
         /* --- Responsive Design --- */
         @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
+            .hero h1 { font-size: 2.5rem; }
+            .hero p { font-size: 1.2rem; }
+            h2 { font-size: 2.2rem; }
 
-            .hero p {
-                font-size: 1.2rem;
-            }
-
-            h2 {
-                font-size: 2.2rem;
-            }
-
-            .evolution-path {
-                flex-direction: column;
-                gap: 0.5rem;
-            }
-
-            .evolution-arrow {
-                transform: rotate(90deg);
-                margin: 0.5rem 0;
-            }
+            .evolution-path { flex-direction: column; gap: 0.5rem; }
+            .evolution-arrow { transform: rotate(90deg); margin: 0.5rem 0; }
 
             .nav-links {
                 position: fixed;
@@ -642,43 +604,18 @@
                 transition: 0.3s;
                 box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             }
-
-            .nav-links.active {
-                right: 0;
-            }
-
-            .nav-links li {
-                padding: 1.5rem 0;
-            }
-
-            .nav-links a {
-                font-size: 1.2rem;
-            }
-
-            .nav-links a:not(.apply-btn)::after {
-                display: none;
-            }
-
+            .nav-links.active { right: 0; }
+            .nav-links li { padding: 1.5rem 0; }
+            .nav-links a { font-size: 1.2rem; }
+            .nav-links a:not(.apply-btn)::after { display: none; }
             .nav-links .apply-btn {
                 margin: 0 auto;
                 display: inline-block;
             }
-
-            .hamburger {
-                display: flex;
-            }
-
-            .hamburger.active .bar:nth-child(2) {
-                opacity: 0;
-            }
-
-            .hamburger.active .bar:nth-child(1) {
-                transform: translateY(8px) rotate(45deg);
-            }
-
-            .hamburger.active .bar:nth-child(3) {
-                transform: translateY(-8px) rotate(-45deg);
-            }
+            .hamburger { display: flex; }
+            .hamburger.active .bar:nth-child(2) { opacity: 0; }
+            .hamburger.active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+            .hamburger.active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
         }
     </style>
 </head>
@@ -702,6 +639,7 @@
             </div>
         </nav>
     </header>
+
     <main>
         <section class="hero">
             <div class="hero-content">
@@ -725,6 +663,7 @@
                 </div>
             </div>
         </section>
+
         <section id="journey" class="section">
             <h2>The Evolution Journey</h2>
             <p style="text-align: center; max-width: 800px; margin: 0 auto 2rem; font-size: 1.2rem; color: var(--text-dark);">This project began with a personal revelation about exploitation in political organizing and has grown into a comprehensive educational platform for transforming our political ecosystem. Follow the journey that connects individual empowerment to systemic change.</p>
@@ -760,7 +699,59 @@
             </div>
         </section>
 
-        <section id="pilot-signup" class="section" style="background-color: white;">
+        <section id="why-evolve" class="section" style="background-color: white;">
+            <h2>Adapt or Go Dinosaur</h2>
+            <p style="text-align: center; max-width: 800px; margin: -1.5rem auto 2.5rem; font-size: 1.2rem; color: var(--text-dark);">The theory behind the Political Evolution Project, based on the essay by Carrie Clendening.</p>
+            <div class="evolution-theory-grid">
+                <div class="evolution-card competition">
+                    <h3>The Old Fitness: Competition</h3>
+                    [cite_start]<p>For much of the 20th century, the two-party system worked like competing species in a stable environment. [cite: 23] [cite_start]Democrats and Republicans were like lions and hyenas, maintaining a balance through mutual antagonism. [cite: 24] [cite_start]Party loyalty functioned like pack behavior, coordinating action and providing clear tribal identities. [cite: 26]</p>
+                </div>
+                <div class="evolution-card asteroid">
+                    <h3>The Asteroid: A Changed World</h3>
+                    [cite_start]<p>The political environment changed faster than our systems could adapt. [cite: 30] This "asteroid" was made of several disruptive forces hitting at once:
+                        <ul>
+                            [cite_start]<li><strong>The Internet:</strong> Disrupted information gatekeepers. [cite: 30]</li>
+                            [cite_start]<li><strong>Global Challenges:</strong> Pandemics and climate change don't respect partisan borders. [cite: 27]</li>
+                            [cite_start]<li><strong>Economic Disruption:</strong> Technology outpaces policy. [cite: 27]</li>
+                            [cite_start]<li><strong>Generational Shifts:</strong> Younger generations raised on collaboration find rigid party boundaries outdated. [cite: 28, 29]</li>
+                        </ul>
+                    </p>
+                </div>
+                <div class="evolution-card collaboration">
+                    <h3>The New Fitness: Collaboration</h3>
+                    [cite_start]<p>In this new environment, political "fitness" isn't about being the loudest. [cite: 32] [cite_start]It’s about fitting into the environment like a key in a lock. [cite: 4] [cite_start]The most successful species in nature are masters of cooperation, like leaf-cutter ants or wolves in a pack. [cite: 5, 7, 15] [cite_start]The new survival traits for politics are the same: [cite: 33]
+                        <ul>
+                            [cite_start]<li>Form fluid coalitions. [cite: 33]</li>
+                            [cite_start]<li>Bridge ideological divides. [cite: 33]</li>
+                            [cite_start]<li>Adapt quickly to new information. [cite: 33]</li>
+                            [cite_start]<li>Coordinate across boundaries. [cite: 33]</li>
+                        </ul>
+                    </p>
+                </div>
+            </div>
+            <h3 style="text-align:center; font-size: 2.5rem; margin-bottom: 2rem;">How Evolution is Happening Now</h3>
+            [cite_start]<p style="text-align: center; max-width: 800px; margin: 0 auto 3rem;">This evolution is messy and happening in real-time. [cite: 36] [cite_start]We are currently seeing three main strategies co-existing in the political ecosystem: [cite: 37]</p>
+            <div class="strategy-grid">
+                <div class="strategy-card">
+                    <h4>1. The Hyper-Partisans</h4>
+                    [cite_start]<p>These are the dinosaurs roaring at the meteor. [cite: 63] [cite_start]They are doubling down on division, becoming more specialized and rigid in their approach. [cite: 37, 38]</p>
+                </div>
+                <div class="strategy-card experimenter">
+                    <h4>2. The Experimenters</h4>
+                    [cite_start]<p>These are the early mammals, scurrying with potential. [cite: 57] [cite_start]They are trying new collaborative forms like citizens' assemblies and cross-partisan caucuses. [cite: 39] [cite_start]Some experiments will fail, but diversity is crucial for finding what works. [cite: 37, 44]</p>
+                </div>
+                <div class="strategy-card">
+                    <h4>3. The Bet-Hedgers</h4>
+                    [cite_start]<p>This is most of us. [cite: 41] [cite_start]We keep one foot in the old system while cautiously exploring the new one, like having both a smartphone and a landline "just in case". [cite: 37, 42]</p>
+                </div>
+            </div>
+            <div class="quote evolution">
+                [cite_start]"We're not witnessing the moral failure of democracy— we're watching evolution in real time. [cite: 55] [cite_start]The transition is inevitable; environmental pressures guarantee it. [cite: 58] [cite_start]In our political ecosystem, the ability to work with people you disagree with isn't just nice—it's the new fitness test." [cite: 62]
+            </div>
+        </section>
+        
+        <section id="pilot-signup" class="section">
             <h2>Join the First Cohort</h2>
             <p style="text-align: center; max-width: 800px; margin: 0 auto 2rem; font-size: 1.2rem;">Be part of the transformative first cohort of the Political Evolution Project. This pilot program is designed for organizers ready to move from extraction to empowerment.</p>
             <div class="pilot-info-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin: 3rem 0;">
@@ -827,7 +818,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="signup-form-container" style="max-width: 600px; margin: 0 auto; background: white; padding: 3rem; border-radius: 16px; box-shadow: 0 5px 20px rgba(44, 62, 80, 0.1); border: 2px solid var(--accent-color);">
                 <h3 style="text-align: center; margin-bottom: 2rem; color: var(--primary-color);">Apply for the First Cohort</h3>
                 <p style="text-align: center; color: var(--text-dark); margin-bottom: 2rem;">Ready to join us in transforming how we organize for change? Click below to complete your application.</p>
@@ -1075,6 +1065,7 @@
             </div>
         </section>
     </main>
+
     <footer>
         <div class="footer-content">
             <div class="footer-section">
@@ -1123,13 +1114,10 @@
         // --- Hamburger Menu Functionality ---
         const hamburger = document.querySelector('.hamburger');
         const navLinks = document.querySelector('.nav-links');
-
         hamburger.addEventListener('click', () => {
             hamburger.classList.toggle('active');
             navLinks.classList.toggle('active');
         });
-
-        // Close menu when a link is clicked
         document.querySelectorAll('.nav-links li a').forEach(link => {
             link.addEventListener('click', () => {
                 hamburger.classList.remove('active');
@@ -1141,7 +1129,6 @@
         function showTab(event, tabName) {
             const tabButtons = document.querySelectorAll('.tab-button');
             const tabPanels = document.querySelectorAll('.tab-content');
-
             tabPanels.forEach(panel => {
                 panel.classList.remove('active');
                 panel.setAttribute('hidden', true);
@@ -1151,10 +1138,8 @@
                 button.setAttribute('aria-selected', false);
                 button.setAttribute('tabindex', -1);
             });
-
             document.getElementById('panel-' + tabName).classList.add('active');
             document.getElementById('panel-' + tabName).removeAttribute('hidden');
-
             event.currentTarget.classList.add('active');
             event.currentTarget.setAttribute('aria-selected', true);
             event.currentTarget.setAttribute('tabindex', 0);
@@ -1165,10 +1150,8 @@
             const hours = document.getElementById('hours-slider').value;
             const professional = document.getElementById('professional-slider').value;
             const power = document.getElementById('power-slider').value;
-
             const exploitationScore = (hours * 0.3) + (professional * 0.4) + ((100 - power) * 0.3);
             let result, color, action, resources;
-
             if (exploitationScore < 30) {
                 result = 'Your organizing relationship appears relatively balanced.';
                 color = '#27ae60';
@@ -1185,29 +1168,22 @@
                 action = 'Your labor deserves fair compensation and real power. Consider alternatives.';
                 resources = ['Exploitation Assessment Tool', 'Power Mapping Templates'];
             }
-
             document.getElementById('exploitation-result').innerHTML = `
                 <div style="padding: 1.5rem; background: ${color}20; border-left: 4px solid ${color}; border-radius: 8px; margin-top: 1rem;">
                     <h4 style="color: ${color}; margin-bottom: 0.5rem; font-family: 'Playfair Display', serif;">Assessment Result</h4>
                     <p style="margin-bottom: 1rem;">${result}</p>
                     <p style="margin-top: 1rem;"><strong>Recommended Action:</strong> ${action}</p>
                     <p style="margin-top: 1rem;"><strong>Suggested Resources:</strong></p>
-                    <ul style="margin: 0.5rem 0; padding-left: 1.5rem;">
-                        ${resources.map(r => `<li>${r}</li>`).join('')}
-                    </ul>
+                    <ul style="margin: 0.5rem 0; padding-left: 1.5rem;">${resources.map(r => `<li>${r}</li>`).join('')}</ul>
                     <a href="#resources" class="btn" style="margin-top: 1rem; background-color:${color}; color:white;">Access Resources</a>
-                </div>
-            `;
+                </div>`;
         }
-
         function calculateEvolution() {
             const collaboration = document.getElementById('collaboration-slider').value;
             const openness = document.getElementById('openness-slider').value;
             const abundance = document.getElementById('abundance-slider').value;
-
             const evolutionScore = (parseInt(collaboration) + parseInt(openness) + parseInt(abundance)) / 3;
             let result, color, next, pathway;
-
             if (evolutionScore < 35) {
                 result = 'Your community is in early stages of political evolution, likely focused on traditional organizing.';
                 color = '#e74c3c';
@@ -1224,7 +1200,6 @@
                 next = 'Build and scale alternative models of organizing.';
                 pathway = 'Transformation Path';
             }
-
             document.getElementById('evolution-result').innerHTML = `
                  <div style="padding: 1.5rem; background: ${color}20; border-left: 4px solid ${color}; border-radius: 8px; margin-top: 1rem;">
                     <h4 style="color: ${color}; margin-bottom: 0.5rem; font-family: 'Playfair Display', serif;">Assessment Result</h4>
@@ -1232,8 +1207,7 @@
                     <p style="margin-top: 1rem;"><strong>Next Step:</strong> ${next}</p>
                      <p style="margin-top: 1rem;"><strong>Suggested Learning:</strong> ${pathway}</p>
                     <a href="#pathways" class="btn" style="margin-top: 1rem; background-color:${color}; color:white;">Explore Learning Paths</a>
-                </div>
-            `;
+                </div>`;
         }
         
         // Set current year in the footer
