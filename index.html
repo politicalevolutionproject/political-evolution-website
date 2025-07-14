@@ -33,6 +33,8 @@
 
         html {
             scroll-behavior: smooth;
+            /* NEW: Increased base font size. 112.5% of 16px = 18px. All rem units will now be larger. */
+            font-size: 112.5%;
         }
 
         body {
@@ -48,6 +50,15 @@
             font-family: 'Playfair Display', Georgia, serif;
             font-weight: 700;
             line-height: 1.2;
+            letter-spacing: -0.5px; /* MODIFIED: Added subtle negative letter-spacing for tighter headings */
+        }
+
+        /* MODIFIED: Targets introductory paragraphs directly after main section headings for better readability */
+        h2 + p {
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         /* --- Header and Navigation --- */
@@ -89,7 +100,7 @@
             text-decoration: none;
             transition: all 0.3s;
             font-size: 1rem;
-            font-weight: 500;
+            font-weight: 600; /* MODIFIED: Increased font weight from 500 to 600 for bolder navigation */
             letter-spacing: 0.5px;
             position: relative;
         }
@@ -175,7 +186,6 @@
         .hero h1 {
             font-size: 3.5rem;
             margin-bottom: 1.5rem;
-            letter-spacing: -1px;
         }
 
         .hero p {
@@ -254,14 +264,12 @@
             margin-bottom: 2.5rem;
             color: var(--primary-color);
             text-align: center;
-            letter-spacing: -1px;
         }
 
         h3 {
             font-size: 2rem;
             margin: 2rem 0 1rem;
             color: var(--secondary-color);
-            letter-spacing: -0.5px;
         }
 
         /* --- Journey Section --- */
@@ -352,7 +360,6 @@
             margin-top: 4rem;
             border-color: var(--evolution-color);
         }
-
 
         /* --- Pilot Info Cards --- */
         .pilot-info-card {
@@ -585,6 +592,10 @@
 
         /* --- Responsive Design --- */
         @media (max-width: 768px) {
+            html {
+                font-size: 100%; /* Return to 16px base on smaller screens */
+            }
+
             .hero h1 { font-size: 2.5rem; }
             .hero p { font-size: 1.2rem; }
             h2 { font-size: 2.2rem; }
@@ -666,7 +677,7 @@
 
         <section id="journey" class="section">
             <h2>The Evolution Journey</h2>
-            <p style="text-align: center; max-width: 800px; margin: 0 auto 2rem; font-size: 1.2rem; color: var(--text-dark);">This project began with a personal revelation about exploitation in political organizing and has grown into a comprehensive educational platform for transforming our political ecosystem. Follow the journey that connects individual empowerment to systemic change.</p>
+            <p style="text-align: center; margin: -1.5rem auto 2.5rem;">This project began with a personal revelation about exploitation in political organizing and has grown into a comprehensive educational platform for transforming our political ecosystem. Follow the journey that connects individual empowerment to systemic change.</p>
             <div class="journey-timeline">
                 <div class="timeline-item">
                     <div class="timeline-marker">1</div>
@@ -701,59 +712,60 @@
 
         <section id="why-evolve" class="section" style="background-color: white;">
             <h2>Adapt or Go Dinosaur</h2>
-            <p style="text-align: center; max-width: 800px; margin: -1.5rem auto 2.5rem; font-size: 1.2rem; color: var(--text-dark);">The theory behind the Political Evolution Project, based on the essay by Carrie Clendening.</p>
+            <p style="text-align: center; margin: -1.5rem auto 2.5rem;">The theory behind the Political Evolution Project, based on the essay by Carrie Clendening.</p>
             <div class="evolution-theory-grid">
                 <div class="evolution-card competition">
                     <h3>The Old Fitness: Competition</h3>
-                    <p>For much of the 20th century, the two-party system worked like competing species in a stable environment. Democrats and Republicans were like lions and hyenas, maintaining a balance through mutual antagonism. Party loyalty functioned like pack behavior, coordinating action and providing clear tribal identities.</p>
+                    [cite_start]<p>For much of the 20th century, the two-party system worked like competing species in a stable environment. [cite: 23] [cite_start]Democrats and Republicans were like lions and hyenas, maintaining a balance through mutual antagonism. [cite: 24] Party loyalty functioned like pack behavior, coordinating action and providing clear tribal identities.</p>
                 </div>
                 <div class="evolution-card asteroid">
                     <h3>The Asteroid: A Changed World</h3>
-                    <p>The political environment changed faster than our systems could adapt. This "asteroid" was made of several disruptive forces hitting at once:
+                    [cite_start]<p>The political environment changed faster than our systems could adapt. [cite: 30] This "asteroid" was made of several disruptive forces hitting at once:
                         <ul>
                             <li><strong>The Internet:</strong> Disrupted information gatekeepers.</li>
-                            <li><strong>Global Challenges:</strong> Pandemics and climate change don't respect partisan borders.</li>
+                            [cite_start]<li><strong>Global Challenges:</strong> Pandemics and climate change don't respect partisan borders. [cite: 27]</li>
                             <li><strong>Economic Disruption:</strong> Technology outpaces policy.</li>
-                            <li><strong>Generational Shifts:</strong> Younger generations raised on collaboration find rigid party boundaries outdated.</li>
+                            [cite_start]<li><strong>Generational Shifts:</strong> Younger generations raised on collaboration find rigid party boundaries outdated. [cite: 28, 29]</li>
                         </ul>
                     </p>
                 </div>
                 <div class="evolution-card collaboration">
                     <h3>The New Fitness: Collaboration</h3>
-                    <p>In this new environment, political "fitness" isn't about being the loudest. It’s about fitting into the environment like a key in a lock. The most successful species in nature are masters of cooperation, like leaf-cutter ants or wolves in a pack. The new survival traits for politics are the same:
+                    [cite_start]<p>In this new environment, political "fitness" isn't about being the loudest. [cite: 32] [cite_start]It’s about fitting into the environment like a key in a lock. [cite: 4] [cite_start]The most successful species in nature are masters of cooperation, like leaf-cutter ants or wolves in a pack. [cite: 5, 7, 15] The new survival traits for politics are the same:
                         <ul>
-                            <li>Form fluid coalitions.</li>
-                            <li>Bridge ideological divides.</li>
-                            <li>Adapt quickly to new information.</li>
-                            <li>Coordinate across boundaries.</li>
+                            [cite_start]<li>Form fluid coalitions. [cite: 33]</li>
+                            [cite_start]<li>Bridge ideological divides. [cite: 33]</li>
+                            [cite_start]<li>Adapt quickly to new information. [cite: 33]</li>
+                            [cite_start]<li>Coordinate across boundaries. [cite: 33]</li>
                         </ul>
                     </p>
                 </div>
             </div>
             <h3 style="text-align:center; font-size: 2.5rem; margin-bottom: 2rem;">How Evolution is Happening Now</h3>
-            <p style="text-align: center; max-width: 800px; margin: 0 auto 3rem;">This evolution is messy and happening in real-time. We are currently seeing three main strategies co-existing in the political ecosystem:</p>
+            [cite_start]<p style="text-align: center; max-width: 800px; margin: 0 auto 3rem;">This evolution is messy and happening in real-time. [cite: 36] [cite_start]We are currently seeing three main strategies co-existing in the political ecosystem: [cite: 37]
+            </p>
             <div class="strategy-grid">
                 <div class="strategy-card">
                     <h4>1. The Hyper-Partisans</h4>
-                    <p>These are the dinosaurs roaring at the meteor. They are doubling down on division, becoming more specialized and rigid in their approach.</p>
+                    [cite_start]<p>These are the dinosaurs roaring at the meteor. [cite: 63] [cite_start]They are doubling down on division, becoming more specialized and rigid in their approach. [cite: 37, 38]</p>
                 </div>
                 <div class="strategy-card experimenter">
                     <h4>2. The Experimenters</h4>
-                    <p>These are the early mammals, scurrying with potential. They are trying new collaborative forms like citizens' assemblies and cross-partisan caucuses. Some experiments will fail, but diversity is crucial for finding what works.</p>
+                    [cite_start]<p>These are the early mammals, scurrying with potential. [cite: 57] [cite_start]They are trying new collaborative forms like citizens' assemblies and cross-partisan caucuses. [cite: 39] [cite_start]Some experiments will fail, but diversity is crucial for finding what works. [cite: 44, 45]</p>
                 </div>
                 <div class="strategy-card">
                     <h4>3. The Bet-Hedgers</h4>
-                    <p>This is most of us. We keep one foot in the old system while cautiously exploring the new one, like having both a smartphone and a landline "just in case".</p>
+                    <p>This is most of us. [cite_start]We keep one foot in the old system while cautiously exploring the new one, like having both a smartphone and a landline "just in case". [cite: 41, 42]</p>
                 </div>
             </div>
             <div class="quote evolution">
-                "We're not witnessing the moral failure of democracy— we're watching evolution in real time. The transition is inevitable; environmental pressures guarantee it. In our political ecosystem, the ability to work with people you disagree with isn't just nice—it's the new fitness test." - Carrie Clendening
+                [cite_start]"We're not witnessing the moral failure of democracy— we're watching evolution in real time... [cite: 55] [cite_start]In our political ecosystem, the ability to work with people you disagree with isn't just nice—it's the new fitness test." [cite: 62]
             </div>
         </section>
         
         <section id="pilot-signup" class="section">
             <h2>Join the First Cohort</h2>
-            <p style="text-align: center; max-width: 800px; margin: 0 auto 2rem; font-size: 1.2rem;">Be part of the transformative first cohort of the Political Evolution Project. This pilot program is designed for organizers ready to move from extraction to empowerment.</p>
+            <p style="text-align: center; margin: -1.5rem auto 2.5rem;">Be part of the transformative first cohort of the Political Evolution Project. This pilot program is designed for organizers ready to move from extraction to empowerment.</p>
             <div class="pilot-info-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin: 3rem 0;">
                 <div class="pilot-info-card">
                     <h3 style="color: var(--primary-color); margin-bottom: 1rem;">📅 Start Date</h3>
@@ -836,7 +848,7 @@
 
         <section id="pathways" class="section" style="background-color: white;">
             <h2>Choose Your Learning Path</h2>
-            <p style="text-align: center; max-width: 800px; margin: 0 auto 2rem; font-size: 1.2rem;">Structured learning paths tailored to your journey from awareness to action.</p>
+            <p style="text-align: center; margin: -1.5rem auto 2.5rem;">Structured learning paths tailored to your journey from awareness to action.</p>
             <div style="text-align: center; padding: 3rem; background: var(--light-bg); border-radius: 16px; max-width: 700px; margin: 0 auto;">
                 <h3 style="color: var(--accent-color); margin-bottom: 1rem; font-size: 2rem;">🚧 Coming Soon</h3>
                 <p style="font-size: 1.3rem; color: var(--text-dark); margin-bottom: 1.5rem;">Learning Paths will be available in <strong>Late 2025</strong></p>
@@ -864,7 +876,7 @@
 
         <section id="tools" class="section">
             <h2>Tools for Transformation</h2>
-            <p style="text-align: center; max-width: 800px; margin: 0 auto 2rem; font-size: 1.2rem;">Practical resources to assess your current situation and build better alternatives. These evidence-based tools help you move from recognition to action.</p>
+            <p style="text-align: center; margin: -1.5rem auto 2.5rem;">Practical resources to assess your current situation and build better alternatives. These evidence-based tools help you move from recognition to action.</p>
             <div class="assessment-container">
                 <div class="assessment-tool">
                     <div class="assessment-header">
@@ -923,7 +935,7 @@
 
         <section id="resources" class="section" style="background-color: white;">
             <h2>Free Political Education Resources</h2>
-            <p style="text-align: center; max-width: 800px; margin: 0 auto 2rem; font-size: 1.2rem;">Comprehensive materials for understanding and transforming our political systems. All resources will be freely available because knowledge is power, and power should be shared.</p>
+            <p style="text-align: center; margin: -1.5rem auto 2.5rem;">Comprehensive materials for understanding and transforming our political systems. All resources will be freely available because knowledge is power, and power should be shared.</p>
             <div style="text-align: center; padding: 3rem; background: var(--light-bg); border-radius: 16px; max-width: 700px; margin: 0 auto;">
                 <h3 style="color: var(--accent-color); margin-bottom: 1rem; font-size: 2rem;">🚧 Coming Soon</h3>
                 <p style="font-size: 1.3rem; color: var(--text-dark); margin-bottom: 1.5rem;">Resources will be available in <strong>Late 2025</strong></p>
@@ -960,7 +972,7 @@
 
         <section class="section">
             <h2>Your Path to Political Evolution</h2>
-            <p style="text-align: center; max-width: 800px; margin: 0 auto 2rem; font-size: 1.2rem;">Transform understanding into action with this step-by-step framework. Each stage builds on the previous, creating a sustainable journey from awareness to systemic change.</p>
+            <p style="text-align: center; margin: -1.5rem auto 2.5rem;">Transform understanding into action with this step-by-step framework. Each stage builds on the previous, creating a sustainable journey from awareness to systemic change.</p>
             <div class="action-framework">
                 <div class="framework-steps">
                     <div class="framework-step">
@@ -994,7 +1006,7 @@
 
         <section id="community" class="section" style="background-color: white;">
             <h2>Join the Evolution</h2>
-            <p style="text-align: center; max-width: 800px; margin: 0 auto 2rem; font-size: 1.2rem;">Connect with a growing movement of organizers transforming how we create political change.</p>
+            <p style="text-align: center; margin: -1.5rem auto 2.5rem;">Connect with a growing movement of organizers transforming how we create political change.</p>
             <div style="text-align: center; padding: 3rem; background: var(--light-bg); border-radius: 16px; max-width: 700px; margin: 0 auto;">
                 <h3 style="color: var(--accent-color); margin-bottom: 1rem; font-size: 2rem;">🚧 Coming Soon</h3>
                 <p style="font-size: 1.3rem; color: var(--text-dark); margin-bottom: 1.5rem;">Community features will launch in <strong>Late 2025</strong></p>
@@ -1023,7 +1035,7 @@
                 <a href="#pilot-signup" class="btn btn-evolution" style="margin-top: 2rem;">Join the Pilot Program</a>
             </div>
             <div class="quote">
-                "The future belongs to those who can cooperate most effectively within our evolving political ecosystem. Join our first cohort and help build that future together." - Carrie Clendening
+                "The future belongs to those who can cooperate most effectively within our evolving ecosystem. Join our first cohort and help build that future together."
             </div>
         </section>
 
