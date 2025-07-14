@@ -6,7 +6,7 @@
     <title>The Political Evolution Project</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         /* --- Base Styles and Variables --- */
         :root {
@@ -16,14 +16,9 @@
             --evolution-color: #27ae60;
             --light-bg: #ecf0f1;
             --text-dark: #2c3e50;
-            /* MODIFIED: Darkened light text for better contrast */
             --text-light: #5d6d7e;
-            --success-color: #27ae60;
             --warm-neutral: #bdc3c7;
-
             --gradient-1: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
-            --gradient-2: linear-gradient(135deg, #e74c3c 0%, #f39c12 100%);
-            --gradient-3: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
         }
 
         * {
@@ -34,15 +29,14 @@
 
         html {
             scroll-behavior: smooth;
-            /* MODIFIED: Significantly increased base font size for readability. 125% of 16px = 20px. */
-            font-size: 125%;
+            font-size: 115%; /* Adjusted for optimal readability */
         }
 
         body {
-            font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
             line-height: 1.7;
-            color: var(--text-dark);
-            background-color: var(--light-bg);
+            color: var(--text-light);
+            background-color: #ffffff;
             font-weight: 400;
         }
 
@@ -52,13 +46,12 @@
             font-weight: 700;
             line-height: 1.2;
             letter-spacing: -0.5px;
+            color: var(--primary-color);
         }
 
-        /* NEW: Added default spacing between paragraphs */
         p {
             margin-bottom: 1.25rem;
         }
-        /* Remove margin from last paragraph in a container to avoid extra space */
         p:last-child {
             margin-bottom: 0;
         }
@@ -68,19 +61,20 @@
             max-width: 800px;
             margin-left: auto;
             margin-right: auto;
-            margin-bottom: 1.25rem;
+            margin-bottom: 2.5rem;
         }
 
         /* --- Header and Navigation --- */
         header {
-            background: var(--primary-color);
-            color: white;
+            background: white;
+            color: var(--text-dark);
             padding: 1rem 0;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
             box-shadow: 0 2px 10px rgba(44, 62, 80, 0.1);
+            transition: background-color 0.3s;
         }
 
         nav {
@@ -102,11 +96,11 @@
         .nav-links {
             list-style: none;
             display: flex;
-            gap: 2.5rem;
+            gap: 2rem;
         }
 
         .nav-links a {
-            color: white;
+            color: var(--text-dark);
             text-decoration: none;
             transition: all 0.3s;
             font-size: 1rem;
@@ -131,14 +125,15 @@
         }
 
         .nav-links .apply-btn {
-            background: #f39c12;
+            background: var(--secondary-color);
             color: white;
-            padding: 0.5rem 1rem;
+            padding: 0.5rem 1.5rem;
             border-radius: 20px;
+            box-shadow: 0 2px 5px rgba(231, 76, 60, 0.3);
         }
 
         .nav-links .apply-btn:hover {
-            background: #e67e22;
+            background: #c0392b;
             transform: translateY(-2px);
         }
 
@@ -153,49 +148,27 @@
         .hamburger .bar {
             width: 25px;
             height: 3px;
-            background-color: white;
+            background-color: var(--text-dark);
             border-radius: 5px;
             transition: all 0.3s ease-in-out;
         }
 
         /* --- Main Content --- */
         main {
-            padding-top: 70px;
+            padding-top: 80px; /* Adjusted for header height */
         }
 
         .hero {
             background: var(--gradient-1);
             color: white;
-            padding: 5rem 2rem;
+            padding: 6rem 2rem;
             text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(52, 152, 219, 0.1) 0%, transparent 70%);
-            animation: pulse 20s infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); opacity: 0.5; }
-            50% { transform: scale(1.1); opacity: 0.3; }
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 1;
         }
 
         .hero h1 {
             font-size: 3.5rem;
             margin-bottom: 1.5rem;
+            color: white;
         }
 
         .hero p {
@@ -206,47 +179,18 @@
             line-height: 1.8;
         }
 
-        .evolution-path {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 1rem;
-            margin: 3rem 0;
-            flex-wrap: wrap;
-        }
-
-        .evolution-step {
-            background: rgba(255, 255, 255, 0.15);
-            padding: 1rem 2rem;
-            border-radius: 30px;
-            backdrop-filter: blur(10px);
-            font-weight: 600;
-            letter-spacing: 0.5px;
-        }
-
-        .evolution-arrow {
-            font-size: 2rem;
-            color: var(--accent-color);
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
         .btn {
             padding: 1rem 2.5rem;
             text-decoration: none;
             border-radius: 30px;
-            font-weight: 600;
+            font-weight: 700;
             transition: all 0.3s;
             display: inline-block;
             border: none;
             cursor: pointer;
             letter-spacing: 0.5px;
             font-size: 1rem;
+            font-family: 'Inter', sans-serif;
         }
 
         .btn:hover {
@@ -255,8 +199,6 @@
         }
 
         .btn-primary { background: var(--secondary-color); color: white; }
-        .btn-secondary { background: white; color: var(--primary-color); }
-        .btn-evolution { background: var(--evolution-color); color: white; }
 
         /* --- Content Sections --- */
         .section {
@@ -265,253 +207,117 @@
             margin: 0 auto;
         }
 
-        .section:nth-child(even) {
+        .section-light {
             background: white;
         }
 
         h2 {
             font-size: 3rem;
-            margin-bottom: 2.5rem;
-            color: var(--primary-color);
+            margin-bottom: 1rem;
             text-align: center;
         }
 
         h3 {
             font-size: 2rem;
             margin: 2rem 0 1rem;
-            color: var(--secondary-color);
         }
 
-        /* --- Journey Section --- */
-        .journey-timeline {
-            position: relative;
-            padding: 2rem 0;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .timeline-item {
-            display: flex;
-            gap: 2rem;
-            margin-bottom: 3rem;
-            align-items: flex-start;
-        }
-
-        .timeline-item:last-child {
-            margin-bottom: 0;
-        }
-
-        .timeline-marker {
-            width: 60px;
-            height: 60px;
-            background: var(--gradient-2);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: bold;
-            flex-shrink: 0;
-            font-size: 1.5rem;
-            font-family: 'Playfair Display', serif;
-        }
-
-        .timeline-content {
-            flex: 1;
-            background: white;
-            padding: 2rem;
-            border-radius: 12px;
-            box-shadow: 0 3px 15px rgba(44, 62, 80, 0.08);
-            border: 1px solid rgba(189, 195, 199, 0.3);
-        }
-
-        .timeline-content h3 {
-            margin-top: 0;
-            color: var(--primary-color);
-        }
-        
-        /* --- Why Evolve Section --- */
-        .evolution-theory-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2rem;
-            margin-bottom: 4rem;
-        }
-        .evolution-card {
-            background: var(--light-bg);
-            padding: 2rem;
-            border-radius: 12px;
-        }
-        .evolution-card.competition { border-left: 5px solid var(--secondary-color); }
-        .evolution-card.asteroid { border-left: 5px solid var(--accent-color); }
-        .evolution-card.collaboration { border-left: 5px solid var(--evolution-color); }
-        .evolution-card h3 { margin-top: 0; }
-        .evolution-card.competition h3 { color: var(--secondary-color); }
-        .evolution-card.asteroid h3 { color: var(--accent-color); }
-        .evolution-card.collaboration h3 { color: var(--evolution-color); }
-        .evolution-card ul { padding-left: 1.5rem; margin-top: 1rem; }
-        .evolution-card li { margin-bottom: 0.5rem; }
-        
-        .strategy-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-        }
-        .strategy-card {
-            padding: 2rem;
-            border: 1px solid #ddd;
-            border-radius: 12px;
-            text-align: center;
-        }
-        .strategy-card h4 {
-            font-size: 1.5rem;
-            color: var(--primary-color);
-        }
-        .strategy-card.experimenter {
-            border-top: 5px solid var(--evolution-color);
-        }
-
-        /* --- Pilot Info Cards --- */
-        .pilot-info-card {
-            text-align: center;
-            padding: 2rem;
-            background: var(--light-bg);
-            border-radius: 12px;
-            transition: transform 0.3s, box-shadow 0.3s;
-            cursor: pointer;
-        }
-
-        .pilot-info-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 20px rgba(44, 62, 80, 0.1);
-        }
-
-        /* --- Assessment Tool --- */
-        .assessment-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .assessment-tool {
-            background: white;
-            border-radius: 12px;
-            padding: 2.5rem;
-            box-shadow: 0 3px 15px rgba(44, 62, 80, 0.08);
-            border: 1px solid rgba(189, 195, 199, 0.2);
-        }
-
-        .assessment-header {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 2rem;
-        }
-
-        .assessment-header h3 {
-            margin: 0;
-            color: var(--primary-color);
-        }
-
-        .assessment-icon { font-size: 2.5rem; }
-        .question { margin-bottom: 2rem; }
-        .question label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-            color: var(--text-dark);
-        }
-
-        .slider {
-            width: 100%;
-            margin: 1rem 0;
-            cursor: pointer;
-            accent-color: var(--accent-color);
-        }
-
-        .slider-labels {
-            display: flex;
-            justify-content: space-between;
-            font-size: 0.9rem;
-            color: var(--text-light);
-        }
-
-        /* --- Action Framework --- */
-        .action-framework {
-            background: white;
-            border-radius: 16px;
-            padding: 3rem;
-            box-shadow: 0 5px 20px rgba(44, 62, 80, 0.08);
-            margin: 2rem 0;
-            border: 1px solid rgba(189, 195, 199, 0.2);
-        }
-
-        .framework-steps {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .framework-step {
-            text-align: center;
-            padding: 2rem 1rem;
-            background: var(--light-bg);
-            border-radius: 12px;
-            transition: all 0.3s;
-            border: 2px solid transparent;
-        }
-
-        .framework-step:hover {
-            background: var(--evolution-color);
-            color: white;
-            transform: scale(1.05);
-            border-color: var(--evolution-color);
-        }
-
-        .step-number {
-            font-size: 3rem;
-            font-weight: 700;
-            color: var(--accent-color);
-            margin-bottom: 1rem;
-            transition: color 0.3s;
-            font-family: 'Playfair Display', serif;
-        }
-
-        .framework-step:hover .step-number {
-            color: white;
-        }
-
-        /* --- Quote Highlights --- */
-        figure.quote {
+        .quote-wrapper {
             margin: 3rem auto;
-            padding-left: 2rem;
-            border-left: 4px solid var(--accent-color);
             max-width: 800px;
         }
 
-        figure.quote.evolution {
-            margin-top: 4rem;
-            border-color: var(--evolution-color);
-        }
-
-        figure.quote blockquote {
+        .blockquote {
+            padding-left: 2rem;
+            border-left: 4px solid var(--accent-color);
             font-size: 1.4rem;
             font-style: italic;
-            color: var(--primary-color);
             font-family: 'Playfair Display', serif;
             line-height: 1.8;
             margin: 0;
         }
 
-        figure.quote figcaption {
+        .quote-caption {
             text-align: right;
             font-style: normal;
             font-weight: 600;
             margin-top: 1rem;
             color: var(--text-light);
-            font-family: 'Source Sans Pro', sans-serif;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 3px 15px rgba(44, 62, 80, 0.08);
+            border: 1px solid #ecf0f1;
+        }
+        
+        .card h3 {
+            margin-top: 0;
+            color: var(--accent-color);
+        }
+
+        .timeline {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .timeline-item {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            border-left: 5px solid var(--accent-color);
+            box-shadow: 0 3px 15px rgba(44, 62, 80, 0.08);
+        }
+
+        .timeline-item h3 {
+            margin-top: 0;
+            color: var(--primary-color);
+        }
+
+        .who-is-this-for-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .who-card {
+            padding: 2rem;
+            border-radius: 12px;
+        }
+
+        .who-card.for-you {
+            background: #eafaf1;
+            border: 1px solid #a3d9b8;
+        }
+        .who-card.for-you h3 { color: var(--evolution-color); }
+        .who-card.for-you li::before { content: '✔'; color: var(--evolution-color); margin-right: 0.5rem; }
+
+        .who-card.not-for-you {
+            background: #fdedec;
+            border: 1px solid #f5b7b1;
+        }
+        .who-card.not-for-you h3 { color: var(--secondary-color); }
+        .who-card.not-for-you li::before { content: '✘'; color: var(--secondary-color); margin-right: 0.5rem; }
+
+        .who-card ul {
+            list-style: none;
+            padding: 0;
+        }
+        .who-card li {
+            margin-bottom: 0.5rem;
         }
         
         /* --- Footer --- */
@@ -524,128 +330,43 @@
         .footer-content {
             max-width: 1200px;
             margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 3rem;
-            margin-bottom: 2rem;
-        }
-
-        .footer-section h4 {
-            margin-bottom: 1rem;
-            color: var(--accent-color);
-            font-family: 'Playfair Display', serif;
-            font-size: 1.3rem;
-        }
-
-        .footer-links {
-            list-style: none;
-            padding: 0;
-        }
-
-        .footer-links li { margin-bottom: 0.5rem; }
-        .footer-links a {
-            color: rgba(255, 255, 255, 0.9);
-            text-decoration: none;
-            transition: all 0.3s;
-            font-weight: 400;
-        }
-
-        .footer-links a:hover {
-            color: var(--accent-color);
-            transform: translateX(5px);
-            display: inline-block;
+            text-align: center;
         }
 
         .footer-bottom {
-            text-align: center;
             padding-top: 2rem;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             font-weight: 300;
         }
-        .footer-quote {
-            font-style: italic;
-        }
-        .footer-quote-author {
-            font-style: normal;
-            font-weight: 600;
-            display: block;
+
+        .footer-email {
+            display: inline-block;
             margin-top: 0.5rem;
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: color 0.3s;
         }
 
-        /* --- Interactive Elements --- */
-        .tab-container { margin: 2rem 0; }
-        .tab-buttons {
-            display: flex;
-            gap: 1rem;
-            margin-bottom: 2rem;
-            flex-wrap: wrap;
-        }
-
-        .tab-button {
-            padding: 0.8rem 1.5rem;
-            border: 2px solid #bdc3c7;
-            background: white;
-            color: var(--primary-color);
-            border-radius: 30px;
-            cursor: pointer;
-            transition: all 0.3s;
-            font-weight: 600;
-            letter-spacing: 0.5px;
-        }
-
-        .tab-button:hover { border-color: var(--accent-color); }
-        .tab-button.active {
-            background: var(--primary-color);
+        .footer-email:hover {
             color: white;
-            border-color: var(--primary-color);
-        }
-
-        .tab-content {
-            display: none;
-            animation: fadeIn 0.5s;
-        }
-        .tab-content.active { display: block; }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* Pilot Announcement */
-        .pilot-announcement {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 1.5rem;
-            border-radius: 12px;
-            margin: 2rem 0;
-            backdrop-filter: blur(10px);
-            border: 2px solid rgba(243, 156, 18, 0.3);
-            animation: pulse-border 3s infinite;
-        }
-
-        @keyframes pulse-border {
-            0%, 100% { border-color: rgba(243, 156, 18, 0.3); }
-            50% { border-color: rgba(243, 156, 18, 0.6); }
         }
 
         /* --- Responsive Design --- */
         @media (max-width: 768px) {
             html {
-                font-size: 110%; /* Use a slightly larger base for mobile for readability */
+                font-size: 100%;
             }
 
-            .hero h1 { font-size: 2.5rem; }
-            .hero p { font-size: 1.2rem; }
+            h1 { font-size: 2.5rem; }
             h2 { font-size: 2.2rem; }
-
-            .evolution-path { flex-direction: column; gap: 0.5rem; }
-            .evolution-arrow { transform: rotate(90deg); margin: 0.5rem 0; }
 
             .nav-links {
                 position: fixed;
                 right: -100%;
-                top: 70px;
+                top: 74px; /* Adjusted for header height */
                 gap: 0;
                 flex-direction: column;
-                background-color: var(--primary-color);
+                background-color: white;
                 width: 100%;
                 text-align: center;
                 transition: 0.3s;
@@ -670,497 +391,158 @@
     <header>
         <nav>
             <div class="logo">The Political Evolution Project</div>
-            <ul class="nav-links">
-                <li><a href="#pilot-signup" class="apply-btn">Apply Now</a></li>
-                <li><a href="#journey">Journey</a></li>
-                <li><a href="#pathways">Learning</a></li>
-                <li><a href="#tools">Tools</a></li>
-                <li><a href="#resources">Resources</a></li>
-                <li><a href="#community">Community</a></li>
-                <li><a href="#about">About</a></li>
-            </ul>
             <div class="hamburger">
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
             </div>
+            <ul class="nav-links">
+                <li><a href="#diagnosis">The Diagnosis</a></li>
+                <li><a href="#guide">The Guide</a></li>
+                <li><a href="#solution">The Solution</a></li>
+                <li><a href="https://forms.gle/D8KZqnRPYA7e3b2f6" target="_blank" rel="noopener noreferrer" class="apply-btn">Apply Now</a></li>
+            </ul>
         </nav>
     </header>
 
     <main>
+        <!-- 1. HERO SECTION -->
         <section class="hero">
-            <div class="hero-content">
-                <h1>Transforming How We Organize for Change</h1>
-                <p>From exposing exploitation to building abundance—comprehensive political education and resources for creating movements that multiply power rather than extract it.</p>
-                <div class="pilot-announcement">
-                    <h3 style="color: #f39c12; margin-bottom: 0.5rem;">🚀 Pilot Program Launch</h3>
-                    <p style="font-size: 1.1rem; margin-bottom: 1rem;">Join our first virtual cohort starting September 7, 2025 • Limited to 25 participants</p>
-                </div>
-                <div class="evolution-path">
-                    <div class="evolution-step">Recognition</div>
-                    <div class="evolution-arrow">→</div>
-                    <div class="evolution-step">Understanding</div>
-                    <div class="evolution-arrow">→</div>
-                    <div class="evolution-step">Transformation</div>
-                </div>
-                <div class="cta-buttons">
-                    <a href="#pilot-signup" class="btn btn-primary" style="background: #f39c12;">Apply for First Cohort</a>
-                    <a href="#tools" class="btn btn-secondary">Assessment Tools</a>
-                    <a href="#about" class="btn btn-evolution">Learn More</a>
-                </div>
-            </div>
+            <h1>The Evolution of Politics is Here.</h1>
+            <p>Partisan competition is obsolete. The future requires collaborative fitness. This 12-week pilot program is for the 25 people ready to build what's next.</p>
+            <a href="https://forms.gle/D8KZqnRPYA7e3b2f6" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Apply for the Pilot Program</a>
+            <p style="margin-top: 1rem; font-size: 1rem; color: rgba(255,255,255,0.8);">Priority Deadline: August 15, 2025</p>
         </section>
 
-        <section id="journey" class="section">
-            <h2>The Evolution Journey</h2>
-            <p style="text-align: center; margin: -1.5rem auto 2.5rem;">This project began with a personal revelation about exploitation in political organizing and has grown into a comprehensive educational platform for transforming our political ecosystem. Follow the journey that connects individual empowerment to systemic change.</p>
-            <div class="journey-timeline">
-                <div class="timeline-item">
-                    <div class="timeline-marker">1</div>
-                    <div class="timeline-content">
-                        <h3>The Breaking Point</h3>
-                        <p>June 2025: Discovering that my volunteer work with MomsRising was subsidizing a sophisticated political machine while providing poverty wages. Calculating that our $500 annual stipend represented 85-90% below market rates for professional political work.</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-marker">2</div>
-                    <div class="timeline-content">
-                        <h3>From Extraction to Education</h3>
-                        <p>Creating comprehensive political education materials that organizations won't provide. Sharing everything freely because political education is a human right, not a commodity.</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-marker">3</div>
-                    <div class="timeline-content">
-                        <h3>Seeing the System</h3>
-                        <p>Connecting organizational exploitation to neoliberalism—the invisible doctrine that treats everything as a business. Understanding how this system creates scarcity where abundance is possible.</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-marker">4</div>
-                    <div class="timeline-content">
-                        <h3>Building Alternatives</h3>
-                        <p>Documenting the political evolution happening in communities worldwide. Moving beyond partisan gridlock to collaborative problem-solving. Creating frameworks for abundance-based organizing.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="why-evolve" class="section" style="background-color: white;">
-            <h2>Adapt or Go Dinosaur</h2>
-            <p style="text-align: center; margin: -1.5rem auto 2.5rem;">The theory behind the Political Evolution Project.</p>
-            <div class="evolution-theory-grid">
-                <div class="evolution-card competition">
-                    <h3>The Old Fitness: Competition</h3>
-                    <p>For much of the 20th century, the two-party system worked like competing species in a stable environment. Democrats and Republicans were like lions and hyenas, maintaining a balance through mutual antagonism. Party loyalty functioned like pack behavior, coordinating action and providing clear tribal identities.</p>
-                </div>
-                <div class="evolution-card asteroid">
-                    <h3>The Asteroid: A Changed World</h3>
-                    <p>The political environment changed faster than our systems could adapt. This "asteroid" was made of several disruptive forces hitting at once:</p>
-                        <ul>
-                            <li><strong>The Internet:</strong> Disrupted information gatekeepers.</li>
-                            <li><strong>Global Challenges:</strong> Pandemics and climate change don't respect partisan borders.</li>
-                            <li><strong>Economic Disruption:</strong> Technology outpaces policy.</li>
-                            <li><strong>Generational Shifts:</strong> Younger generations raised on collaboration find rigid party boundaries outdated.</li>
-                        </ul>
-                </div>
-                <div class="evolution-card collaboration">
-                    <h3>The New Fitness: Collaboration</h3>
-                    <p>In this new environment, political "fitness" isn't about being the loudest. It’s about fitting into the environment like a key in a lock. The most successful species in nature are masters of cooperation, like leaf-cutter ants or wolves in a pack. The new survival traits for politics are the same:</p>
-                        <ul>
-                            <li>Form fluid coalitions.</li>
-                            <li>Bridge ideological divides.</li>
-                            <li>Adapt quickly to new information.</li>
-                            <li>Coordinate across boundaries.</li>
-                        </ul>
-                </div>
-            </div>
-            <h3 style="text-align:center; font-size: 2.5rem; margin-bottom: 2rem;">How Evolution is Happening Now</h3>
-            <p style="text-align: center; max-width: 800px; margin: 0 auto 3rem;">This evolution is messy and happening in real-time. We are currently seeing three main strategies co-existing in the political ecosystem:
-            </p>
-            <div class="strategy-grid">
-                <div class="strategy-card">
-                    <h4>1. The Hyper-Partisans</h4>
-                    <p>These are the dinosaurs roaring at the meteor. They are doubling down on division, becoming more specialized and rigid in their approach.</p>
-                </div>
-                <div class="strategy-card experimenter">
-                    <h4>2. The Experimenters</h4>
-                    <p>These are the early mammals, scurrying with potential. They are trying new collaborative forms like citizens' assemblies and cross-partisan caucuses. Some experiments will fail, but diversity is crucial for finding what works.</p>
-                </div>
-                <div class="strategy-card">
-                    <h4>3. The Bet-Hedgers</h4>
-                    <p>This is most of us. We keep one foot in the old system while cautiously exploring the new one, like having both a smartphone and a landline "just in case".</p>
-                </div>
-            </div>
-            <figure class="quote evolution">
-                <blockquote>"We're not witnessing the moral failure of democracy— we're watching evolution in real time... In our political ecosystem, the ability to work with people you disagree with isn't just nice—it's the new fitness test."</blockquote>
-                <figcaption>— Carrie Clendening</figcaption>
+        <!-- 2. THE DIAGNOSIS -->
+        <section id="diagnosis" class="section section-light">
+            <h2>Our Political System is a Dinosaur Roaring at a Meteor</h2>
+            <p>For decades, politics operated on partisan competition. But the environment has changed. Global challenges, technological disruption, and economic instability are the meteor, and the old ways are proving fatally unfit for survival.</p>
+            <figure class="quote-wrapper">
+                <blockquote class="blockquote">
+                    "We're not witnessing the moral failure of democracy—we're watching evolution in real time... The old forms of political organization are struggling like dinosaurs wondering why it's suddenly so cold."
+                </blockquote>
+                <figcaption class="quote-caption">— Carrie Clendening</figcaption>
             </figure>
+            <div class="card-grid">
+                <div class="card">
+                    <h3>Geographic Extraction</h3>
+                    <p>National organizations have strip-mined local infrastructure, creating sacrifice zones where communities are drained of resources, talent, and hope.</p>
+                </div>
+                <div class="card">
+                    <h3>Knowledge Hoarding</h3>
+                    <p>Political parties and organizations actively hoard the tools of power—data, strategy, and technical skills—while exploiting volunteers for free labor.</p>
+                </div>
+                <div class="card">
+                    <h3>Active Gatekeeping</h3>
+                    <p>Those with titles but no vision block competent individuals. They'd rather preside over a ghost town than let someone with the skills help renovate.</p>
+                </div>
+                <div class="card">
+                    <h3>Hollowed-Out Infrastructure</h3>
+                    <p>The "secret weapons" of campaigning are illusions. Data is useless, districts are nonsensical, and the machinery is held together with duct tape and denial.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. THE GUIDE -->
+        <section id="guide" class="section">
+            <h2>My Journey From Public Service to Political Evolution</h2>
+            <p>I'm Carrie Clendening. My education didn't come from a textbook. It came from a decade as a non-partisan legislative liaison, watching the kabuki theater of politics from the inside. It came from joining a Democratic party so hollowed-out its voter data was a joke. It came from being exploited by national organizations, and then learning the real rules of power from Republican defectors who were more honest about the game.</p>
+            <p style="font-weight: 600; color: var(--text-dark); text-align: center; max-width: 800px; margin: 2rem auto 0;">
+                I was called an outsider for having the skills to fix the problems the insiders created. That rejection was the best thing that ever happened to me. It forced me to create the alternative.
+            </p>
+        </section>
+
+        <!-- 4. THE THESIS (PILOT) -->
+        <section id="solution" class="section section-light">
+            <h2>The Thesis: A 12-Week Program in Collaborative Fitness</h2>
+            <p>This pilot program is the intervention. It's designed to teach the skills the current political environment demands: adaptability, cross-partisan collaboration, and systems thinking. We will turn 25 participants into political education dealers, equipped to build new, more resilient networks in their own communities.</p>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div>
+                        <h3>Weeks 1-3: See the Ecosystem</h3>
+                        <p>Learn to map power, follow the money, and recognize the patterns of extraction and gatekeeping that define the current landscape.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div>
+                        <h3>Weeks 4-6: Decode the Systems</h3>
+                        <p>Move beyond partisan labels to understand the doctrines, theories, and technological frameworks that shape our political reality.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div>
+                        <h3>Weeks 7-8: Build Connections</h3>
+                        <p>Develop the core competency of the new political era: building fluid, cross-partisan coalitions based on competence and shared goals, not rigid ideology.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div>
+                        <h3>Weeks 9-12: Engineer the Alternative</h3>
+                        <p>Design, test, and implement your own political evolution project, creating a tangible, sustainable alternative to the failing systems in your community.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. THE MANIFESTO (WHY FREE) -->
+        <section id="manifesto" class="section">
+            <h2>Our Philosophy: Political Education is a Public Utility, Not a Luxury Good</h2>
+            <p>Charging for this knowledge would make me part of the extractive system I'm fighting. The goal of The Political Evolution Project is simple but revolutionary: 100% access to political education.</p>
+            <figure class="quote-wrapper">
+                <blockquote class="blockquote">
+                    "This isn't about converting people or building another organization that might become extractive. It's about democratizing the tools of political analysis and action."
+                </blockquote>
+                <figcaption class="quote-caption">— Carrie Clendening</figcaption>
+            </figure>
+            <p style="font-weight: 600; color: var(--text-dark); text-align: center; max-width: 800px; margin: 2rem auto 0;">
+                Your investment is your participation. Show up. Do the work. Teach others. That is the only currency we accept.
+            </p>
         </section>
         
-        <section id="pilot-signup" class="section">
-            <h2>Join the First Cohort</h2>
-            <p style="text-align: center; margin: -1.5rem auto 2.5rem;">Be part of the transformative first cohort of the Political Evolution Project. This pilot program is designed for organizers ready to move from extraction to empowerment.</p>
-            <div class="pilot-info-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin: 3rem 0;">
-                <div class="pilot-info-card">
-                    <h3 style="color: var(--primary-color); margin-bottom: 1rem;">📅 Start Date</h3>
-                    <p style="font-size: 1.3rem; font-weight: 600; color: var(--accent-color);">September 7, 2025</p>
-                    <p>12-week virtual journey</p>
+        <!-- 6. THE INVITATION -->
+        <section id="apply" class="section section-light">
+            <h2>This Isn't For Everyone. (And That's The Point.)</h2>
+            <p>We are looking for 25 people who recognize that the old models are broken and are ready to do the hard work of building the replacement. We value experience and commitment over political affiliation.</p>
+            <div class="who-is-this-for-grid">
+                <div class="who-card for-you">
+                    <h3>✓ This is for you if...</h3>
+                    <ul>
+                        <li>You're tired of being treated like unpaid staff and want to understand the system of exploitation.</li>
+                        <li>You can commit 1-2 hours weekly for 12 weeks of intensive virtual sessions.</li>
+                        <li>You want to build resilient, local alternatives, not just critique national politics.</li>
+                        <li>You believe competence is more valuable than partisan loyalty.</li>
+                    </ul>
                 </div>
-                <div class="pilot-info-card">
-                    <h3 style="color: var(--primary-color); margin-bottom: 1rem;">👥 Limited Spots</h3>
-                    <p style="font-size: 1.3rem; font-weight: 600; color: var(--secondary-color);">25 Participants</p>
-                    <p>Small cohort for deep engagement</p>
-                </div>
-                <div class="pilot-info-card">
-                    <h3 style="color: var(--primary-color); margin-bottom: 1rem;">💡 Format</h3>
-                    <p style="font-size: 1.3rem; font-weight: 600; color: var(--evolution-color);">100% Virtual</p>
-                    <p>Weekly online sessions via Zoom</p>
-                </div>
-                <div class="pilot-info-card">
-                    <h3 style="color: var(--primary-color); margin-bottom: 1rem;">🎯 Investment</h3>
-                    <p style="font-size: 1.3rem; font-weight: 600; color: var(--accent-color);">FREE for Pilot</p>
-                    <p>Your commitment is your contribution</p>
+                <div class="who-card not-for-you">
+                    <h3>✗ This is not for you if...</h3>
+                    <ul>
+                        <li>You're looking for quick political wins or easy, partisan answers.</li>
+                        <li>You can't commit to the full 12-week program and its practical homework.</li>
+                        <li>You're not interested in teaching others and multiplying the impact.</li>
+                    </ul>
                 </div>
             </div>
-            <div class="pilot-description" style="max-width: 800px; margin: 0 auto 3rem;">
-                <h3 style="text-align: center; margin-bottom: 2rem;">What You'll Experience</h3>
-                <ul style="list-style: none; padding: 0;">
-                    <li style="padding: 1rem; margin-bottom: 1rem; background: var(--light-bg); border-radius: 8px; border-left: 4px solid var(--accent-color);">
-                        <strong>Comprehensive Political Education:</strong> Master frameworks for understanding power, economics, and organizing strategy
-                    </li>
-                    <li style="padding: 1rem; margin-bottom: 1rem; background: var(--light-bg); border-radius: 8px; border-left: 4px solid var(--secondary-color);">
-                        <strong>Practical Tools & Skills:</strong> Learn power mapping, campaign planning, and abundance-based organizing methods
-                    </li>
-                    <li style="padding: 1rem; margin-bottom: 1rem; background: var(--light-bg); border-radius: 8px; border-left: 4px solid var(--evolution-color);">
-                        <strong>Community & Support:</strong> Join a cohort of committed organizers building the future of political movements
-                    </li>
-                    <li style="padding: 1rem; margin-bottom: 1rem; background: var(--light-bg); border-radius: 8px; border-left: 4px solid var(--accent-color);">
-                        <strong>Direct Mentorship:</strong> Weekly virtual sessions with Carrie Clendening and guest facilitators
-                    </li>
-                </ul>
-
-                <h3 style="text-align: center; margin: 3rem 0 2rem;">Who Should Apply</h3>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
-                    <div style="padding: 1.5rem; background: #27ae6010; border-radius: 8px; border: 1px solid #27ae6030;">
-                        <h4 style="color: var(--evolution-color); margin-bottom: 0.5rem;">✓ You Should Apply If:</h4>
-                        <ul style="margin: 0; padding-left: 1.5rem;">
-                            <li>You've experienced exploitation in organizing</li>
-                            <li>You're ready to build alternatives</li>
-                            <li>You can commit 2-3 hours weekly</li>
-                            <li>You have reliable internet access</li>
-                            <li>You want to transform your community</li>
-                            <li>You're open to new approaches</li>
-                        </ul>
-                    </div>
-                    <div style="padding: 1.5rem; background: #e74c3c10; border-radius: 8px; border: 1px solid #e74c3c30;">
-                        <h4 style="color: var(--secondary-color); margin-bottom: 0.5rem;">✗ This May Not Be For You If:</h4>
-                        <ul style="margin: 0; padding-left: 1.5rem;">
-                            <li>You're looking for quick fixes</li>
-                            <li>You can't commit to the full program</li>
-                            <li>You're not ready to challenge systems</li>
-                            <li>You prefer traditional organizing only</li>
-                            <li>You're not open to collaboration</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="signup-form-container" style="max-width: 600px; margin: 0 auto; background: white; padding: 3rem; border-radius: 16px; box-shadow: 0 5px 20px rgba(44, 62, 80, 0.1); border: 2px solid var(--accent-color);">
-                <h3 style="text-align: center; margin-bottom: 2rem; color: var(--primary-color);">Apply for the First Cohort</h3>
-                <p style="text-align: center; color: var(--text-dark); margin-bottom: 2rem;">Ready to join us in transforming how we organize for change? Click below to complete your application.</p>
-                <div style="text-align: center;">
-                    <a href="https://forms.gle/SaPRipFHXEXFgkrE8" class="btn btn-primary" style="font-size: 1.1rem; padding: 1.2rem 3rem; display: inline-block;" target="_blank" rel="noopener noreferrer">Complete Application Form</a>
-                </div>
-                <p style="text-align: center; margin-top: 2rem; color: var(--text-light); font-size: 0.95rem;">You'll be redirected to our secure Google Form to submit your application.</p>
-            </div>
-            <div style="text-align: center; margin-top: 3rem;">
-                <p style="color: var(--text-light); font-style: italic;">Applications reviewed on a rolling basis. We'll contact you within 7 days.</p>
-                <p style="margin-top: 1rem; padding: 1rem 2rem; background: #f39c1220; border-radius: 8px; display: inline-block; font-weight: 600; color: var(--text-dark);">
-                    ⏰ Priority deadline: August 15, 2025
-                </p>
-            </div>
-        </section>
-
-        <section id="pathways" class="section" style="background-color: white;">
-            <h2>Choose Your Learning Path</h2>
-            <p style="text-align: center; margin: -1.5rem auto 2.5rem;">Structured learning paths tailored to your journey from awareness to action.</p>
-            <div style="text-align: center; padding: 3rem; background: var(--light-bg); border-radius: 16px; max-width: 700px; margin: 0 auto;">
-                <h3 style="color: var(--accent-color); margin-bottom: 1rem; font-size: 2rem;">🚧 Coming Soon</h3>
-                <p style="font-size: 1.3rem; color: var(--text-dark); margin-bottom: 1.5rem;">Learning Paths will be available in <strong>Late 2025</strong></p>
-                <p style="color: var(--text-light); line-height: 1.8; margin-bottom: 2rem;">After our pilot cohort, we'll launch three comprehensive learning paths based on participant feedback and proven methodologies:</p>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; text-align: left;">
-                    <div style="padding: 1.5rem; background: white; border-radius: 8px; border: 2px solid #e74c3c30;">
-                        <h4 style="color: var(--secondary-color); margin-bottom: 0.5rem;">🔍 Recognition Path</h4>
-                        <p style="color: var(--text-light); font-size: 0.95rem;">For those experiencing exploitation in their organizing</p>
-                    </div>
-                    <div style="padding: 1.5rem; background: white; border-radius: 8px; border: 2px solid #3498db30;">
-                        <h4 style="color: var(--accent-color); margin-bottom: 0.5rem;">💡 Understanding Path</h4>
-                        <p style="color: var(--text-light); font-size: 0.95rem;">For those ready to see systemic patterns</p>
-                    </div>
-                    <div style="padding: 1.5rem; background: white; border-radius: 8px; border: 2px solid #27ae6030;">
-                        <h4 style="color: var(--evolution-color); margin-bottom: 0.5rem;">🌱 Transformation Path</h4>
-                        <p style="color: var(--text-light); font-size: 0.95rem;">For those building alternatives</p>
-                    </div>
-                </div>
-                <p style="margin-top: 2rem; padding: 1rem; background: #f39c1220; border-radius: 8px; color: var(--text-dark);">
-                    <strong>Pilot participants will help shape these learning paths</strong> through their experiences and feedback
-                </p>
-                <a href="#pilot-signup" class="btn btn-evolution" style="margin-top: 2rem;">Be Part of the Foundation</a>
-            </div>
-        </section>
-
-        <section id="tools" class="section">
-            <h2>Tools for Transformation</h2>
-            <p style="text-align: center; margin: -1.5rem auto 2.5rem;">Practical resources to assess your current situation and build better alternatives. These evidence-based tools help you move from recognition to action.</p>
-            <div class="assessment-container">
-                <div class="assessment-tool">
-                    <div class="assessment-header">
-                        <span class="assessment-icon">📊</span>
-                        <div>
-                            <h3>Exploitation Assessment</h3>
-                            <p>Evaluate your organizing relationship</p>
-                        </div>
-                    </div>
-                    <div class="question">
-                        <label for="hours-slider">How many hours per week do you volunteer?</label>
-                        <input type="range" class="slider" min="0" max="40" value="10" id="hours-slider">
-                        <div class="slider-labels"><span>0 hrs</span><span>20 hrs</span><span>40+ hrs</span></div>
-                    </div>
-                    <div class="question">
-                        <label for="professional-slider">How much of your work could be paid professional services?</label>
-                        <input type="range" class="slider" min="0" max="100" value="50" id="professional-slider">
-                        <div class="slider-labels"><span>None</span><span>Some</span><span>All</span></div>
-                    </div>
-                    <div class="question">
-                        <label for="power-slider">How much strategic decision-making power do you have?</label>
-                        <input type="range" class="slider" min="0" max="100" value="25" id="power-slider">
-                        <div class="slider-labels"><span>None</span><span>Some</span><span>Full</span></div>
-                    </div>
-                    <button class="btn btn-primary" onclick="calculateExploitation()">Calculate Assessment</button>
-                    <div id="exploitation-result" style="margin-top: 2rem;"></div>
-                </div>
-                <div class="assessment-tool">
-                    <div class="assessment-header">
-                        <span class="assessment-icon">🌱</span>
-                        <div>
-                            <h3>Political Evolution Assessment</h3>
-                            <p>Is your community ready for transformation?</p>
-                        </div>
-                    </div>
-                    <div class="question">
-                        <label for="collaboration-slider">Level of cross-partisan collaboration?</label>
-                        <input type="range" class="slider" min="0" max="100" value="30" id="collaboration-slider">
-                        <div class="slider-labels"><span>None</span><span>Some</span><span>Strong</span></div>
-                    </div>
-                    <div class="question">
-                        <label for="openness-slider">Openness to new solutions?</label>
-                        <input type="range" class="slider" min="0" max="100" value="50" id="openness-slider">
-                        <div class="slider-labels"><span>Resistant</span><span>Curious</span><span>Eager</span></div>
-                    </div>
-                    <div class="question">
-                        <label for="abundance-slider">Focus on abundance vs. scarcity?</label>
-                        <input type="range" class="slider" min="0" max="100" value="40" id="abundance-slider">
-                        <div class="slider-labels"><span>Scarcity</span><span>Mixed</span><span>Abundance</span></div>
-                    </div>
-                    <button class="btn btn-evolution" onclick="calculateEvolution()">Assess Evolution</button>
-                    <div id="evolution-result" style="margin-top: 2rem;"></div>
-                </div>
-            </div>
-        </section>
-
-        <section id="resources" class="section" style="background-color: white;">
-            <h2>Free Political Education Resources</h2>
-            <p style="text-align: center; margin: -1.5rem auto 2.5rem;">Comprehensive materials for understanding and transforming our political systems. All resources will be freely available because knowledge is power, and power should be shared.</p>
-            <div style="text-align: center; padding: 3rem; background: var(--light-bg); border-radius: 16px; max-width: 700px; margin: 0 auto;">
-                <h3 style="color: var(--accent-color); margin-bottom: 1rem; font-size: 2rem;">🚧 Coming Soon</h3>
-                <p style="font-size: 1.3rem; color: var(--text-dark); margin-bottom: 1.5rem;">Resources will be available in <strong>Late 2025</strong></p>
-                <p style="color: var(--text-light); line-height: 1.8;">We're currently developing comprehensive educational materials based on insights from our pilot cohort. These resources will include:</p>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin: 2rem 0; text-align: left;">
-                    <div style="padding: 1.5rem; background: white; border-radius: 8px;">
-                        <h4 style="color: var(--primary-color); margin-bottom: 0.5rem;">📚 Educational Materials</h4>
-                        <ul style="color: var(--text-light); font-size: 0.95rem; padding-left: 1.5rem;">
-                            <li>Political Education Curricula</li>
-                            <li>Understanding Neoliberalism Guide</li>
-                            <li>Abundance Economics Primer</li>
-                        </ul>
-                    </div>
-                    <div style="padding: 1.5rem; background: white; border-radius: 8px;">
-                        <h4 style="color: var(--primary-color); margin-bottom: 0.5rem;">🛠️ Practical Tools</h4>
-                        <ul style="color: var(--text-light); font-size: 0.95rem; padding-left: 1.5rem;">
-                            <li>Power Mapping Templates</li>
-                            <li>Campaign Planning Toolkit</li>
-                            <li>Coalition Building Framework</li>
-                        </ul>
-                    </div>
-                    <div style="padding: 1.5rem; background: white; border-radius: 8px;">
-                        <h4 style="color: var(--primary-color); margin-bottom: 0.5rem;">🔍 Research Resources</h4>
-                        <ul style="color: var(--text-light); font-size: 0.95rem; padding-left: 1.5rem;">
-                            <li>Organization Research Guide</li>
-                            <li>Political Finance Decoder</li>
-                            <li>Evolution Case Studies</li>
-                        </ul>
-                    </div>
-                </div>
-                <a href="#pilot-signup" class="btn btn-primary" style="margin-top: 2rem;">Join the Pilot to Get Early Access</a>
-            </div>
-        </section>
-
-        <section class="section">
-            <h2>Your Path to Political Evolution</h2>
-            <p style="text-align: center; margin: -1.5rem auto 2.5rem;">Transform understanding into action with this step-by-step framework. Each stage builds on the previous, creating a sustainable journey from awareness to systemic change.</p>
-            <div class="action-framework">
-                <div class="framework-steps">
-                    <div class="framework-step">
-                        <div class="step-number">1</div>
-                        <h4>Recognize</h4>
-                        <p>Identify exploitation and scarcity thinking in your current organizing</p>
-                    </div>
-                    <div class="framework-step">
-                        <div class="step-number">2</div>
-                        <h4>Understand</h4>
-                        <p>Learn about systemic patterns and alternative approaches</p>
-                    </div>
-                    <div class="framework-step">
-                        <div class="step-number">3</div>
-                        <h4>Connect</h4>
-                        <p>Find others ready to build beyond old paradigms</p>
-                    </div>
-                    <div class="framework-step">
-                        <div class="step-number">4</div>
-                        <h4>Experiment</h4>
-                        <p>Try new forms of collaboration in your community</p>
-                    </div>
-                    <div class="framework-step">
-                        <div class="step-number">5</div>
-                        <h4>Build</h4>
-                        <p>Create lasting alternatives that multiply power</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="community" class="section" style="background-color: white;">
-            <h2>Join the Evolution</h2>
-            <p style="text-align: center; margin: -1.5rem auto 2.5rem;">Connect with a growing movement of organizers transforming how we create political change.</p>
-            <div style="text-align: center; padding: 3rem; background: var(--light-bg); border-radius: 16px; max-width: 700px; margin: 0 auto;">
-                <h3 style="color: var(--accent-color); margin-bottom: 1rem; font-size: 2rem;">🚧 Coming Soon</h3>
-                <p style="font-size: 1.3rem; color: var(--text-dark); margin-bottom: 1.5rem;">Community features will launch in <strong>Late 2025</strong></p>
-                <p style="color: var(--text-light); line-height: 1.8;">After our pilot cohort, we'll open community spaces for organizers ready to transform political movements together:</p>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; text-align: left; margin-bottom: 2rem;">
-                    <div style="padding: 1.5rem; background: white; border-radius: 8px; border: 2px solid #27ae6030;">
-                        <h4 style="color: var(--evolution-color); margin-bottom: 0.5rem;">🤝 Monthly Evolution Circles</h4>
-                        <p style="color: var(--text-light); font-size: 0.95rem;">Virtual gatherings to discuss resources and strategize together</p>
-                    </div>
-                    <div style="padding: 1.5rem; background: white; border-radius: 8px; border: 2px solid #3498db30;">
-                        <h4 style="color: var(--accent-color); margin-bottom: 0.5rem;">💡 Local Innovation Labs</h4>
-                        <p style="color: var(--text-light); font-size: 0.95rem;">Connect with others experimenting with new forms of organizing</p>
-                    </div>
-                    <div style="padding: 1.5rem; background: white; border-radius: 8px; border: 2px solid #f39c1230;">
-                        <h4 style="color: #f39c12; margin-bottom: 0.5rem;">📢 Story Sharing Network</h4>
-                        <p style="color: var(--text-light); font-size: 0.95rem;">Document and share political evolution in your community</p>
-                    </div>
-                    <div style="padding: 1.5rem; background: white; border-radius: 8px; border: 2px solid #e74c3c30;">
-                        <h4 style="color: var(--secondary-color); margin-bottom: 0.5rem;">🎓 Facilitator Training</h4>
-                        <p style="color: var(--text-light); font-size: 0.95rem;">Learn to lead political education sessions in your area</p>
-                    </div>
-                </div>
-                <p style="padding: 1rem; background: #27ae6020; border-radius: 8px; color: var(--text-dark);">
-                    <strong>Pilot participants will be founding members</strong> of our community spaces
-                </p>
-                <a href="#pilot-signup" class="btn btn-evolution" style="margin-top: 2rem;">Join the Pilot Program</a>
-            </div>
-            <figure class="quote">
-                <blockquote>"The future belongs to those who can cooperate most effectively within our evolving political ecosystem. Join our first cohort and help build that future together."</blockquote>
-                <figcaption>— Carrie Clendening</figcaption>
-            </figure>
-        </section>
-
-        <section id="about" class="section">
-            <h2>About the Project</h2>
-            <div class="tab-container">
-                <div class="tab-buttons" role="tablist" aria-label="About the project">
-                    <button id="tab-story" class="tab-button active" role="tab" aria-selected="true" aria-controls="panel-story" onclick="showTab(event, 'story')">Our Story</button>
-                    <button id="tab-mission" class="tab-button" role="tab" aria-selected="false" aria-controls="panel-mission" onclick="showTab(event, 'mission')" tabindex="-1">Mission</button>
-                    <button id="tab-values" class="tab-button" role="tab" aria-selected="false" aria-controls="panel-values" onclick="showTab(event, 'values')" tabindex="-1">Values</button>
-                    <button id="tab-founder" class="tab-button" role="tab" aria-selected="false" aria-controls="panel-founder" onclick="showTab(event, 'founder')" tabindex="-1">Founder</button>
-                </div>
-                <div id="panel-story" class="tab-content active" role="tabpanel" tabindex="0" aria-labelledby="tab-story">
-                    <h3>From Personal Experience to Collective Transformation</h3>
-                    <p>The Political Evolution Project began with a moment of painful clarity about exploitation in political organizing. What started as an investigation into one organization's practices revealed patterns that run throughout our political systems—from how we organize campaigns to how we imagine solutions to our biggest challenges.</p>
-                    <p>This project has evolved from exposing problems to building alternatives. We're documenting the transformation of our political ecosystem from rigid partisan competition to collaborative problem-solving, from scarcity thinking to abundance creation, from extraction to empowerment.</p>
-                    <p>Every resource shared, every story told, and every connection made through this project contributes to a larger movement: transforming how we organize for change in the 21st century.</p>
-                </div>
-                <div id="panel-mission" class="tab-content" role="tabpanel" tabindex="0" aria-labelledby="tab-mission">
-                    <h3>Our Mission</h3>
-                    <p>We exist to accelerate the evolution of political organizing from systems of extraction to movements of empowerment, from scarcity competition to abundance collaboration.</p>
-                    <p>Through education, community building, and resource sharing, we're creating the conditions for a new kind of politics—one that multiplies power rather than hoarding it, solves problems rather than exploiting them, and builds the future we need rather than defending the past we've outgrown.</p>
-                </div>
-                <div id="panel-values" class="tab-content" role="tabpanel" tabindex="0" aria-labelledby="tab-values">
-                    <h3>Core Values</h3>
-                    <p><strong>Abundance:</strong> We share resources freely because building collective capacity strengthens everyone. Knowledge hoarding perpetuates the very systems we're working to transform.</p>
-                    <p><strong>Evolution:</strong> We embrace change as natural and necessary. Just as ecosystems evolve, our political systems must adapt to new realities.</p>
-                    <p><strong>Transparency:</strong> Clear information about power and money enables informed participation. Confusion serves exploitation; clarity serves empowerment.</p>
-                    <p><strong>Collaboration:</strong> The challenges we face require us to work across traditional boundaries. The future belongs to those who can cooperate effectively.</p>
-                    <p><strong>Sustainability:</strong> Organizing that burns people out cannot build lasting change. We model the sustainable practices we want to see.</p>
-                </div>
-                <div id="panel-founder" class="tab-content" role="tabpanel" tabindex="0" aria-labelledby="tab-founder">
-                    <h3>About Carrie Clendening</h3>
-                    <p>I'm a West Virginia mother, organizer, and political educator who believes that political change shouldn't require accepting exploitation. My journey from MomsRising Hub Leader to founder of this project taught me that recognizing problems is only the first step—we must also build alternatives.</p>
-                    <p>My background includes grassroots organizing, political education curriculum development, and firsthand experience with how progressive organizations can perpetuate the very power imbalances they claim to fight. But more importantly, I've seen what's possible when people have the tools and knowledge to organize authentically.</p>
-                    <p>This project represents my commitment to sharing everything I've learned about building genuine political power. From detailed curricula to practical tools to frameworks for understanding systemic change, these resources are freely given to everyone ready to transform how we organize.</p>
-                    <p>Contact: carrie@politicalevolutionproject.org | 304-881-4404</p>
-                </div>
+            <div style="text-align: center; margin-top: 4rem;">
+                <h2>Become One of the First 25.</h2>
+                <p>If you've read this far, you understand the diagnosis. This is your invitation to help engineer the cure. An informed citizen who disagrees is infinitely better than an ignorant one who agrees. That's not just democracy—that's advanced democracy.</p>
+                <a href="https://forms.gle/D8KZqnRPYA7e3b2f6" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="margin-top: 1rem;">Apply to Join The Pilot</a>
+                <p style="margin-top: 1rem; font-size: 1rem; color: var(--secondary-color); font-weight: 600;">Priority Deadline: August 15, 2025</p>
+                <p style="margin-top: 0.5rem; font-size: 0.9rem;">Applications are reviewed on a rolling basis. You'll be notified within 7 days.</p>
             </div>
         </section>
     </main>
 
     <footer>
         <div class="footer-content">
-            <div class="footer-section">
-                <h4>Explore</h4>
-                <ul class="footer-links">
-                    <li><a href="#resources">Educational Resources</a></li>
-                    <li><a href="#tools">Assessment Tools</a></li>
-                    <li><a href="#community">Community Forums</a></li>
-                    <li><a href="#journey">Case Studies</a></li>
-                </ul>
+            <p style="font-family: 'Playfair Display', serif; font-size: 1.2rem;">The Political Evolution Project</p>
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year"></span> The Political Evolution Project</p>
+                <a href="mailto:Carrie@politicalevolutionproject.org" class="footer-email">Carrie@politicalevolutionproject.org</a>
             </div>
-            <div class="footer-section">
-                <h4>Learn</h4>
-                <ul class="footer-links">
-                    <li><a href="#about">What is Neoliberalism?</a></li>
-                    <li><a href="#pathways">Understanding Abundance</a></li>
-                    <li><a href="#journey">Political Evolution Theory</a></li>
-                    <li><a href="#resources">Research Methods</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h4>Connect</h4>
-                <ul class="footer-links">
-                    <li><a href="#">Newsletter Signup</a></li>
-                    <li><a href="#community">Local Groups</a></li>
-                    <li><a href="#">Social Media</a></li>
-                    <li><a href="mailto:carrie@politicalevolutionproject.org">Contact Us</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h4>Support</h4>
-                <ul class="footer-links">
-                    <li><a href="#">Donate</a></li>
-                    <li><a href="#">Volunteer</a></li>
-                    <li><a href="#">Share Resources</a></li>
-                    <li><a href="#">Start a Local Chapter</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>
-                <span class="footer-quote">"Your labor has value. Your voice matters. You deserve organizing opportunities that empower rather than exploit you."</span>
-                <span class="footer-quote-author">— Carrie Clendening</span>
-            </p>
-            <p style="margin-top: 1rem;">© <span id="current-year"></span> Political Evolution Project. All resources freely available under Creative Commons.</p>
         </div>
     </footer>
+
     <script>
         // --- Hamburger Menu Functionality ---
         const hamburger = document.querySelector('.hamburger');
@@ -1169,97 +551,12 @@
             hamburger.classList.toggle('active');
             navLinks.classList.toggle('active');
         });
-        document.querySelectorAll('.nav-links li a').forEach(link => {
+        document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', () => {
                 hamburger.classList.remove('active');
                 navLinks.classList.remove('active');
             });
         });
-
-        // --- Tab Functionality ---
-        function showTab(event, tabName) {
-            const tabButtons = document.querySelectorAll('.tab-button');
-            const tabPanels = document.querySelectorAll('.tab-content');
-            tabPanels.forEach(panel => {
-                panel.classList.remove('active');
-                panel.setAttribute('hidden', true);
-            });
-            tabButtons.forEach(button => {
-                button.classList.remove('active');
-                button.setAttribute('aria-selected', false);
-                button.setAttribute('tabindex', -1);
-            });
-            document.getElementById('panel-' + tabName).classList.add('active');
-            document.getElementById('panel-' + tabName).removeAttribute('hidden');
-            event.currentTarget.classList.add('active');
-            event.currentTarget.setAttribute('aria-selected', true);
-            event.currentTarget.setAttribute('tabindex', 0);
-        }
-
-        // --- Assessment Calculators ---
-        function calculateExploitation() {
-            const hours = document.getElementById('hours-slider').value;
-            const professional = document.getElementById('professional-slider').value;
-            const power = document.getElementById('power-slider').value;
-            const exploitationScore = (hours * 0.3) + (professional * 0.4) + ((100 - power) * 0.3);
-            let result, color, action, resources;
-            if (exploitationScore < 30) {
-                result = 'Your organizing relationship appears relatively balanced.';
-                color = '#27ae60';
-                action = 'Continue monitoring and advocating for fair treatment.';
-                resources = ['Alternative Models Library', 'Coalition Building Framework'];
-            } else if (exploitationScore < 60) {
-                result = 'You may be experiencing some exploitation.';
-                color = '#f39c12';
-                action = 'Consider setting stronger boundaries and requesting fair compensation.';
-                resources = ['Understanding Emotional Labor Guide', 'Boundary Setting Scripts'];
-            } else {
-                result = 'High likelihood of exploitation in your organizing work.';
-                color = '#e74c3c';
-                action = 'Your labor deserves fair compensation and real power. Consider alternatives.';
-                resources = ['Exploitation Assessment Tool', 'Power Mapping Templates'];
-            }
-            document.getElementById('exploitation-result').innerHTML = `
-                <div style="padding: 1.5rem; background: ${color}20; border-left: 4px solid ${color}; border-radius: 8px; margin-top: 1rem;">
-                    <h4 style="color: ${color}; margin-bottom: 0.5rem; font-family: 'Playfair Display', serif;">Assessment Result</h4>
-                    <p style="margin-bottom: 1rem;">${result}</p>
-                    <p style="margin-top: 1rem;"><strong>Recommended Action:</strong> ${action}</p>
-                    <p style="margin-top: 1rem;"><strong>Suggested Resources:</strong></p>
-                    <ul style="margin: 0.5rem 0; padding-left: 1.5rem;">${resources.map(r => `<li>${r}</li>`).join('')}</ul>
-                    <a href="#resources" class="btn" style="margin-top: 1rem; background-color:${color}; color:white;">Access Resources</a>
-                </div>`;
-        }
-        function calculateEvolution() {
-            const collaboration = document.getElementById('collaboration-slider').value;
-            const openness = document.getElementById('openness-slider').value;
-            const abundance = document.getElementById('abundance-slider').value;
-            const evolutionScore = (parseInt(collaboration) + parseInt(openness) + parseInt(abundance)) / 3;
-            let result, color, next, pathway;
-            if (evolutionScore < 35) {
-                result = 'Your community is in early stages of political evolution, likely focused on traditional organizing.';
-                color = '#e74c3c';
-                next = 'Start by building awareness and fostering dialogue.';
-                pathway = 'Recognition Path';
-            } else if (evolutionScore < 70) {
-                result = 'Your community shows potential for evolution, with some openness to new ideas.';
-                color = '#f39c12';
-                next = 'Connect with other innovators and start small-scale experiments.';
-                pathway = 'Understanding Path';
-            } else {
-                result = 'Your community is primed for transformative change and collaborative action.';
-                color = '#27ae60';
-                next = 'Build and scale alternative models of organizing.';
-                pathway = 'Transformation Path';
-            }
-            document.getElementById('evolution-result').innerHTML = `
-                 <div style="padding: 1.5rem; background: ${color}20; border-left: 4px solid ${color}; border-radius: 8px; margin-top: 1rem;">
-                    <h4 style="color: ${color}; margin-bottom: 0.5rem; font-family: 'Playfair Display', serif;">Assessment Result</h4>
-                    <p style="margin-bottom: 1rem;">${result}</p>
-                    <p style="margin-top: 1rem;"><strong>Next Step:</strong> ${next}</p>
-                     <p style="margin-top: 1rem;"><strong>Suggested Learning:</strong> ${pathway}</p>
-                    <a href="#pathways" class="btn" style="margin-top: 1rem; background-color:${color}; color:white;">Explore Learning Paths</a>
-                </div>`;
-        }
         
         // Set current year in the footer
         document.getElementById('current-year').textContent = new Date().getFullYear();
