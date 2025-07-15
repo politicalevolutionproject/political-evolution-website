@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Political Evolution Project | From Exploitation to Evolution</title>
-    <meta name="description" content="A 12-week pilot curriculum to build the political future we need. Facilitated by Carrie Clendening.">
+    <meta name="description" content="A 12-week pilot curriculum to build the political future we need. Stop being political prey. Start being a political predator. Facilitated by Carrie Clendening.">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -62,6 +62,13 @@
         h3 { font-size: 1.8rem; }
         h4 { font-size: 1.2rem; margin-bottom: 10px; color: var(--primary-color);}
         p { margin-bottom: 1rem; }
+        
+        .tagline {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--secondary-color);
+            margin: 20px 0;
+        }
 
         /* --- HEADER & NAVIGATION --- */
         .main-header {
@@ -183,6 +190,20 @@
             opacity: 0;
             animation: slideIn 1s ease-out 0.5s both;
         }
+        .evolution-stages {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+        .stage {
+            text-align: center;
+            padding: 20px;
+        }
+        .stage h4 {
+            color: var(--secondary-color);
+            margin-bottom: 10px;
+        }
         @keyframes slideIn {
             from {
                 opacity: 0;
@@ -192,6 +213,39 @@
                 opacity: 1;
                 transform: translateX(0);
             }
+        }
+
+        /* --- BENEFITS SECTION --- */
+        #benefits {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #1a4a6b 100%);
+            color: var(--light-text-color);
+        }
+        #benefits h2, #benefits h3 {
+            color: var(--light-text-color);
+        }
+        .benefit-ecosystem {
+            margin-top: 40px;
+        }
+        .benefit-block {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 25px;
+            border-radius: 12px;
+            border-left: 5px solid var(--secondary-color);
+            backdrop-filter: blur(10px);
+            margin-bottom: 25px;
+            transition: all 0.3s ease;
+        }
+        .benefit-block:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateX(10px);
+        }
+        .evolution-note {
+            text-align: center;
+            font-style: italic;
+            margin-top: 40px;
+            padding: 20px;
+            background: rgba(179, 139, 0, 0.2);
+            border-radius: 8px;
         }
 
         /* --- CURRICULUM SECTION --- */
@@ -267,32 +321,23 @@
             letter-spacing: 1px;
         }
 
-        /* --- BENEFITS SECTION --- */
-        #benefits {
-            background: linear-gradient(135deg, var(--primary-color) 0%, #1a4a6b 100%);
-            color: var(--light-text-color);
+        /* --- ABOUT SECTION --- */
+        #about {
+            background: #f8f9fa;
         }
-        #benefits h2 {
-            color: var(--light-text-color);
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
         }
-        #benefits ul {
-            list-style: none;
-            margin-top: 40px;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-        }
-        #benefits li {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 25px;
-            border-radius: 12px;
-            border-left: 5px solid var(--secondary-color);
-            backdrop-filter: blur(10px);
-            transition: all 0.3s ease;
-        }
-        #benefits li:hover {
-            background: rgba(255, 255, 255, 0.15);
-            transform: translateX(10px);
+        .pull-quote {
+            font-size: 1.3rem;
+            font-style: italic;
+            color: var(--secondary-color);
+            margin: 30px 0;
+            padding: 20px;
+            border-left: 4px solid var(--secondary-color);
+            text-align: left;
         }
 
         /* --- FACILITATOR & APPLICATION --- */
@@ -409,6 +454,9 @@
             .journey-arrow {
                 font-size: 1.5rem;
             }
+            .evolution-stages {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -416,9 +464,10 @@
 
     <header class="main-header">
         <div class="container">
-            <a href="#" class="logo">Political Evolution Project</a>
+            <a href="#" class="logo">The Political Evolution Project</a>
             <nav class="main-nav">
                 <ul>
+                    <li><a href="#about">About</a></li>
                     <li><a href="#curriculum">Curriculum</a></li>
                     <li><a href="#facilitator">Facilitator</a></li>
                     <li><a href="#apply">Apply</a></li>
@@ -433,57 +482,135 @@
         <section id="hero">
             <div class="container">
                 <h1>From Exploitation to Evolution</h1>
-                <p>A 12-week virtual program designed to give you the tools, knowledge, and community to build the political future we need. Stop organizing from a place of frustration and start building from a place of power.</p>
+                <p class="tagline">Stop Being Political Prey. Start Being a Political Predator.</p>
+                <p>Welcome to the 12-week virtual program that transforms political rage into strategic power. We're not here to play nice with a system designed to extract your passion like fossil fuels. We're here to evolve past it entirely.</p>
+                <p style="font-size: 1.1rem; font-style: italic;">Currently burning out on a campaign that treats you like disposable batteries? There's a better way.</p>
                 <a href="#apply" class="btn">Apply for the Fall 2025 Cohort</a>
             </div>
         </section>
 
         <section id="overview">
             <div class="container">
-                <h2>A New Path Forward</h2>
-                <p style="text-align:center; max-width:800px; margin: 0 auto 40px auto;">Our political system feels broken because it's designed to extract resources, not empower people. This program follows a proven path to reclaim your agency and build effective, sustainable political power.</p>
+                <h2>Your Political Evolution Starts Here</h2>
+                <p style="text-align:center; max-width:800px; margin: 0 auto 20px auto;">Think of our political system like a badly designed video game where the NPCs have all the power and the actual players are stuck grinding for XP that never converts to real change. The house always wins because the house wrote the rules. Until now.</p>
+                
+                <p style="text-align:center; max-width:800px; margin: 0 auto 40px auto;">This isn't another "how to win elections" workshop taught by people who've never questioned why we're playing this rigged game in the first place. This is evolutionary biology meets political strategy—Darwin meets Machiavelli at a dive bar and they decide to flip the table.</p>
+                
                 <div class="journey-arrow">
                     Recognize &rarr; Understand &rarr; Connect &rarr; Experiment &rarr; Build
+                </div>
+                
+                <div class="evolution-stages">
+                    <div class="stage">
+                        <h4>Recognize</h4>
+                        <p>See the extraction matrix for what it is</p>
+                    </div>
+                    <div class="stage">
+                        <h4>Understand</h4>
+                        <p>Decode the operating system of power</p>
+                    </div>
+                    <div class="stage">
+                        <h4>Connect</h4>
+                        <p>Find your political pack</p>
+                    </div>
+                    <div class="stage">
+                        <h4>Experiment</h4>
+                        <p>Test new models in the wild</p>
+                    </div>
+                    <div class="stage">
+                        <h4>Build</h4>
+                        <p>Create systems that actually work</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about">
+            <div class="container">
+                <h2>Why This Program Exists</h2>
+                <div class="about-content">
+                    <p>Let's be brutally honest: The current political system isn't broken—it's working exactly as designed. It's a resource extraction operation that mines human hope like Bitcoin, leaving organizers exhausted and communities powerless while consultants cash checks.</p>
+                    
+                    <div class="pull-quote">
+                        "After watching too many brilliant organizers burn out trying to fix a system that feeds on their exhaustion, I realized we don't need better tactics. We need a whole new species of political engagement."
+                    </div>
+                    
+                    <p>This program emerged from a simple observation: The most effective political operators aren't the ones shouting the loudest or working the hardest. They're the ones who understand the ecosystem well enough to hack it. Think of it as political biomimicry—learning from the organisms that have already evolved past predation.</p>
+                    
+                    <p>We're not here to teach you how to be a better cog in the machine. We're here to show you how to build entirely new machines. Or better yet, organic systems that don't need machines at all.</p>
                 </div>
             </div>
         </section>
         
         <section id="benefits">
              <div class="container">
-                <h2>What You'll Receive as a Participant</h2>
-                <ul>
-                    <li>12 weeks of intensive, expert-led virtual sessions designed for real-world application.</li>
-                    <li>A dedicated cohort of 25 passionate peers from diverse backgrounds to end political isolation.</li>
-                    <li>A comprehensive library of practical tools, templates, and guides you won't find anywhere else.</li>
-                    <li><strong>A pre-program "Flight Manual"</strong> with foundational resources to help you hit the ground running before Week 1.</li>
-                    <li>Hands-on experience developing and launching your own <strong>Political Micro-Experiment</strong>.</li>
-                    <li>Lifetime access to the Political Evolution Project alumni network for ongoing collaboration.</li>
-                </ul>
+                <h2>Your Political Evolution Starter Pack</h2>
+                
+                <p style="text-align:center; color: var(--light-text-color); max-width:800px; margin: 0 auto 40px auto;">Think of this program as CrossFit for democracy—except instead of flipping tires, you're flipping power structures. Here's what you get when you join our political petri dish:</p>
+                
+                <div class="benefit-ecosystem">
+                    <div class="benefit-block">
+                        <h3>The Hive Mind Effect</h3>
+                        <p><strong>12 weeks of intensive virtual sessions</strong> where we dissect the political genome like it's a particularly fascinating episode of Westworld. Each session builds on the last, creating compound knowledge interest that would make Warren Buffett jealous.</p>
+                    </div>
+                    
+                    <div class="benefit-block">
+                        <h3>The Anti-Isolation Protocol</h3>
+                        <p><strong>Your personal political pod of 25 fellow travelers</strong>—think Ocean's Eleven meets The Breakfast Club, but for dismantling extractive systems. Political organizing in isolation is like trying to play Among Us solo. Spoiler: it doesn't work.</p>
+                    </div>
+                    
+                    <div class="benefit-block">
+                        <h3>The Toolkit That Actually Works</h3>
+                        <p><strong>A comprehensive library of battle-tested resources</strong> that's basically the political equivalent of Tony Stark's workshop. No more cobbling together strategies from Twitter threads and hope.</p>
+                    </div>
+                    
+                    <div class="benefit-block">
+                        <h3>Pre-Game Power-Up</h3>
+                        <p><strong>The "Flight Manual"</strong>—your pre-program care package that ensures you don't show up to Week 1 like someone who just discovered fire while everyone else is building rockets. Consider it your political primer, minus the condescension.</p>
+                    </div>
+                    
+                    <div class="benefit-block">
+                        <h3>Your Political Laboratory</h3>
+                        <p><strong>Design and launch your own Political Micro-Experiment</strong>—because theory without practice is just expensive talk. This is where you test your political hypotheses in the real world, like a scientific method for democracy.</p>
+                    </div>
+                    
+                    <div class="benefit-block">
+                        <h3>The Network Effect (But Make It Political)</h3>
+                        <p><strong>Lifetime alumni access</strong> because political evolution doesn't stop at Week 12. It's like LinkedIn, if LinkedIn actually helped you dismantle oppressive power structures instead of just endorsing you for "Microsoft Office."</p>
+                    </div>
+                </div>
+                
+                <p class="evolution-note">Remember: In the political ecosystem, it's not the strongest or the loudest who survive—it's the most strategically connected. Welcome to your evolutionary advantage.</p>
              </div>
         </section>
 
         <section id="curriculum">
             <div class="container">
-                <h2>The 12-Week Journey</h2>
+                <h2>The 12-Week Metamorphosis</h2>
+                <p style="text-align:center; max-width:800px; margin: 0 auto 40px auto;">Each phase of this journey is designed to systematically deprogram you from extraction-based politics and rebuild your understanding from the cellular level up. Think of it as a political detox followed by strategic steroids.</p>
+                
                 <div class="phase-grid">
 
                     <div class="phase">
                         <div class="phase-header">
                             <h3>PHASE 1: RECOGNITION (Weeks 1-3)</h3>
-                            <p class="phase-tagline">"Seeing the Matrix: How Political Extraction Actually Works"</p>
+                            <p class="phase-tagline">"Red Pill Time: Seeing the Extraction Matrix"</p>
                         </div>
                         <div class="week-grid">
                             <div class="week-card">
-                                <p class="week-number">Week 1</p><h4>Orientation & Political Ecosystem Mapping</h4>
-                                <p>Why everything you've been told is wrong and how to map your place in the current system.</p>
+                                <p class="week-number">Week 1</p>
+                                <h4>The Great Political Unplugging</h4>
+                                <p>We start by torching everything you think you know about politics. Map your position in the extraction ecosystem and discover why your well-meaning efforts keep feeding the beast you're trying to slay. Spoiler: The call is coming from inside the house.</p>
                             </div>
                             <div class="week-card">
-                                <p class="week-number">Week 2</p><h4>Following the Money</h4>
-                                <p>Decode political finance with an FEC deep dive and learn to read the tea leaves of power.</p>
+                                <p class="week-number">Week 2</p>
+                                <h4>Follow the Money (With Forensic Accounting)</h4>
+                                <p>Deep dive into FEC data like we're auditing the Matrix itself. Learn to read political finance reports like tea leaves that actually predict the future. By the end, you'll spot dark money patterns faster than a Bloomberg terminal.</p>
                             </div>
                             <div class="week-card">
-                                <p class="week-number">Week 3</p><h4>Geographic Extraction</h4>
-                                <p>Understand why your community was written off and how "strategic" resource allocation really works.</p>
+                                <p class="week-number">Week 3</p>
+                                <h4>The Geography of Abandonment</h4>
+                                <p>Decode why your community became a "sacrifice zone" in the grand political chess game. We'll map the extraction patterns that turned your hometown into a resource colony for coastal consultants. (Hint: It's not an accident.)</p>
                             </div>
                         </div>
                     </div>
@@ -491,20 +618,23 @@
                     <div class="phase">
                         <div class="phase-header">
                            <h3>PHASE 2: UNDERSTANDING (Weeks 4-6)</h3>
-                           <p class="phase-tagline">"The System Behind the System: How Power Really Works"</p>
+                           <p class="phase-tagline">"The Operating System: How Power Actually Compiles"</p>
                         </div>
                         <div class="week-grid">
                             <div class="week-card">
-                                <p class="week-number">Week 4</p><h4>Neoliberalism Demystified</h4>
-                                <p>Learn the invisible doctrine that makes everything feel like a business and explore abundance-based alternatives.</p>
+                                <p class="week-number">Week 4</p>
+                                <h4>Neoliberalism: The Invisible OS Running Everything</h4>
+                                <p>Finally understand why everything feels like a LinkedIn post written by a venture capitalist. We'll decode the economic theology that turned citizens into customers and democracy into a market failure. Plus: abundance-based alternatives that don't suck.</p>
                             </div>
                             <div class="week-card">
-                                <p class="week-number">Week 5</p><h4>Power Mapping Like a Pro</h4>
-                                <p>Go beyond the obvious players to map who really runs your community and clarify your own theory of change.</p>
+                                <p class="week-number">Week 5</p>
+                                <h4>Power Mapping Like a CIA Analyst</h4>
+                                <p>Move beyond the obvious puppets to identify the actual puppet masters. Build multidimensional power maps that would make string theory physicists jealous. Bonus: Clarify your own theory of change (beyond "hope something works").</p>
                             </div>
                             <div class="week-card">
-                                <p class="week-number">Week 6</p><h4>Modern Organizing Technology</h4>
-                                <p>Discover the data and tech tools that actually work, moving your strategy beyond hope and prayers.</p>
+                                <p class="week-number">Week 6</p>
+                                <h4>Tech Stack for the Revolution</h4>
+                                <p>Discover the actual tools that work, not the ones sold by "political tech" grifters. From data management to distributed organizing, we'll build your technical arsenal. Warning: May cause allergic reactions to NGP VAN.</p>
                             </div>
                         </div>
                     </div>
@@ -512,17 +642,18 @@
                     <div class="phase">
                          <div class="phase-header">
                            <h3>PHASE 3: CONNECTION (Weeks 7-8)</h3>
-                           <p class="phase-tagline">"Finding Your People: Building Coalition Across Traditional Boundaries"</p>
+                           <p class="phase-tagline">"Pack Formation: Building Your Political Wolf Pack"</p>
                         </div>
                         <div class="week-grid">
                             <div class="week-card">
                                 <p class="week-number">Week 7</p>
-                                <h4>Finding Strange Bedfellows: The Art of Issue-Based Coalitions</h4>
-                                <p>A deep dive into building effective alliances, focusing on shared goals and strategic collaboration.</p>
+                                <h4>Strange Bedfellows & Strategic Alliances</h4>
+                                <p>Learn to build coalitions that would make The Avengers look homogeneous. Master the art of finding common ground with people you'd normally block on Twitter. Sometimes your best ally is the enemy of your enemy's enemy. (Yes, the math checks out.)</p>
                             </div>
                             <div class="week-card">
-                                <p class="week-number">Week 8</p><h4>Community Building & Sustainable Organizing</h4>
-                                <p>Learn anti-exploitation practices to build movements and community without burning out.</p>
+                                <p class="week-number">Week 8</p>
+                                <h4>Sustainable Organizing (Not an Oxymoron)</h4>
+                                <p>Build movements that don't cannibalize their own organizers. Learn anti-extraction practices that create energy instead of depleting it. Think permaculture principles applied to political organizing. Your burnout is not a badge of honor.</p>
                             </div>
                         </div>
                     </div>
@@ -530,17 +661,18 @@
                     <div class="phase">
                          <div class="phase-header">
                            <h3>PHASE 4: EXPERIMENTATION (Weeks 9-10)</h3>
-                           <p class="phase-tagline">"Testing New Models: What Works in the Real World"</p>
+                           <p class="phase-tagline">"Beta Testing Democracy: Your Political Petri Dish"</p>
                         </div>
                         <div class="week-grid">
                             <div class="week-card">
                                 <p class="week-number">Week 9</p>
                                 <h4>Designing Your Political Micro-Experiment</h4>
-                                <p>Develop a small-scale, testable action to apply your learnings and generate new insights.</p>
+                                <p>Time to get your hands dirty. Design a small-scale intervention that tests your new understanding. Think "minimum viable campaign" meets "chaos theory." We'll help you craft something that's ambitious enough to matter but small enough to actually work.</p>
                             </div>
                             <div class="week-card">
-                                <p class="week-number">Week 10</p><h4>Implementation & Troubleshooting</h4>
-                                <p>Move your plan to action with practical strategies for implementation and problem-solving.</p>
+                                <p class="week-number">Week 10</p>
+                                <h4>Deployment & Debugging</h4>
+                                <p>Launch your experiment into the wild and learn to troubleshoot in real-time. This is where theory meets the beautiful messiness of actual humans. Expect plot twists. Embrace the chaos. Document everything.</p>
                             </div>
                         </div>
                     </div>
@@ -548,16 +680,18 @@
                     <div class="phase">
                          <div class="phase-header">
                            <h3>PHASE 5: BUILDING (Weeks 11-12)</h3>
-                           <p class="phase-tagline">"Creating the Future: Sustainable Change That Lasts"</p>
+                           <p class="phase-tagline">"Emergence: From Experiments to Ecosystems"</p>
                         </div>
                         <div class="week-grid">
                             <div class="week-card">
-                                <p class="week-number">Week 11</p><h4>Progress Reports & Iteration</h4>
-                                <p>Learn from doing by honestly assessing progress and adjusting your strategy based on real-world feedback.</p>
+                                <p class="week-number">Week 11</p>
+                                <h4>Autopsy of an Experiment</h4>
+                                <p>Conduct a forensic analysis of what worked, what exploded, and what surprised you. Learn the art of failing forward fast. This is where we separate correlation from causation and hope from strategy.</p>
                             </div>
                              <div class="week-card">
-                                <p class="week-number">Week 12</p><h4>Celebration & Future Planning</h4>
-                                <p>Showcase the learnings from your micro-experiment and chart the course for your (and our) next steps.</p>
+                                <p class="week-number">Week 12</p>
+                                <h4>From Prototype to Ecosystem</h4>
+                                <p>Present your findings to the hive mind and collectively chart next steps. This isn't a graduation—it's a beginning. Leave with concrete plans to scale what works and a network that actually has your back.</p>
                             </div>
                         </div>
                     </div>
@@ -568,12 +702,16 @@
         
         <section id="facilitator">
             <div class="container">
-                <h2>Meet Your Facilitator</h2>
+                <h2>Meet Your Guide Through the Political Wilderness</h2>
                 <div class="bio-wrapper">
                     <img src="https://raw.githubusercontent.com/politicalevolutionproject/political-evolution-website/main/image.png" alt="Portrait of Carrie Clendening">
                     <div>
                         <h3>Carrie Clendening</h3>
-                        <p>Carrie is a political educator and strategist who went from being a nonpartisan observer to a "political education dealer." Frustrated by an ecosystem that thrives on exploiting the passion of organizers and activists, she created the Political Evolution Project to equip a new generation of leaders with the practical skills and strategic understanding the establishment won't teach them. Her work is informed by years of experience in West Virginia and beyond, learning from both allies and adversaries what it truly takes to build lasting power.</p>
+                        <p>Part political strategist, part systems theorist, full-time troublemaker. Carrie spent years as a "nonpartisan observer" (translation: professional political voyeur) before evolving into what she calls a "political education dealer"—someone who distributes the good stuff the establishment doesn't want you to have.</p>
+                        
+                        <p>After watching too many brilliant organizers get chewed up and spit out by an ecosystem that runs on their exhaustion, she decided to stop playing by the rules of a rigged game. The Political Evolution Project is her answer to the question: "What if we taught people how power actually works instead of how we wish it worked?"</p>
+                        
+                        <p>Based in West Virginia (yes, that West Virginia—where political extraction is both metaphorical and literal), she's learned from coal miners and consultants alike that the real divide isn't left versus right—it's extractors versus everyone else. Her superpower? Translating political dark arts into language that doesn't require a PhD in cynicism to understand.</p>
                     </div>
                 </div>
             </div>
@@ -581,36 +719,43 @@
 
         <section id="apply">
             <div class="container">
-                <h2>Apply for the Fall 2025 Cohort</h2>
-                <p><strong>Duration:</strong> September 7 - November 23, 2025<br>
-                <strong>Format:</strong> Weekly 90-minute virtual sessions + independent work<br>
-                <strong>Investment:</strong> FREE (pilot program)
+                <h2>Ready to Evolve?</h2>
+                <p style="font-size: 1.2rem; text-align:center; margin-bottom: 30px;">Join the Fall 2025 Cohort of Political Evolutionaries</p>
+                
+                <p><strong>When:</strong> September 7 - November 23, 2025<br>
+                <strong>Format:</strong> Weekly 90-minute virtual sessions (because we respect your time) + self-directed experiments<br>
+                <strong>Investment:</strong> FREE for this pilot cohort (because knowledge hoarding is so extractive economy)<br>
+                <strong>Commitment:</strong> Your full presence and willingness to experiment
                 </p>
 
                 <div class="apply-note">
-                     <p>To help us build a committed and collaborative pilot cohort, our application includes several short questions about your political experiences and your goals for this program. This helps ensure everyone is ready to engage with the curriculum's depth and contribute to the community.</p>
+                     <p><strong>A note on our application:</strong> We're not looking for the "right" answers or the perfect resume. We're looking for people ready to question everything and build something better. Our application asks about your experiences with political frustration (we all have them), what systems you want to hack, and what kind of political future you're trying to build. No performative wokeness required—just honest assessment of where you are and where you want to go.</p>
                 </div>
                 
-                <p>Applications are now open. We are accepting submissions until August 31, 2025.</p>
-                <a href="https://forms.gle/pqpZqvDPp3PkPcyx6" class="btn">Begin Your Application</a>
+                <p style="text-align:center; font-style:italic; margin: 30px 0;">Applications close August 31, 2025. Cohort limited to 25 evolutionaries.</p>
+                
+                <div style="text-align:center;">
+                    <a href="https://forms.gle/pqpZqvDPp3PkPcyx6" class="btn">Begin Your Application</a>
+                    <p style="margin-top: 20px; font-size: 0.9rem; opacity: 0.8;">Average completion time: 15-20 minutes of radical honesty</p>
+                </div>
             </div>
         </section>
         
         <section id="metrics">
             <div class="container">
-                <h2>Measuring Success</h2>
+                <h2>How We Define Success<br><span style="font-size: 1.2rem; font-weight: normal;">(Spoiler: It's Not About Electoral Wins)</span></h2>
                 <div class="metrics-grid">
                     <div class="metric-card">
-                        <h4>Individual Success</h4>
-                        <p>Increased political confidence, development of practical skills, and implementation of a personal political micro-experiment.</p>
+                        <h4>Individual Evolution</h4>
+                        <p>You'll leave knowing how to read power like source code, build without burning out, and run experiments that actually teach you something. Success = becoming politically dangerous in the best way.</p>
                     </div>
                     <div class="metric-card">
-                        <h4>Cohort Success</h4>
-                        <p>High retention (85%+), formation of a mutual support network, and collaborative resource creation.</p>
+                        <h4>Collective Intelligence</h4>
+                        <p>85%+ cohort retention (because FOMO is real when the content is this good), active resource sharing, and the formation of a mutual aid network that actually aids mutually.</p>
                     </div>
                     <div class="metric-card">
-                        <h4>Project Success</h4>
-                        <p>An effective, replicable curriculum model and documentary evidence of political evolution in action.</p>
+                        <h4>Systemic Impact</h4>
+                        <p>A replicable model for political education that doesn't suck, documented proof that alternative approaches work, and a growing network of people building power outside traditional channels.</p>
                     </div>
                 </div>
             </div>
@@ -620,7 +765,9 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 The Political Evolution Project. All Rights Reserved.<br>carrie@politicalevolutionproject.org.</p>
+            <p>&copy; 2025 The Political Evolution Project. All Rights Reserved.<br>
+            Built in West Virginia. For everywhere.<br>
+            carrie@politicalevolutionproject.org</p>
         </div>
     </footer>
     
@@ -634,7 +781,7 @@
 
         // Add scroll animations
         const observeElements = () => {
-            const elements = document.querySelectorAll('.phase, .metric-card');
+            const elements = document.querySelectorAll('.phase, .metric-card, .benefit-block');
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
