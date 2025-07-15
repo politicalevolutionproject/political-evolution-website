@@ -3,841 +3,663 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Political Evolution Project</title>
+    <title>Political Evolution Project | From Exploitation to Evolution</title>
+    <meta name="description" content="A 12-week pilot curriculum to build the political future we need. Facilitated by Carrie Clendening.">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        /* --- Base Styles and Variables --- */
-        :root {
-            --primary-color: #2c3e50;
-            --secondary-color: #e74c3c;
-            --accent-color: #3498db;
-            --evolution-color: #27ae60;
-            --light-bg: #ecf0f1;
-            --text-dark: #2c3e50;
-            --text-light: #5d6d7e;
-            --warm-neutral: #bdc3c7;
-            --gradient-1: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
-        }
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<style>
+    /* --- CUSTOMIZABLE VARIABLES --- */
+    :root {
+        --primary-color: #0d2c4b; /* Dark Blue */
+        --secondary-color: #b38b00; /* Muted Gold */
+        --background-color: #f8f9fa;
+        --text-color: #343a40;
+        --light-text-color: #ffffff;
+        --header-font: 'Playfair Display', serif;
+        --body-font: 'Source Sans Pro', sans-serif;
+    }
 
-        html {
-            scroll-behavior: smooth;
-            font-size: 115%; /* Adjusted for optimal readability */
-        }
+    /* --- GENERAL STYLES & RESETS --- */
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+    html {
+        scroll-behavior: smooth;
+    }
+    body {
+        font-family: var(--body-font);
+        color: var(--text-color);
+        background-color: var(--background-color);
+        line-height: 1.6;
+    }
 
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            line-height: 1.7;
-            color: var(--text-light);
-            background-color: #ffffff;
-            font-weight: 400;
-        }
+    /* --- LAYOUT & CONTAINERS --- */
+    .container {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+    section {
+        padding: 80px 0;
+    }
+    section:nth-child(even) {
+        background-color: #ffffff;
+    }
 
-        /* Typography */
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Playfair Display', Georgia, serif;
-            font-weight: 700;
-            line-height: 1.2;
-            letter-spacing: -0.5px;
-            color: var(--primary-color);
-        }
+    /* --- TYPOGRAPHY --- */
+    h1, h2, h3, h4 {
+        font-family: var(--header-font);
+        color: var(--primary-color);
+        margin-bottom: 20px;
+    }
+    h1 { font-size: 3.5rem; line-height: 1.2; }
+    h2 { font-size: 2.5rem; text-align: center; }
+    h3 { font-size: 1.8rem; }
+    h4 { font-size: 1.2rem; margin-bottom: 10px; color: var(--primary-color);}
+    p { margin-bottom: 1rem; }
 
-        p {
-            margin-bottom: 1.25rem;
-        }
-        p:last-child {
-            margin-bottom: 0;
-        }
-        
-        h2 + p {
-            font-size: 1.1rem;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-            margin-bottom: 2.5rem;
-        }
+    /* --- HEADER & NAVIGATION --- */
+    .main-header {
+        background: #fff;
+        padding: 1rem 0;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 100;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .main-header .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .logo {
+        font-family: var(--header-font);
+        font-size: 1.5rem;
+        color: var(--primary-color);
+        text-decoration: none;
+    }
+    .main-nav ul {
+        display: flex;
+        list-style: none;
+    }
+    .main-nav a {
+        color: var(--primary-color);
+        text-decoration: none;
+        padding: 0.5rem 1rem;
+        font-weight: 600;
+        transition: color 0.3s ease;
+    }
+    .main-nav a:hover {
+        color: var(--secondary-color);
+    }
 
-        /* --- Header and Navigation --- */
-        header {
-            background: white;
-            color: var(--text-dark);
-            padding: 0.5rem 0; /* Adjusted padding for logo */
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(44, 62, 80, 0.1);
-            transition: background-color 0.3s;
-        }
+    /* --- HERO SECTION --- */
+    #hero {
+        background: linear-gradient(135deg, var(--primary-color) 0%, #1a4a6b 100%);
+        color: var(--light-text-color);
+        padding-top: 180px;
+        padding-bottom: 120px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+    }
+    #hero::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(45deg, rgba(179, 139, 0, 0.1) 0%, transparent 100%);
+        pointer-events: none;
+    }
+    #hero .container {
+        position: relative;
+        z-index: 2;
+    }
+    #hero h1, #hero h2 {
+        color: var(--light-text-color);
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    }
+    #hero h1 {
+        margin-bottom: 30px;
+        animation: fadeInUp 1s ease-out;
+    }
+    #hero p {
+        font-size: 1.2rem;
+        max-width: 700px;
+        margin: 0 auto 30px auto;
+        opacity: 0.95;
+        animation: fadeInUp 1s ease-out 0.3s both;
+    }
+    .btn {
+        display: inline-block;
+        background: var(--secondary-color);
+        color: #fff;
+        padding: 15px 35px;
+        text-decoration: none;
+        border-radius: 8px;
+        font-weight: 700;
+        font-size: 1.1rem;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(179, 139, 0, 0.3);
+        animation: fadeInUp 1s ease-out 0.6s both;
+    }
+    .btn:hover {
+        background: #cca300;
+        transform: translateY(-3px);
+        box-shadow: 0 6px 20px rgba(179, 139, 0, 0.4);
+    }
 
-        nav {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+    /* --- INITIAL LOAD ANIMATIONS --- */
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
         }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-            gap: 0.75rem;
-        }
-        
-        .logo-svg {
-            height: 50px;
-            width: 50px;
-        }
-
-        .logo-text {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.2rem;
-            font-weight: 700;
-            letter-spacing: -0.5px;
-            color: var(--primary-color);
-            line-height: 1.1;
-        }
-
-        .nav-links {
-            list-style: none;
-            display: flex;
-            gap: 2rem;
-            align-items: center;
-        }
-
-        .nav-links a {
-            color: var(--text-dark);
-            text-decoration: none;
-            transition: all 0.3s;
-            font-size: 1rem;
-            font-weight: 600;
-            letter-spacing: 0.5px;
-            position: relative;
-        }
-
-        .nav-links a:not(.apply-btn)::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background-color: var(--accent-color);
-            transition: width 0.3s;
-        }
-
-        .nav-links a:not(.apply-btn):hover::after {
-            width: 100%;
-        }
-
-        .nav-links .apply-btn {
-            background: var(--secondary-color);
-            color: white;
-            padding: 0.5rem 1.5rem;
-            border-radius: 20px;
-            box-shadow: 0 2px 5px rgba(231, 76, 60, 0.3);
-        }
-
-        .nav-links .apply-btn:hover {
-            background: #c0392b;
-            transform: translateY(-2px);
-        }
-
-        /* --- Hamburger Menu --- */
-        .hamburger {
-            display: none;
-            cursor: pointer;
-            flex-direction: column;
-            gap: 5px;
-        }
-
-        .hamburger .bar {
-            width: 25px;
-            height: 3px;
-            background-color: var(--text-dark);
-            border-radius: 5px;
-            transition: all 0.3s ease-in-out;
-        }
-
-        /* --- Main Content --- */
-        main {
-            padding-top: 80px; /* Adjusted for header height */
-        }
-
-        .hero {
-            background: var(--gradient-1);
-            color: white;
-            padding: 6rem 2rem;
-            text-align: center;
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1.5rem;
-            color: white;
-        }
-
-        .hero p {
-            font-size: 1.4rem;
-            max-width: 800px;
-            margin: 0 auto 2rem;
-            font-weight: 300;
-            line-height: 1.8;
-        }
-
-        .btn {
-            padding: 1rem 2.5rem;
-            text-decoration: none;
-            border-radius: 30px;
-            font-weight: 700;
-            transition: all 0.3s;
-            display: inline-block;
-            border: none;
-            cursor: pointer;
-            letter-spacing: 0.5px;
-            font-size: 1rem;
-            font-family: 'Inter', sans-serif;
-        }
-
-        .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
-        }
-
-        .btn-primary { background: var(--secondary-color); color: white; }
-
-        /* --- Content Sections --- */
-        .section {
-            padding: 5rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .section-light {
-            background: white;
-        }
-
-        h2 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            text-align: center;
-        }
-
-        h3 {
-            font-size: 2rem;
-            margin: 2rem 0 1rem;
-        }
-
-        .quote-wrapper {
-            margin: 3rem auto;
-            max-width: 800px;
-        }
-
-        .blockquote {
-            padding-left: 2rem;
-            border-left: 4px solid var(--accent-color);
-            font-size: 1.4rem;
-            font-style: italic;
-            font-family: 'Playfair Display', serif;
-            line-height: 1.8;
-            margin: 0;
-        }
-
-        .quote-caption {
-            text-align: right;
-            font-style: normal;
-            font-weight: 600;
-            margin-top: 1rem;
-            color: var(--text-light);
-            font-family: 'Inter', sans-serif;
-        }
-
-        .card-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .card {
-            background: white;
-            padding: 2rem;
-            border-radius: 12px;
-            box-shadow: 0 3px 15px rgba(44, 62, 80, 0.08);
-            border: 1px solid #ecf0f1;
-        }
-        
-        .card h3 {
-            margin-top: 0;
-            color: var(--accent-color);
-        }
-
-        .timeline {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .timeline-item {
-            background: white;
-            padding: 2rem;
-            border-radius: 12px;
-            border-left: 5px solid var(--accent-color);
-            box-shadow: 0 3px 15px rgba(44, 62, 80, 0.08);
-        }
-
-        .timeline-item h3 {
-            margin-top: 0;
-            color: var(--primary-color);
-        }
-
-        .who-is-this-for-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .who-card {
-            padding: 2rem;
-            border-radius: 12px;
-        }
-
-        .who-card.for-you {
-            background: #eafaf1;
-            border: 1px solid #a3d9b8;
-        }
-        .who-card.for-you h3 { color: var(--evolution-color); }
-        .who-card.for-you li::before { content: '✔'; color: var(--evolution-color); margin-right: 0.5rem; }
-
-        .who-card.not-for-you {
-            background: #fdedec;
-            border: 1px solid #f5b7b1;
-        }
-        .who-card.not-for-you h3 { color: var(--secondary-color); }
-        .who-card.not-for-you li::before { content: '✘'; color: var(--secondary-color); margin-right: 0.5rem; }
-
-        .who-card ul {
-            list-style: none;
-            padding: 0;
-        }
-        .who-card li {
-            margin-bottom: 0.5rem;
-        }
-        
-        /* --- AI Toolkit Section --- */
-        .tool-container {
-            background: #f8f9fa;
-            border: 1px solid #e9ecef;
-            padding: 2.5rem;
-            border-radius: 12px;
-            margin-top: 3rem;
-            box-shadow: 0 3px 15px rgba(44, 62, 80, 0.05);
-        }
-
-        .tool-container h3 {
-            text-align: center;
-            color: var(--primary-color);
-            margin-top: 0;
-            margin-bottom: 0.5rem;
-        }
-
-        .tool-description {
-            text-align: center;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-            margin-bottom: 2rem;
-            font-size: 1rem;
-        }
-
-        .tool-container textarea {
-            width: 100%;
-            min-height: 150px;
-            padding: 1rem;
-            border-radius: 8px;
-            border: 1px solid #ced4da;
-            font-family: 'Inter', sans-serif;
-            font-size: 1rem;
-            line-height: 1.6;
-            margin-bottom: 1rem;
-            resize: vertical;
-            background-color: #fff;
-        }
-
-        .common-ground-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .btn-tool {
-            background: var(--evolution-color);
-            color: white;
-            display: block;
-            margin: 0 auto;
-            width: fit-content;
-        }
-
-        .btn-tool:hover {
-            background: #229954;
-        }
-
-        .btn-tool:disabled {
-            background: #95a5a6;
-            cursor: not-allowed;
+        to {
+            opacity: 1;
             transform: translateY(0);
-            box-shadow: none;
         }
-
-        .tool-result {
-            margin-top: 2rem;
-            padding: 2rem;
-            background: white;
-            border-radius: 8px;
-            border: 1px solid #e9ecef;
-            min-height: 50px;
-            white-space: pre-wrap; /* To respect newlines from the API response */
-            line-height: 1.8;
-            color: var(--text-dark);
+    }
+    @keyframes slideIn {
+        from {
+            opacity: 0;
+            transform: translateX(-50px);
         }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+    
+    /* --- SCROLL ANIMATION HELPERS --- */
+    .animate-on-scroll {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    .animate-on-scroll.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
 
-        .tool-result.loading::before {
-            content: 'Analyzing...';
+    /* --- OVERVIEW SECTION --- */
+    #overview {
+        background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    }
+    .journey-arrow {
+        text-align: center;
+        font-family: var(--header-font);
+        font-size: 2rem;
+        color: var(--secondary-color);
+        margin: 40px 0;
+        letter-spacing: 2px;
+        opacity: 0;
+        animation: slideIn 1s ease-out 0.5s both;
+    }
+
+    /* --- CURRICULUM SECTION --- */
+    .phase-grid {
+        margin-top: 40px;
+    }
+    .phase {
+        margin-bottom: 60px;
+    }
+    .phase-header {
+        border-bottom: 3px solid var(--secondary-color);
+        padding-bottom: 15px;
+        margin-bottom: 30px;
+        position: relative;
+    }
+    .phase-header::after {
+        content: '';
+        position: absolute;
+        bottom: -3px;
+        left: 0;
+        width: 0;
+        height: 3px;
+        background: var(--primary-color);
+        transition: width 0.8s ease;
+    }
+    .phase:hover .phase-header::after {
+        width: 100px;
+    }
+    .phase-tagline {
+        font-style: italic;
+        color: #666;
+        font-size: 1.1rem;
+    }
+    .week-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+    }
+    .week-card {
+        background: linear-gradient(135deg, #fff 0%, #f9f9f9 100%);
+        border: 1px solid #e0e0e0;
+        border-radius: 12px;
+        padding: 25px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+    }
+    .week-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background: linear-gradient(90deg, var(--secondary-color), var(--primary-color));
+    }
+    .week-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+    }
+    .week-card .week-number {
+        font-size: 0.9rem;
+        font-weight: 700;
+        color: var(--secondary-color);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    /* --- BENEFITS SECTION --- */
+    #benefits {
+        background: linear-gradient(135deg, var(--primary-color) 0%, #1a4a6b 100%);
+        color: var(--light-text-color);
+    }
+    #benefits h2 {
+        color: var(--light-text-color);
+    }
+    #benefits ul {
+        list-style: none;
+        margin-top: 40px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 25px;
+    }
+    #benefits li {
+        background: rgba(255, 255, 255, 0.1);
+        padding: 25px;
+        border-radius: 12px;
+        border-left: 5px solid var(--secondary-color);
+        backdrop-filter: blur(10px);
+        transition: all 0.3s ease;
+    }
+    #benefits li:hover {
+        background: rgba(255, 255, 255, 0.15);
+        transform: translateX(10px);
+    }
+
+    /* --- FACILITATOR & APPLICATION --- */
+    .bio-wrapper {
+        display: flex;
+        gap: 40px;
+        align-items: center;
+        margin-top: 40px;
+    }
+    .bio-wrapper img {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 4px solid var(--secondary-color);
+        box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    }
+    #apply {
+        text-align: center;
+        background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    }
+    #apply .container {
+        max-width: 800px;
+    }
+    .apply-note {
+        background: linear-gradient(135deg, #e7f3ff 0%, #f0f8ff 100%);
+        border-left: 5px solid #007bff;
+        padding: 25px;
+        margin: 30px 0;
+        text-align: left;
+        border-radius: 8px;
+        box-shadow: 0 4px 15px rgba(0,123,255,0.1);
+    }
+    
+    /* --- SUCCESS METRICS --- */
+    .metrics-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 40px;
+        margin-top: 40px;
+    }
+    .metric-card {
+        text-align: center;
+        padding: 30px;
+        background: linear-gradient(135deg, #fff 0%, #f9f9f9 100%);
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        transition: all 0.3s ease;
+    }
+    .metric-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+    }
+    .metric-card h4 {
+        color: var(--secondary-color);
+        font-size: 1.3rem;
+        margin-bottom: 15px;
+    }
+    
+    /* --- FOOTER --- */
+    footer {
+        background: var(--primary-color);
+        color: var(--light-text-color);
+        text-align: center;
+        padding: 40px 20px;
+    }
+    
+    /* --- MOBILE RESPONSIVENESS --- */
+    .menu-toggle {
+        display: none;
+        background: none;
+        border: none;
+        font-size: 1.8rem;
+        cursor: pointer;
+    }
+    @media (max-width: 768px) {
+        h1 { font-size: 2.5rem; }
+        h2 { font-size: 2rem; }
+        
+        .menu-toggle {
             display: block;
-            text-align: center;
-            font-weight: 600;
-            color: var(--text-light);
-            animation: pulse 1.5s infinite ease-in-out;
+            color: var(--primary-color);
         }
-
-        @keyframes pulse {
-            0% { opacity: 0.5; }
-            50% { opacity: 1; }
-            100% { opacity: 0.5; }
+        .main-nav {
+            display: none;
+            width: 100%;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: #fff;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
-
-        /* --- Footer --- */
-        footer {
-            background: var(--primary-color);
-            color: white;
-            padding: 4rem 2rem 2rem;
+        .main-nav.active {
+            display: block;
         }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
+        .main-nav ul {
+            flex-direction: column;
             text-align: center;
         }
-
-        .footer-bottom {
-            padding-top: 2rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            font-weight: 300;
+        .main-nav li {
+            border-bottom: 1px solid #f0f0f0;
         }
-
-        .footer-email {
-            display: inline-block;
-            margin-top: 0.5rem;
-            color: rgba(255, 255, 255, 0.8);
-            text-decoration: none;
-            transition: color 0.3s;
+        .main-nav a {
+            padding: 1rem;
+            display: block;
         }
-
-        .footer-email:hover {
-            color: white;
+        .bio-wrapper {
+            flex-direction: column;
+            text-align: center;
         }
-
-        /* --- Responsive Design --- */
-        @media (max-width: 768px) {
-            html {
-                font-size: 100%;
-            }
-
-            h1 { font-size: 2.5rem; }
-            h2 { font-size: 2.2rem; }
-
-            .logo-text {
-                display: none; /* Hide text logo on small screens */
-            }
-
-            .nav-links {
-                position: fixed;
-                right: -100%;
-                top: 74px; /* Adjusted for header height */
-                gap: 0;
-                flex-direction: column;
-                background-color: white;
-                width: 100%;
-                text-align: center;
-                transition: 0.3s;
-                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            }
-            .nav-links.active { right: 0; }
-            .nav-links li { padding: 1.5rem 0; }
-            .nav-links a { font-size: 1.2rem; }
-            .nav-links a:not(.apply-btn)::after { display: none; }
-            .nav-links .apply-btn {
-                margin: 0 auto;
-                display: inline-block;
-            }
-            .hamburger { display: flex; }
-            .hamburger.active .bar:nth-child(2) { opacity: 0; }
-            .hamburger.active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
-            .hamburger.active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
-            
-            .common-ground-grid {
-                grid-template-columns: 1fr;
-            }
+        .metrics-grid {
+            grid-template-columns: 1fr;
         }
-    </style>
+        .journey-arrow {
+            font-size: 1.5rem;
+        }
+    }
+</style>
 </head>
 <body>
-    <header>
-        <nav>
-            <a href="#" class="logo">
-                <svg class="logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The Political Evolution Project Logo">
-                    <defs>
-                        <clipPath id="circle-clip">
-                            <circle cx="50" cy="50" r="48"/>
-                        </clipPath>
-                    </defs>
-                    <circle cx="50" cy="50" r="48" fill="#1A252F" stroke="#1A252F" stroke-width="4"/>
-                    <g clip-path="url(#circle-clip)">
-                        <!-- Tree Trunk -->
-                        <path d="M50 98 V60 C45 65, 40 50, 42 40 C45 50, 50 55, 50 60 C55 55, 60 50, 58 40 C60 50, 55 65, 50 60 Z" fill="#1A252F"/>
-                        <!-- Leaves -->
-                        <g>
-                            <ellipse cx="50" cy="20" rx="4" ry="5" fill="#c0392b"/>
-                            <ellipse cx="60" cy="25" rx="4" ry="5" fill="#2980b9"/>
-                            <ellipse cx="40" cy="25" rx="4" ry="5" fill="#c0392b"/>
-                            <ellipse cx="70" cy="35" rx="4" ry="5" fill="#c0392b"/>
-                            <ellipse cx="30" cy="35" rx="4" ry="5" fill="#2980b9"/>
-                            <ellipse cx="55" cy="40" rx="4" ry="5" fill="#c0392b"/>
-                            <ellipse cx="45" cy="40" rx="4" ry="5" fill="#2980b9"/>
-                            <ellipse cx="65" cy="50" rx="4" ry="5" fill="#2980b9"/>
-                            <ellipse cx="35" cy="50" rx="4" ry="5" fill="#c0392b"/>
-                            <ellipse cx="50" cy="50" rx="4" ry="5" fill="#c0392b"/>
-                            <ellipse cx="42" cy="58" rx="4" ry="5" fill="#2980b9"/>
-                            <ellipse cx="58" cy="58" rx="4"ry="5" fill="#c0392b"/>
-                            <ellipse cx="33" cy="28" rx="4" ry="5" fill="#c0392b" />
-                            <ellipse cx="67" cy="28" rx="4" ry="5" fill="#2980b9" />
-                            <ellipse cx="48" cy="33" rx="4" ry="5" fill="#c0392b" />
-                            <ellipse cx="52" cy="33" rx="4" ry="5" fill="#2980b9" />
-                        </g>
-                    </g>
-                </svg>
-                <span class="logo-text">The Political<br>Evolution Project</span>
-            </a>
-            <div class="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-            <ul class="nav-links">
-                <li><a href="#diagnosis">The Diagnosis</a></li>
-                <li><a href="#solution">The Solution</a></li>
-                <li><a href="#toolkit">Toolkit</a></li>
-                <li><a href="https://forms.gle/D8KZqnRPYA7e3b2f6" target="_blank" rel="noopener noreferrer" class="apply-btn">Apply Now</a></li>
+
+<header class="main-header">
+    <div class="container">
+        <a href="#" class="logo">Political Evolution Project</a>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="#curriculum">Curriculum</a></li>
+                <li><a href="#facilitator">Facilitator</a></li>
+                <li><a href="#apply">Apply</a></li>
             </ul>
         </nav>
-    </header>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Open Navigation">&#9776;</button>
+    </div>
+</header>
 
-    <main>
-        <!-- 1. HERO SECTION -->
-        <section class="hero">
-            <h1>The Evolution of Politics is Here.</h1>
-            <p>Partisan competition is obsolete. The future requires collaborative fitness. This 12-week pilot program is for the 25 people ready to build what's next.</p>
-            <a href="https://forms.gle/D8KZqnRPYA7e3b2f6" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Apply for the Pilot Program</a>
-            <p style="margin-top: 1.5rem; font-size: 1rem; color: rgba(255,255,255,0.9); font-weight: 500;">Program Dates: September 7 – November 23, 2025</p>
-            <p style="margin-top: 0.5rem; font-size: 1rem; color: rgba(255,255,255,0.8);">Priority Deadline: August 15, 2025</p>
-        </section>
+<main>
 
-        <!-- 2. THE DIAGNOSIS -->
-        <section id="diagnosis" class="section section-light">
-            <h2>Our Political System is a Dinosaur Roaring at a Meteor</h2>
-            <p>For decades, politics operated on partisan competition. But the environment has changed. Global challenges, technological disruption, and economic instability are the meteor, and the old ways are proving fatally unfit for survival.</p>
-            <figure class="quote-wrapper">
-                <blockquote class="blockquote">
-                    "We're not witnessing the moral failure of democracy—we're watching evolution in real time... The old forms of political organization are struggling like dinosaurs wondering why it's suddenly so cold."
-                </blockquote>
-                <figcaption class="quote-caption">— Carrie Clendening</figcaption>
-            </figure>
-            <div class="card-grid">
-                <div class="card">
-                    <h3>Geographic Extraction</h3>
-                    <p>National organizations have strip-mined local infrastructure, creating sacrifice zones where communities are drained of resources, talent, and hope.</p>
-                </div>
-                <div class="card">
-                    <h3>Knowledge Hoarding</h3>
-                    <p>Political parties and organizations actively hoard the tools of power—data, strategy, and technical skills—while exploiting volunteers for free labor.</p>
-                </div>
-                <div class="card">
-                    <h3>Active Gatekeeping</h3>
-                    <p>Those with titles but no vision block competent individuals. They'd rather preside over a ghost town than let someone with the skills help renovate.</p>
-                </div>
-                <div class="card">
-                    <h3>Hollowed-Out Infrastructure</h3>
-                    <p>The "secret weapons" of campaigning are illusions. Data is useless, districts are nonsensical, and the machinery is held together with duct tape and denial.</p>
-                </div>
-            </div>
-        </section>
+    <section id="hero">
+        <div class="container">
+            <h1>From Exploitation to Evolution</h1>
+            <p>A 12-week virtual program designed to give you the tools, knowledge, and community to build the political future we need. Stop organizing from a place of frustration and start building from a place of power.</p>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfhpGHpLPeHTMsxBwYp08_PwLRjTyAw3sYp9n2y8OUMnwBVVw/viewform" target="_blank" rel="noopener noreferrer" class="btn">Apply for the Fall 2025 Cohort</a>
+        </div>
+    </section>
 
-        <!-- 3. THE GUIDE -->
-        <section id="guide" class="section">
-            <h2>My Journey From Public Service to Political Evolution</h2>
-            <p>I'm Carrie Clendening. My education didn't come from a textbook. It came from a decade as a non-partisan legislative liaison, watching the kabuki theater of politics from the inside. It came from joining a Democratic party so hollowed-out its voter data was a joke. It came from being exploited by national organizations, and then learning the real rules of power from Republican defectors who were more honest about the game.</p>
-            <p style="font-weight: 600; color: var(--text-dark); text-align: center; max-width: 800px; margin: 2rem auto 0;">
-                I was called an outsider for having the skills to fix the problems the insiders created. That rejection was the best thing that ever happened to me. It forced me to create the alternative.
-            </p>
-        </section>
-
-        <!-- 4. THE THESIS (PILOT) -->
-        <section id="solution" class="section section-light">
-            <h2>The Thesis: A 12-Week Program in Collaborative Fitness</h2>
-            <p>This pilot program is the intervention. It's designed to teach the skills the current political environment demands: adaptability, cross-partisan collaboration, and systems thinking. We will turn 25 participants into political education dealers, equipped to build new, more resilient networks in their own communities.</p>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div>
-                        <h3>Weeks 1-3: See the Ecosystem</h3>
-                        <p>Learn to map power, follow the money, and recognize the patterns of extraction and gatekeeping that define the current landscape.</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div>
-                        <h3>Weeks 4-6: Decode the Systems</h3>
-                        <p>Move beyond partisan labels to understand the doctrines, theories, and technological frameworks that shape our political reality.</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div>
-                        <h3>Weeks 7-8: Build Connections</h3>
-                        <p>Develop the core competency of the new political era: building fluid, cross-partisan coalitions based on competence and shared goals, not rigid ideology.</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div>
-                        <h3>Weeks 9-12: Engineer the Alternative</h3>
-                        <p>Design, test, and implement your own political evolution project, creating a tangible, sustainable alternative to the failing systems in your community.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- 5. GEMINI-POWERED TOOLKIT -->
-        <section id="toolkit" class="section">
-            <h2>The Political Evolution Toolkit</h2>
-            <p>The old tools don't work anymore. Here are some new ones, powered by AI, to help you decode the noise and build what's next. This is a demonstration of the kind of thinking we'll cultivate in the program.</p>
-        
-            <!-- Tool 1: Common Ground Finder -->
-            <div class="tool-container">
-                <h3>Common Ground Finder</h3>
-                <p class="tool-description">Paste two opposing arguments on an issue below. Our AI will analyze them to find hidden points of agreement or shared values that can bridge the divide.</p>
-                <div class="common-ground-grid">
-                    <textarea id="viewpointA" placeholder="Paste Viewpoint A here... (e.g., from a news article, social media post, etc.)"></textarea>
-                    <textarea id="viewpointB" placeholder="Paste Viewpoint B here..."></textarea>
-                </div>
-                <button id="findCommonGroundBtn" class="btn btn-tool">✨ Find Common Ground</button>
-                <div id="commonGroundResult" class="tool-result" aria-live="polite"></div>
-            </div>
-        
-            <!-- Tool 2: Local Action Generator -->
-            <div class="tool-container">
-                <h3>Local Action Generator</h3>
-                <p class="tool-description">Feeling overwhelmed by a local problem? Describe it below, and our AI will generate a list of practical first steps you can take to make a difference.</p>
-                <textarea id="localProblem" placeholder="e.g., 'The playground at my local park is outdated and unsafe for kids.' or 'There's no safe bike lane on the main road to my kid's school.'"></textarea>
-                <button id="generateActionBtn" class="btn btn-tool">✨ Generate Action Steps</button>
-                <div id="localActionResult" class="tool-result" aria-live="polite"></div>
-            </div>
-        </section>
-
-        <!-- 6. THE MANIFESTO (WHY FREE) -->
-        <section id="manifesto" class="section section-light">
-            <h2>Our Philosophy: Political Education is a Public Utility, Not a Luxury Good</h2>
-            <p>Charging for this knowledge would make me part of the extractive system I'm fighting. The goal of The Political Evolution Project is simple but revolutionary: 100% access to political education.</p>
-            <figure class="quote-wrapper">
-                <blockquote class="blockquote">
-                    "This isn't about converting people or building another organization that might become extractive. It's about democratizing the tools of political analysis and action."
-                </blockquote>
-                <figcaption class="quote-caption">— Carrie Clendening</figcaption>
-            </figure>
-            <p style="font-weight: 600; color: var(--text-dark); text-align: center; max-width: 800px; margin: 2rem auto 0;">
-                Your investment is your participation. Show up. Do the work. Teach others. That is the only currency we accept.
-            </p>
-        </section>
-        
-        <!-- 7. THE INVITATION -->
-        <section id="apply" class="section">
-            <h2>This Isn't For Everyone. (And That's The Point.)</h2>
-            <p>We are looking for 25 people who recognize that the old models are broken and are ready to do the hard work of building the replacement. We value experience and commitment over political affiliation.</p>
-            <div class="who-is-this-for-grid">
-                <div class="who-card for-you">
-                    <h3>✓ This is for you if...</h3>
-                    <ul>
-                        <li>You're tired of being treated like unpaid staff and want to understand the system of exploitation.</li>
-                        <li>You can commit 1-2 hours weekly for 12 weeks of intensive virtual sessions.</li>
-                        <li>You want to build resilient, local alternatives, not just critique national politics.</li>
-                        <li>You believe competence is more valuable than partisan loyalty.</li>
-                    </ul>
-                </div>
-                <div class="who-card not-for-you">
-                    <h3>✗ This is not for you if...</h3>
-                    <ul>
-                        <li>You're looking for quick political wins or easy, partisan answers.</li>
-                        <li>You can't commit to the full 12-week program and its practical homework.</li>
-                        <li>You're not interested in teaching others and multiplying the impact.</li>
-                    </ul>
-                </div>
-            </div>
-            <div style="text-align: center; margin-top: 4rem;">
-                <h2>Become One of the First 25.</h2>
-                <p>If you've read this far, you understand the diagnosis. This is your invitation to help engineer the cure. An informed citizen who disagrees is infinitely better than an ignorant one who agrees. That's not just democracy—that's advanced democracy.</p>
-                <a href="https://forms.gle/D8KZqnRPYA7e3b2f6" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="margin-top: 1rem;">Apply to Join The Pilot</a>
-                <p style="margin-top: 1rem; font-size: 1rem; color: var(--secondary-color); font-weight: 600;">Priority Deadline: August 15, 2025</p>
-                <p style="margin-top: 0.5rem; font-size: 0.9rem;">Applications are reviewed on a rolling basis. You'll be notified within 7 days.</p>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="footer-content">
-            <p style="font-family: 'Playfair Display', serif; font-size: 1.2rem;">The Political Evolution Project</p>
-            <div class="footer-bottom">
-                <p>&copy; <span id="current-year"></span> The Political Evolution Project</p>
-                <a href="mailto:Carrie@politicalevolutionproject.org" class="footer-email">Carrie@politicalevolutionproject.org</a>
+    <section id="overview">
+        <div class="container">
+            <h2>A New Path Forward</h2>
+            <p style="text-align:center; max-width:800px; margin: 0 auto 40px auto;">Our political system feels broken because it's designed to extract resources, not empower people. This program follows a proven path to reclaim your agency and build effective, sustainable political power.</p>
+            <div class="journey-arrow">
+                Recognize &rarr; Understand &rarr; Connect &rarr; Experiment &rarr; Build
             </div>
         </div>
-    </footer>
+    </section>
+    
+    <section id="benefits">
+         <div class="container">
+            <h2>What You'll Receive as a Participant</h2>
+            <ul>
+                <li>12 weeks of intensive, expert-led virtual sessions designed for real-world application.</li>
+                <li>A dedicated cohort of 25 passionate peers from diverse backgrounds to end political isolation.</li>
+                <li>A comprehensive library of practical tools, templates, and guides you won't find anywhere else.</li>
+                <li><strong>A pre-program "Flight Manual"</strong> with foundational resources to help you hit the ground running before Week 1.</li>
+                <li>Hands-on experience developing and launching your own <strong>Political Micro-Experiment</strong>.</li>
+                <li>Lifetime access to the Political Evolution Project alumni network for ongoing collaboration.</li>
+            </ul>
+         </div>
+    </section>
 
-    <script>
-        // --- Hamburger Menu Functionality ---
-        const hamburger = document.querySelector('.hamburger');
-        const navLinks = document.querySelector('.nav-links');
-        hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
-            navLinks.classList.toggle('active');
-        });
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                if(navLinks.classList.contains('active')) {
-                    hamburger.classList.remove('active');
-                    navLinks.classList.remove('active');
-                }
-            });
-        });
-        
-        // Set current year in the footer
-        document.getElementById('current-year').textContent = new Date().getFullYear();
+    <section id="curriculum">
+        <div class="container">
+            <h2>The 12-Week Journey</h2>
+            <div class="phase-grid">
 
-        // --- Gemini API Functionality ---
-        const findCommonGroundBtn = document.getElementById('findCommonGroundBtn');
-        const generateActionBtn = document.getElementById('generateActionBtn');
+                <div class="phase animate-on-scroll">
+                    <div class="phase-header">
+                        <h3>PHASE 1: RECOGNITION (Weeks 1-3)</h3>
+                        <p class="phase-tagline">"Seeing the Matrix: How Political Extraction Actually Works"</p>
+                    </div>
+                    <div class="week-grid">
+                        <div class="week-card">
+                            <p class="week-number">Week 1</p><h4>Orientation & Political Ecosystem Mapping</h4>
+                            <p>Why everything you've been told is wrong and how to map your place in the current system.</p>
+                        </div>
+                        <div class="week-card">
+                            <p class="week-number">Week 2</p><h4>Following the Money</h4>
+                            <p>Decode political finance with an FEC deep dive and learn to read the tea leaves of power.</p>
+                        </div>
+                        <div class="week-card">
+                            <p class="week-number">Week 3</p><h4>Geographic Extraction</h4>
+                            <p>Understand why your community was written off and how "strategic" resource allocation really works.</p>
+                        </div>
+                    </div>
+                </div>
 
-        const viewpointA = document.getElementById('viewpointA');
-        const viewpointB = document.getElementById('viewpointB');
-        const localProblem = document.getElementById('localProblem');
+                <div class="phase animate-on-scroll">
+                    <div class="phase-header">
+                       <h3>PHASE 2: UNDERSTANDING (Weeks 4-6)</h3>
+                       <p class="phase-tagline">"The System Behind the System: How Power Really Works"</p>
+                    </div>
+                    <div class="week-grid">
+                        <div class="week-card">
+                            <p class="week-number">Week 4</p><h4>Neoliberalism Demystified</h4>
+                            <p>Learn the invisible doctrine that makes everything feel like a business and explore abundance-based alternatives.</p>
+                        </div>
+                        <div class="week-card">
+                            <p class="week-number">Week 5</p><h4>Power Mapping Like a Pro</h4>
+                            <p>Go beyond the obvious players to map who really runs your community and clarify your own theory of change.</p>
+                        </div>
+                        <div class="week-card">
+                            <p class="week-number">Week 6</p><h4>Modern Organizing Technology</h4>
+                            <p>Discover the data and tech tools that actually work, moving your strategy beyond hope and prayers.</p>
+                        </div>
+                    </div>
+                </div>
 
-        const commonGroundResult = document.getElementById('commonGroundResult');
-        const localActionResult = document.getElementById('localActionResult');
+                <div class="phase animate-on-scroll">
+                     <div class="phase-header">
+                       <h3>PHASE 3: CONNECTION (Weeks 7-8)</h3>
+                       <p class="phase-tagline">"Finding Your People: Building Coalition Across Traditional Boundaries"</p>
+                    </div>
+                    <div class="week-grid">
+                        <div class="week-card">
+                            <p class="week-number">Week 7</p>
+                            <h4>Finding Strange Bedfellows: The Art of Issue-Based Coalitions</h4>
+                            <p>A deep dive into building effective alliances, focusing on shared goals and strategic collaboration.</p>
+                        </div>
+                        <div class="week-card">
+                            <p class="week-number">Week 8</p><h4>Community Building & Sustainable Organizing</h4>
+                            <p>Learn anti-exploitation practices to build movements and community without burning out.</p>
+                        </div>
+                    </div>
+                </div>
 
-        /**
-         * A generic function to call the Gemini API.
-         * @param {string} prompt The prompt to send to the API.
-         * @param {HTMLElement} resultElement The HTML element to display the result in.
-         * @param {HTMLButtonElement} buttonElement The button that triggered the call.
-         */
-        const callGemini = async (prompt, resultElement, buttonElement) => {
-            resultElement.innerHTML = '';
-            resultElement.classList.add('loading');
-            buttonElement.disabled = true;
+                <div class="phase animate-on-scroll">
+                     <div class="phase-header">
+                       <h3>PHASE 4: EXPERIMENTATION (Weeks 9-10)</h3>
+                       <p class="phase-tagline">"Testing New Models: What Works in the Real World"</p>
+                    </div>
+                    <div class="week-grid">
+                        <div class="week-card">
+                            <p class="week-number">Week 9</p>
+                            <h4>Designing Your Political Micro-Experiment</h4>
+                            <p>Develop a small-scale, testable action to apply your learnings and generate new insights.</p>
+                        </div>
+                        <div class="week-card">
+                            <p class="week-number">Week 10</p><h4>Implementation & Troubleshooting</h4>
+                            <p>Move your plan to action with practical strategies for implementation and problem-solving.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="phase animate-on-scroll">
+                     <div class="phase-header">
+                       <h3>PHASE 5: BUILDING (Weeks 11-12)</h3>
+                       <p class="phase-tagline">"Creating the Future: Sustainable Change That Lasts"</p>
+                    </div>
+                    <div class="week-grid">
+                        <div class="week-card">
+                            <p class="week-number">Week 11</p><h4>Progress Reports & Iteration</h4>
+                            <p>Learn from doing by honestly assessing progress and adjusting your strategy based on real-world feedback.</p>
+                        </div>
+                         <div class="week-card">
+                            <p class="week-number">Week 12</p><h4>Celebration & Future Planning</h4>
+                            <p>Showcase the learnings from your micro-experiment and chart the course for your (and our) next steps.</p>
+                        </div>
+                    </div>
+                </div>
 
-            // The API key is an empty string and will be handled by the execution environment.
-            const apiKey = ""; 
-            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+            </div>
+        </div>
+    </section>
+    
+    <section id="facilitator">
+        <div class="container">
+            <h2>Meet Your Facilitator</h2>
+            <div class="bio-wrapper animate-on-scroll">
+                <img src="image.png" alt="Portrait of Carrie Clendening">
+                <div>
+                    <h3>Carrie Clendening</h3>
+                    <p>Carrie is a political educator and strategist who went from being a nonpartisan observer to a "political education dealer." Frustrated by an ecosystem that thrives on exploiting the passion of organizers and activists, she created the Political Evolution Project to equip a new generation of leaders with the practical skills and strategic understanding the establishment won't teach them. Her work is informed by years of experience in Charleston, WV and beyond, learning from both allies and adversaries what it truly takes to build lasting power.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="apply">
+        <div class="container">
+            <h2>Apply for the Fall 2025 Cohort</h2>
+            <p><strong>Duration:</strong> September 7 - November 23, 2025<br>
+            <strong>Format:</strong> Weekly 90-minute virtual sessions + independent work<br>
+            <strong>Investment:</strong> FREE (pilot program)
+            </p>
+
+            <div class="apply-note">
+                 <p>To help us build a committed and collaborative pilot cohort, our application includes several short questions about your political experiences and your goals for this program. This helps ensure everyone is ready to engage with the curriculum's depth and contribute to the community.</p>
+            </div>
             
-            const payload = {
-                contents: [{
-                    role: "user",
-                    parts: [{ text: prompt }]
-                }]
-            };
+            <p>Applications are now open. We are accepting submissions until August 15, 2025.</p>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfhpGHpLPeHTMsxBwYp08_PwLRjTyAw3sYp9n2y8OUMnwBVVw/viewform" target="_blank" rel="noopener noreferrer" class="btn">Begin Your Application</a>
+        </div>
+    </section>
+    
+    <section id="metrics">
+        <div class="container">
+            <h2>Measuring Success</h2>
+            <div class="metrics-grid">
+                <div class="metric-card animate-on-scroll">
+                    <h4>Individual Success</h4>
+                    <p>Increased political confidence, development of practical skills, and implementation of a personal political micro-experiment.</p>
+                </div>
+                <div class="metric-card animate-on-scroll">
+                    <h4>Cohort Success</h4>
+                    <p>High retention (85%+), formation of a mutual support network, and collaborative resource creation.</p>
+                </div>
+                <div class="metric-card animate-on-scroll">
+                    <h4>Project Success</h4>
+                    <p>An effective, replicable curriculum model and documentary evidence of political evolution in action.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-            try {
-                const response = await fetch(apiUrl, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(payload)
+</main>
+
+<footer>
+    <div class="container">
+        <p>&copy; 2025 Political Evolution Project. All Rights Reserved.<br>Based in Charleston, West Virginia.</p>
+    </div>
+</footer>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Mobile menu toggle logic
+        const menuToggle = document.getElementById('menu-toggle');
+        const mainNav = document.querySelector('.main-nav');
+        if (menuToggle && mainNav) {
+            menuToggle.addEventListener('click', () => {
+                mainNav.classList.toggle('active');
+            });
+        }
+
+        // Scroll animation logic
+        const animatedElements = document.querySelectorAll('.animate-on-scroll');
+        if ('IntersectionObserver' in window) {
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target); // Stop observing once animated
+                    }
                 });
+            }, {
+                threshold: 0.1 // Animate when 10% of the element is visible
+            });
 
-                if (!response.ok) {
-                    throw new Error(`API request failed with status ${response.status}`);
-                }
+            animatedElements.forEach(el => {
+                observer.observe(el);
+            });
+        }
+    });
+</script>
 
-                const result = await response.json();
-                
-                let text = 'Sorry, I could not generate a response. The model may have returned empty content. Please try again with a different prompt.';
-                if (result.candidates && result.candidates.length > 0 &&
-                    result.candidates[0].content && result.candidates[0].content.parts &&
-                    result.candidates[0].content.parts.length > 0) {
-                    text = result.candidates[0].content.parts[0].text;
-                }
-                
-                resultElement.innerText = text;
-
-            } catch (error) {
-                console.error('Error calling Gemini API:', error);
-                resultElement.innerText = 'An error occurred while contacting the AI model. Please check the console for details and try again.';
-            } finally {
-                resultElement.classList.remove('loading');
-                buttonElement.disabled = false;
-            }
-        };
-
-        // Event listener for the "Find Common Ground" button
-        findCommonGroundBtn.addEventListener('click', () => {
-            const textA = viewpointA.value.trim();
-            const textB = viewpointB.value.trim();
-
-            if (!textA || !textB) {
-                commonGroundResult.innerText = 'Please provide both viewpoints in the text boxes above.';
-                return;
-            }
-
-            const prompt = `You are an expert political mediator named "Evo". Your goal is to de-escalate conflict and find paths toward productive dialogue. Analyze the following two opposing viewpoints. Do not take a side or declare a "winner." Your task is to identify and clearly explain any underlying shared values, common goals, misunderstood points, or potential areas of agreement that could serve as a starting point for a constructive conversation. Frame your analysis in a neutral, encouraging, and helpful tone.
-
-Viewpoint A: "${textA}"
-
-Viewpoint B: "${textB}"`;
-
-            callGemini(prompt, commonGroundResult, findCommonGroundBtn);
-        });
-
-        // Event listener for the "Generate Action Steps" button
-        generateActionBtn.addEventListener('click', () => {
-            const problem = localProblem.value.trim();
-
-            if (!problem) {
-                localActionResult.innerText = 'Please describe a local problem in the text box above.';
-                return;
-            }
-
-            const prompt = `You are a helpful and experienced community organizer named "Evo". A user is describing a problem in their local community. Your task is to provide a clear, encouraging, and actionable list of initial steps they can take to start addressing the issue. Focus on practical, low-barrier actions that an everyday person could realistically accomplish. Break down the advice into a numbered or bulleted list.
-
-The user's problem is: "${problem}"`;
-
-            callGemini(prompt, localActionResult, generateActionBtn);
-        });
-    </script>
 </body>
 </html>
