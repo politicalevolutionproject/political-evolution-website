@@ -3,663 +3,654 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Political Evolution Project | From Exploitation to Evolution</title>
+    <title>The Political Evolution Project | From Exploitation to Evolution</title>
     <meta name="description" content="A 12-week pilot curriculum to build the political future we need. Facilitated by Carrie Clendening.">
-
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 
-<style>
-    /* --- CUSTOMIZABLE VARIABLES --- */
-    :root {
-        --primary-color: #0d2c4b; /* Dark Blue */
-        --secondary-color: #b38b00; /* Muted Gold */
-        --background-color: #f8f9fa;
-        --text-color: #343a40;
-        --light-text-color: #ffffff;
-        --header-font: 'Playfair Display', serif;
-        --body-font: 'Source Sans Pro', sans-serif;
-    }
-
-    /* --- GENERAL STYLES & RESETS --- */
-    * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-    }
-    html {
-        scroll-behavior: smooth;
-    }
-    body {
-        font-family: var(--body-font);
-        color: var(--text-color);
-        background-color: var(--background-color);
-        line-height: 1.6;
-    }
-
-    /* --- LAYOUT & CONTAINERS --- */
-    .container {
-        max-width: 1100px;
-        margin: 0 auto;
-        padding: 0 20px;
-    }
-    section {
-        padding: 80px 0;
-    }
-    section:nth-child(even) {
-        background-color: #ffffff;
-    }
-
-    /* --- TYPOGRAPHY --- */
-    h1, h2, h3, h4 {
-        font-family: var(--header-font);
-        color: var(--primary-color);
-        margin-bottom: 20px;
-    }
-    h1 { font-size: 3.5rem; line-height: 1.2; }
-    h2 { font-size: 2.5rem; text-align: center; }
-    h3 { font-size: 1.8rem; }
-    h4 { font-size: 1.2rem; margin-bottom: 10px; color: var(--primary-color);}
-    p { margin-bottom: 1rem; }
-
-    /* --- HEADER & NAVIGATION --- */
-    .main-header {
-        background: #fff;
-        padding: 1rem 0;
-        position: fixed;
-        width: 100%;
-        top: 0;
-        z-index: 100;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-    .main-header .container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-    .logo {
-        font-family: var(--header-font);
-        font-size: 1.5rem;
-        color: var(--primary-color);
-        text-decoration: none;
-    }
-    .main-nav ul {
-        display: flex;
-        list-style: none;
-    }
-    .main-nav a {
-        color: var(--primary-color);
-        text-decoration: none;
-        padding: 0.5rem 1rem;
-        font-weight: 600;
-        transition: color 0.3s ease;
-    }
-    .main-nav a:hover {
-        color: var(--secondary-color);
-    }
-
-    /* --- HERO SECTION --- */
-    #hero {
-        background: linear-gradient(135deg, var(--primary-color) 0%, #1a4a6b 100%);
-        color: var(--light-text-color);
-        padding-top: 180px;
-        padding-bottom: 120px;
-        text-align: center;
-        position: relative;
-        overflow: hidden;
-    }
-    #hero::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: linear-gradient(45deg, rgba(179, 139, 0, 0.1) 0%, transparent 100%);
-        pointer-events: none;
-    }
-    #hero .container {
-        position: relative;
-        z-index: 2;
-    }
-    #hero h1, #hero h2 {
-        color: var(--light-text-color);
-        text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-    }
-    #hero h1 {
-        margin-bottom: 30px;
-        animation: fadeInUp 1s ease-out;
-    }
-    #hero p {
-        font-size: 1.2rem;
-        max-width: 700px;
-        margin: 0 auto 30px auto;
-        opacity: 0.95;
-        animation: fadeInUp 1s ease-out 0.3s both;
-    }
-    .btn {
-        display: inline-block;
-        background: var(--secondary-color);
-        color: #fff;
-        padding: 15px 35px;
-        text-decoration: none;
-        border-radius: 8px;
-        font-weight: 700;
-        font-size: 1.1rem;
-        transition: all 0.3s ease;
-        box-shadow: 0 4px 15px rgba(179, 139, 0, 0.3);
-        animation: fadeInUp 1s ease-out 0.6s both;
-    }
-    .btn:hover {
-        background: #cca300;
-        transform: translateY(-3px);
-        box-shadow: 0 6px 20px rgba(179, 139, 0, 0.4);
-    }
-
-    /* --- INITIAL LOAD ANIMATIONS --- */
-    @keyframes fadeInUp {
-        from {
-            opacity: 0;
-            transform: translateY(30px);
+    <style>
+        /* --- CUSTOMIZABLE VARIABLES --- */
+        :root {
+            --primary-color: #0d2c4b; /* Dark Blue */
+            --secondary-color: #b38b00; /* Muted Gold */
+            --background-color: #f8f9fa;
+            --text-color: #343a40;
+            --light-text-color: #ffffff;
+            --header-font: 'Playfair Display', serif;
+            --body-font: 'Source Sans Pro', sans-serif;
         }
-        to {
-            opacity: 1;
-            transform: translateY(0);
+
+        /* --- GENERAL STYLES & RESETS --- */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
-    }
-    @keyframes slideIn {
-        from {
-            opacity: 0;
-            transform: translateX(-50px);
+        html {
+            scroll-behavior: smooth;
         }
-        to {
-            opacity: 1;
-            transform: translateX(0);
+        body {
+            font-family: var(--body-font);
+            color: var(--text-color);
+            background-color: var(--background-color);
+            line-height: 1.6;
         }
-    }
-    
-    /* --- SCROLL ANIMATION HELPERS --- */
-    .animate-on-scroll {
-        opacity: 0;
-        transform: translateY(20px);
-        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-    }
-    .animate-on-scroll.is-visible {
-        opacity: 1;
-        transform: translateY(0);
-    }
 
-    /* --- OVERVIEW SECTION --- */
-    #overview {
-        background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
-    }
-    .journey-arrow {
-        text-align: center;
-        font-family: var(--header-font);
-        font-size: 2rem;
-        color: var(--secondary-color);
-        margin: 40px 0;
-        letter-spacing: 2px;
-        opacity: 0;
-        animation: slideIn 1s ease-out 0.5s both;
-    }
+        /* --- LAYOUT & CONTAINERS --- */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        section {
+            padding: 80px 0;
+        }
+        section:nth-child(even) {
+            background-color: #ffffff;
+        }
 
-    /* --- CURRICULUM SECTION --- */
-    .phase-grid {
-        margin-top: 40px;
-    }
-    .phase {
-        margin-bottom: 60px;
-    }
-    .phase-header {
-        border-bottom: 3px solid var(--secondary-color);
-        padding-bottom: 15px;
-        margin-bottom: 30px;
-        position: relative;
-    }
-    .phase-header::after {
-        content: '';
-        position: absolute;
-        bottom: -3px;
-        left: 0;
-        width: 0;
-        height: 3px;
-        background: var(--primary-color);
-        transition: width 0.8s ease;
-    }
-    .phase:hover .phase-header::after {
-        width: 100px;
-    }
-    .phase-tagline {
-        font-style: italic;
-        color: #666;
-        font-size: 1.1rem;
-    }
-    .week-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 30px;
-    }
-    .week-card {
-        background: linear-gradient(135deg, #fff 0%, #f9f9f9 100%);
-        border: 1px solid #e0e0e0;
-        border-radius: 12px;
-        padding: 25px;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-        transition: all 0.3s ease;
-        position: relative;
-        overflow: hidden;
-    }
-    .week-card::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 4px;
-        background: linear-gradient(90deg, var(--secondary-color), var(--primary-color));
-    }
-    .week-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 8px 25px rgba(0,0,0,0.12);
-    }
-    .week-card .week-number {
-        font-size: 0.9rem;
-        font-weight: 700;
-        color: var(--secondary-color);
-        text-transform: uppercase;
-        letter-spacing: 1px;
-    }
-
-    /* --- BENEFITS SECTION --- */
-    #benefits {
-        background: linear-gradient(135deg, var(--primary-color) 0%, #1a4a6b 100%);
-        color: var(--light-text-color);
-    }
-    #benefits h2 {
-        color: var(--light-text-color);
-    }
-    #benefits ul {
-        list-style: none;
-        margin-top: 40px;
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 25px;
-    }
-    #benefits li {
-        background: rgba(255, 255, 255, 0.1);
-        padding: 25px;
-        border-radius: 12px;
-        border-left: 5px solid var(--secondary-color);
-        backdrop-filter: blur(10px);
-        transition: all 0.3s ease;
-    }
-    #benefits li:hover {
-        background: rgba(255, 255, 255, 0.15);
-        transform: translateX(10px);
-    }
-
-    /* --- FACILITATOR & APPLICATION --- */
-    .bio-wrapper {
-        display: flex;
-        gap: 40px;
-        align-items: center;
-        margin-top: 40px;
-    }
-    .bio-wrapper img {
-        width: 200px;
-        height: 200px;
-        border-radius: 50%;
-        object-fit: cover;
-        border: 4px solid var(--secondary-color);
-        box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-    }
-    #apply {
-        text-align: center;
-        background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
-    }
-    #apply .container {
-        max-width: 800px;
-    }
-    .apply-note {
-        background: linear-gradient(135deg, #e7f3ff 0%, #f0f8ff 100%);
-        border-left: 5px solid #007bff;
-        padding: 25px;
-        margin: 30px 0;
-        text-align: left;
-        border-radius: 8px;
-        box-shadow: 0 4px 15px rgba(0,123,255,0.1);
-    }
-    
-    /* --- SUCCESS METRICS --- */
-    .metrics-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 40px;
-        margin-top: 40px;
-    }
-    .metric-card {
-        text-align: center;
-        padding: 30px;
-        background: linear-gradient(135deg, #fff 0%, #f9f9f9 100%);
-        border-radius: 12px;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-        transition: all 0.3s ease;
-    }
-    .metric-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 8px 25px rgba(0,0,0,0.12);
-    }
-    .metric-card h4 {
-        color: var(--secondary-color);
-        font-size: 1.3rem;
-        margin-bottom: 15px;
-    }
-    
-    /* --- FOOTER --- */
-    footer {
-        background: var(--primary-color);
-        color: var(--light-text-color);
-        text-align: center;
-        padding: 40px 20px;
-    }
-    
-    /* --- MOBILE RESPONSIVENESS --- */
-    .menu-toggle {
-        display: none;
-        background: none;
-        border: none;
-        font-size: 1.8rem;
-        cursor: pointer;
-    }
-    @media (max-width: 768px) {
-        h1 { font-size: 2.5rem; }
-        h2 { font-size: 2rem; }
-        
-        .menu-toggle {
-            display: block;
+        /* --- TYPOGRAPHY --- */
+        h1, h2, h3, h4 {
+            font-family: var(--header-font);
             color: var(--primary-color);
+            margin-bottom: 20px;
         }
-        .main-nav {
-            display: none;
-            width: 100%;
-            position: absolute;
-            top: 100%;
-            left: 0;
+        h1 { font-size: 3.5rem; line-height: 1.2; }
+        h2 { font-size: 2.5rem; text-align: center; }
+        h3 { font-size: 1.8rem; }
+        h4 { font-size: 1.2rem; margin-bottom: 10px; color: var(--primary-color);}
+        p { margin-bottom: 1rem; }
+
+        /* --- HEADER & NAVIGATION --- */
+        .main-header {
             background: #fff;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
-        .main-nav.active {
-            display: block;
+        .main-header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-family: var(--header-font);
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            text-decoration: none;
         }
         .main-nav ul {
-            flex-direction: column;
-            text-align: center;
-        }
-        .main-nav li {
-            border-bottom: 1px solid #f0f0f0;
+            display: flex;
+            list-style: none;
         }
         .main-nav a {
-            padding: 1rem;
-            display: block;
+            color: var(--primary-color);
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            font-weight: 600;
+            transition: color 0.3s ease;
         }
-        .bio-wrapper {
-            flex-direction: column;
+        .main-nav a:hover {
+            color: var(--secondary-color);
+        }
+
+        /* --- HERO SECTION --- */
+        #hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #1a4a6b 100%);
+            color: var(--light-text-color);
+            padding-top: 180px;
+            padding-bottom: 120px;
             text-align: center;
+            position: relative;
+            overflow: hidden;
         }
-        .metrics-grid {
-            grid-template-columns: 1fr;
+        #hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(179, 139, 0, 0.1) 0%, transparent 100%);
+            pointer-events: none;
+        }
+        #hero .container {
+            position: relative;
+            z-index: 2;
+        }
+        #hero h1, #hero h2 {
+            color: var(--light-text-color);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        #hero h1 {
+            margin-bottom: 30px;
+            animation: fadeInUp 1s ease-out;
+        }
+        #hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px auto;
+            opacity: 0.95;
+            animation: fadeInUp 1s ease-out 0.3s both;
+        }
+        .btn {
+            display: inline-block;
+            background: var(--secondary-color);
+            color: #fff;
+            padding: 15px 35px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(179, 139, 0, 0.3);
+            animation: fadeInUp 1s ease-out 0.6s both;
+        }
+        .btn:hover {
+            background: #cca300;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(179, 139, 0, 0.4);
+        }
+
+        /* --- ANIMATIONS --- */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* --- OVERVIEW SECTION --- */
+        #overview {
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
         }
         .journey-arrow {
-            font-size: 1.5rem;
+            text-align: center;
+            font-family: var(--header-font);
+            font-size: 2rem;
+            color: var(--secondary-color);
+            margin: 40px 0;
+            letter-spacing: 2px;
+            opacity: 0;
+            animation: slideIn 1s ease-out 0.5s both;
         }
-    }
-</style>
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* --- CURRICULUM SECTION --- */
+        .phase-grid {
+            margin-top: 40px;
+        }
+        .phase {
+            margin-bottom: 60px;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease-out both;
+        }
+        .phase:nth-child(2) { animation-delay: 0.1s; }
+        .phase:nth-child(3) { animation-delay: 0.2s; }
+        .phase:nth-child(4) { animation-delay: 0.3s; }
+        .phase:nth-child(5) { animation-delay: 0.4s; }
+        .phase-header {
+            border-bottom: 3px solid var(--secondary-color);
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+            position: relative;
+        }
+        .phase-header::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: var(--primary-color);
+            transition: width 0.8s ease;
+        }
+        .phase:hover .phase-header::after {
+            width: 100px;
+        }
+        .phase-tagline {
+            font-style: italic;
+            color: #666;
+            font-size: 1.1rem;
+        }
+        .week-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .week-card {
+            background: linear-gradient(135deg, #fff 0%, #f9f9f9 100%);
+            border: 1px solid #e0e0e0;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .week-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--secondary-color), var(--primary-color));
+        }
+        .week-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+        }
+        .week-card .week-number {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* --- BENEFITS SECTION --- */
+        #benefits {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #1a4a6b 100%);
+            color: var(--light-text-color);
+        }
+        #benefits h2 {
+            color: var(--light-text-color);
+        }
+        #benefits ul {
+            list-style: none;
+            margin-top: 40px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+        #benefits li {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 25px;
+            border-radius: 12px;
+            border-left: 5px solid var(--secondary-color);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+        #benefits li:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateX(10px);
+        }
+
+        /* --- FACILITATOR & APPLICATION --- */
+        .bio-wrapper {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+            margin-top: 40px;
+        }
+        .bio-wrapper img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--secondary-color);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        #apply {
+            text-align: center;
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+        }
+        #apply .container {
+            max-width: 800px;
+        }
+        .apply-note {
+            background: linear-gradient(135deg, #e7f3ff 0%, #f0f8ff 100%);
+            border-left: 5px solid #007bff;
+            padding: 25px;
+            margin: 30px 0;
+            text-align: left;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,123,255,0.1);
+        }
+        
+        /* --- SUCCESS METRICS --- */
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-top: 40px;
+        }
+        .metric-card {
+            text-align: center;
+            padding: 30px;
+            background: linear-gradient(135deg, #fff 0%, #f9f9f9 100%);
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+        }
+        .metric-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+        }
+        .metric-card h4 {
+            color: var(--secondary-color);
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+        }
+        
+        /* --- FOOTER --- */
+        footer {
+            background: var(--primary-color);
+            color: var(--light-text-color);
+            text-align: center;
+            padding: 40px 20px;
+        }
+        
+        /* --- MOBILE RESPONSIVENESS --- */
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.8rem;
+            cursor: pointer;
+        }
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            h2 { font-size: 2rem; }
+            
+            .menu-toggle {
+                display: block;
+                color: var(--primary-color);
+            }
+            .main-nav {
+                display: none;
+                width: 100%;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                background: #fff;
+                box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            }
+            .main-nav.active {
+                display: block;
+            }
+            .main-nav ul {
+                flex-direction: column;
+                text-align: center;
+            }
+            .main-nav li {
+                border-bottom: 1px solid #f0f0f0;
+            }
+            .main-nav a {
+                padding: 1rem;
+                display: block;
+            }
+            .bio-wrapper {
+                flex-direction: column;
+                text-align: center;
+            }
+            .metrics-grid {
+                grid-template-columns: 1fr;
+            }
+            .journey-arrow {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
 </head>
 <body>
 
-<header class="main-header">
-    <div class="container">
-        <a href="#" class="logo">Political Evolution Project</a>
-        <nav class="main-nav">
-            <ul>
-                <li><a href="#curriculum">Curriculum</a></li>
-                <li><a href="#facilitator">Facilitator</a></li>
-                <li><a href="#apply">Apply</a></li>
-            </ul>
-        </nav>
-        <button class="menu-toggle" id="menu-toggle" aria-label="Open Navigation">&#9776;</button>
-    </div>
-</header>
-
-<main>
-
-    <section id="hero">
+    <header class="main-header">
         <div class="container">
-            <h1>From Exploitation to Evolution</h1>
-            <p>A 12-week virtual program designed to give you the tools, knowledge, and community to build the political future we need. Stop organizing from a place of frustration and start building from a place of power.</p>
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfhpGHpLPeHTMsxBwYp08_PwLRjTyAw3sYp9n2y8OUMnwBVVw/viewform" target="_blank" rel="noopener noreferrer" class="btn">Apply for the Fall 2025 Cohort</a>
+            <a href="#" class="logo">Political Evolution Project</a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#curriculum">Curriculum</a></li>
+                    <li><a href="#facilitator">Facilitator</a></li>
+                    <li><a href="#apply">Apply</a></li>
+                </ul>
+            </nav>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Open Navigation">&#9776;</button>
         </div>
-    </section>
+    </header>
 
-    <section id="overview">
-        <div class="container">
-            <h2>A New Path Forward</h2>
-            <p style="text-align:center; max-width:800px; margin: 0 auto 40px auto;">Our political system feels broken because it's designed to extract resources, not empower people. This program follows a proven path to reclaim your agency and build effective, sustainable political power.</p>
-            <div class="journey-arrow">
-                Recognize &rarr; Understand &rarr; Connect &rarr; Experiment &rarr; Build
+    <main>
+
+        <section id="hero">
+            <div class="container">
+                <h1>From Exploitation to Evolution</h1>
+                <p>A 12-week virtual program designed to give you the tools, knowledge, and community to build the political future we need. Stop organizing from a place of frustration and start building from a place of power.</p>
+                <a href="#apply" class="btn">Apply for the Fall 2025 Cohort</a>
             </div>
-        </div>
-    </section>
-    
-    <section id="benefits">
-         <div class="container">
-            <h2>What You'll Receive as a Participant</h2>
-            <ul>
-                <li>12 weeks of intensive, expert-led virtual sessions designed for real-world application.</li>
-                <li>A dedicated cohort of 25 passionate peers from diverse backgrounds to end political isolation.</li>
-                <li>A comprehensive library of practical tools, templates, and guides you won't find anywhere else.</li>
-                <li><strong>A pre-program "Flight Manual"</strong> with foundational resources to help you hit the ground running before Week 1.</li>
-                <li>Hands-on experience developing and launching your own <strong>Political Micro-Experiment</strong>.</li>
-                <li>Lifetime access to the Political Evolution Project alumni network for ongoing collaboration.</li>
-            </ul>
-         </div>
-    </section>
+        </section>
 
-    <section id="curriculum">
-        <div class="container">
-            <h2>The 12-Week Journey</h2>
-            <div class="phase-grid">
+        <section id="overview">
+            <div class="container">
+                <h2>A New Path Forward</h2>
+                <p style="text-align:center; max-width:800px; margin: 0 auto 40px auto;">Our political system feels broken because it's designed to extract resources, not empower people. This program follows a proven path to reclaim your agency and build effective, sustainable political power.</p>
+                <div class="journey-arrow">
+                    Recognize &rarr; Understand &rarr; Connect &rarr; Experiment &rarr; Build
+                </div>
+            </div>
+        </section>
+        
+        <section id="benefits">
+             <div class="container">
+                <h2>What You'll Receive as a Participant</h2>
+                <ul>
+                    <li>12 weeks of intensive, expert-led virtual sessions designed for real-world application.</li>
+                    <li>A dedicated cohort of 25 passionate peers from diverse backgrounds to end political isolation.</li>
+                    <li>A comprehensive library of practical tools, templates, and guides you won't find anywhere else.</li>
+                    <li><strong>A pre-program "Flight Manual"</strong> with foundational resources to help you hit the ground running before Week 1.</li>
+                    <li>Hands-on experience developing and launching your own <strong>Political Micro-Experiment</strong>.</li>
+                    <li>Lifetime access to the Political Evolution Project alumni network for ongoing collaboration.</li>
+                </ul>
+             </div>
+        </section>
 
-                <div class="phase animate-on-scroll">
-                    <div class="phase-header">
-                        <h3>PHASE 1: RECOGNITION (Weeks 1-3)</h3>
-                        <p class="phase-tagline">"Seeing the Matrix: How Political Extraction Actually Works"</p>
+        <section id="curriculum">
+            <div class="container">
+                <h2>The 12-Week Journey</h2>
+                <div class="phase-grid">
+
+                    <div class="phase">
+                        <div class="phase-header">
+                            <h3>PHASE 1: RECOGNITION (Weeks 1-3)</h3>
+                            <p class="phase-tagline">"Seeing the Matrix: How Political Extraction Actually Works"</p>
+                        </div>
+                        <div class="week-grid">
+                            <div class="week-card">
+                                <p class="week-number">Week 1</p><h4>Orientation & Political Ecosystem Mapping</h4>
+                                <p>Why everything you've been told is wrong and how to map your place in the current system.</p>
+                            </div>
+                            <div class="week-card">
+                                <p class="week-number">Week 2</p><h4>Following the Money</h4>
+                                <p>Decode political finance with an FEC deep dive and learn to read the tea leaves of power.</p>
+                            </div>
+                            <div class="week-card">
+                                <p class="week-number">Week 3</p><h4>Geographic Extraction</h4>
+                                <p>Understand why your community was written off and how "strategic" resource allocation really works.</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="week-grid">
-                        <div class="week-card">
-                            <p class="week-number">Week 1</p><h4>Orientation & Political Ecosystem Mapping</h4>
-                            <p>Why everything you've been told is wrong and how to map your place in the current system.</p>
+
+                    <div class="phase">
+                        <div class="phase-header">
+                           <h3>PHASE 2: UNDERSTANDING (Weeks 4-6)</h3>
+                           <p class="phase-tagline">"The System Behind the System: How Power Really Works"</p>
                         </div>
-                        <div class="week-card">
-                            <p class="week-number">Week 2</p><h4>Following the Money</h4>
-                            <p>Decode political finance with an FEC deep dive and learn to read the tea leaves of power.</p>
+                        <div class="week-grid">
+                            <div class="week-card">
+                                <p class="week-number">Week 4</p><h4>Neoliberalism Demystified</h4>
+                                <p>Learn the invisible doctrine that makes everything feel like a business and explore abundance-based alternatives.</p>
+                            </div>
+                            <div class="week-card">
+                                <p class="week-number">Week 5</p><h4>Power Mapping Like a Pro</h4>
+                                <p>Go beyond the obvious players to map who really runs your community and clarify your own theory of change.</p>
+                            </div>
+                            <div class="week-card">
+                                <p class="week-number">Week 6</p><h4>Modern Organizing Technology</h4>
+                                <p>Discover the data and tech tools that actually work, moving your strategy beyond hope and prayers.</p>
+                            </div>
                         </div>
-                        <div class="week-card">
-                            <p class="week-number">Week 3</p><h4>Geographic Extraction</h4>
-                            <p>Understand why your community was written off and how "strategic" resource allocation really works.</p>
+                    </div>
+
+                    <div class="phase">
+                         <div class="phase-header">
+                           <h3>PHASE 3: CONNECTION (Weeks 7-8)</h3>
+                           <p class="phase-tagline">"Finding Your People: Building Coalition Across Traditional Boundaries"</p>
                         </div>
+                        <div class="week-grid">
+                            <div class="week-card">
+                                <p class="week-number">Week 7</p>
+                                <h4>Finding Strange Bedfellows: The Art of Issue-Based Coalitions</h4>
+                                <p>A deep dive into building effective alliances, focusing on shared goals and strategic collaboration.</p>
+                            </div>
+                            <div class="week-card">
+                                <p class="week-number">Week 8</p><h4>Community Building & Sustainable Organizing</h4>
+                                <p>Learn anti-exploitation practices to build movements and community without burning out.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="phase">
+                         <div class="phase-header">
+                           <h3>PHASE 4: EXPERIMENTATION (Weeks 9-10)</h3>
+                           <p class="phase-tagline">"Testing New Models: What Works in the Real World"</p>
+                        </div>
+                        <div class="week-grid">
+                            <div class="week-card">
+                                <p class="week-number">Week 9</p>
+                                <h4>Designing Your Political Micro-Experiment</h4>
+                                <p>Develop a small-scale, testable action to apply your learnings and generate new insights.</p>
+                            </div>
+                            <div class="week-card">
+                                <p class="week-number">Week 10</p><h4>Implementation & Troubleshooting</h4>
+                                <p>Move your plan to action with practical strategies for implementation and problem-solving.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="phase">
+                         <div class="phase-header">
+                           <h3>PHASE 5: BUILDING (Weeks 11-12)</h3>
+                           <p class="phase-tagline">"Creating the Future: Sustainable Change That Lasts"</p>
+                        </div>
+                        <div class="week-grid">
+                            <div class="week-card">
+                                <p class="week-number">Week 11</p><h4>Progress Reports & Iteration</h4>
+                                <p>Learn from doing by honestly assessing progress and adjusting your strategy based on real-world feedback.</p>
+                            </div>
+                             <div class="week-card">
+                                <p class="week-number">Week 12</p><h4>Celebration & Future Planning</h4>
+                                <p>Showcase the learnings from your micro-experiment and chart the course for your (and our) next steps.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        
+        <section id="facilitator">
+            <div class="container">
+                <h2>Meet Your Facilitator</h2>
+                <div class="bio-wrapper">
+                    <img src="https://raw.githubusercontent.com/politicalevolutionproject/political-evolution-website/main/image.png" alt="Portrait of Carrie Clendening">
+                    <div>
+                        <h3>Carrie Clendening</h3>
+                        <p>Carrie is a political educator and strategist who went from being a nonpartisan observer to a "political education dealer." Frustrated by an ecosystem that thrives on exploiting the passion of organizers and activists, she created the Political Evolution Project to equip a new generation of leaders with the practical skills and strategic understanding the establishment won't teach them. Her work is informed by years of experience in West Virginia and beyond, learning from both allies and adversaries what it truly takes to build lasting power.</p>
                     </div>
                 </div>
+            </div>
+        </section>
 
-                <div class="phase animate-on-scroll">
-                    <div class="phase-header">
-                       <h3>PHASE 2: UNDERSTANDING (Weeks 4-6)</h3>
-                       <p class="phase-tagline">"The System Behind the System: How Power Really Works"</p>
-                    </div>
-                    <div class="week-grid">
-                        <div class="week-card">
-                            <p class="week-number">Week 4</p><h4>Neoliberalism Demystified</h4>
-                            <p>Learn the invisible doctrine that makes everything feel like a business and explore abundance-based alternatives.</p>
-                        </div>
-                        <div class="week-card">
-                            <p class="week-number">Week 5</p><h4>Power Mapping Like a Pro</h4>
-                            <p>Go beyond the obvious players to map who really runs your community and clarify your own theory of change.</p>
-                        </div>
-                        <div class="week-card">
-                            <p class="week-number">Week 6</p><h4>Modern Organizing Technology</h4>
-                            <p>Discover the data and tech tools that actually work, moving your strategy beyond hope and prayers.</p>
-                        </div>
-                    </div>
-                </div>
+        <section id="apply">
+            <div class="container">
+                <h2>Apply for the Fall 2025 Cohort</h2>
+                <p><strong>Duration:</strong> September 7 - November 23, 2025<br>
+                <strong>Format:</strong> Weekly 90-minute virtual sessions + independent work<br>
+                <strong>Investment:</strong> FREE (pilot program)
+                </p>
 
-                <div class="phase animate-on-scroll">
-                     <div class="phase-header">
-                       <h3>PHASE 3: CONNECTION (Weeks 7-8)</h3>
-                       <p class="phase-tagline">"Finding Your People: Building Coalition Across Traditional Boundaries"</p>
-                    </div>
-                    <div class="week-grid">
-                        <div class="week-card">
-                            <p class="week-number">Week 7</p>
-                            <h4>Finding Strange Bedfellows: The Art of Issue-Based Coalitions</h4>
-                            <p>A deep dive into building effective alliances, focusing on shared goals and strategic collaboration.</p>
-                        </div>
-                        <div class="week-card">
-                            <p class="week-number">Week 8</p><h4>Community Building & Sustainable Organizing</h4>
-                            <p>Learn anti-exploitation practices to build movements and community without burning out.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="phase animate-on-scroll">
-                     <div class="phase-header">
-                       <h3>PHASE 4: EXPERIMENTATION (Weeks 9-10)</h3>
-                       <p class="phase-tagline">"Testing New Models: What Works in the Real World"</p>
-                    </div>
-                    <div class="week-grid">
-                        <div class="week-card">
-                            <p class="week-number">Week 9</p>
-                            <h4>Designing Your Political Micro-Experiment</h4>
-                            <p>Develop a small-scale, testable action to apply your learnings and generate new insights.</p>
-                        </div>
-                        <div class="week-card">
-                            <p class="week-number">Week 10</p><h4>Implementation & Troubleshooting</h4>
-                            <p>Move your plan to action with practical strategies for implementation and problem-solving.</p>
-                        </div>
-                    </div>
+                <div class="apply-note">
+                     <p>To help us build a committed and collaborative pilot cohort, our application includes several short questions about your political experiences and your goals for this program. This helps ensure everyone is ready to engage with the curriculum's depth and contribute to the community.</p>
                 </div>
                 
-                <div class="phase animate-on-scroll">
-                     <div class="phase-header">
-                       <h3>PHASE 5: BUILDING (Weeks 11-12)</h3>
-                       <p class="phase-tagline">"Creating the Future: Sustainable Change That Lasts"</p>
+                <p>Applications are now open. We are accepting submissions until August 31, 2025.</p>
+                <a href="https://forms.gle/pqpZqvDPp3PkPcyx6" class="btn">Begin Your Application</a>
+            </div>
+        </section>
+        
+        <section id="metrics">
+            <div class="container">
+                <h2>Measuring Success</h2>
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <h4>Individual Success</h4>
+                        <p>Increased political confidence, development of practical skills, and implementation of a personal political micro-experiment.</p>
                     </div>
-                    <div class="week-grid">
-                        <div class="week-card">
-                            <p class="week-number">Week 11</p><h4>Progress Reports & Iteration</h4>
-                            <p>Learn from doing by honestly assessing progress and adjusting your strategy based on real-world feedback.</p>
-                        </div>
-                         <div class="week-card">
-                            <p class="week-number">Week 12</p><h4>Celebration & Future Planning</h4>
-                            <p>Showcase the learnings from your micro-experiment and chart the course for your (and our) next steps.</p>
-                        </div>
+                    <div class="metric-card">
+                        <h4>Cohort Success</h4>
+                        <p>High retention (85%+), formation of a mutual support network, and collaborative resource creation.</p>
+                    </div>
+                    <div class="metric-card">
+                        <h4>Project Success</h4>
+                        <p>An effective, replicable curriculum model and documentary evidence of political evolution in action.</p>
                     </div>
                 </div>
-
             </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 The Political Evolution Project. All Rights Reserved.<br>carrie@politicalevolutionproject.org.</p>
         </div>
-    </section>
+    </footer>
     
-    <section id="facilitator">
-        <div class="container">
-            <h2>Meet Your Facilitator</h2>
-            <div class="bio-wrapper animate-on-scroll">
-                <img src="https://raw.githubusercontent.com/politicalevolutionproject/political-evolution-website/main/image.png" alt="Portrait of Carrie Clendening">
-                <div>
-                    <h3>Carrie Clendening</h3>
-                    <p>Carrie is a political educator and strategist who went from being a nonpartisan observer to a "political education dealer." Frustrated by an ecosystem that thrives on exploiting the passion of organizers and activists, she created the Political Evolution Project to equip a new generation of leaders with the practical skills and strategic understanding the establishment won't teach them. Her work is informed by years of experience in Charleston, WV and beyond, learning from both allies and adversaries what it truly takes to build lasting power.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="apply">
-        <div class="container">
-            <h2>Apply for the Fall 2025 Cohort</h2>
-            <p><strong>Duration:</strong> September 7 - November 23, 2025<br>
-            <strong>Format:</strong> Weekly 90-minute virtual sessions + independent work<br>
-            <strong>Investment:</strong> FREE (pilot program)
-            </p>
-
-            <div class="apply-note">
-                 <p>To help us build a committed and collaborative pilot cohort, our application includes several short questions about your political experiences and your goals for this program. This helps ensure everyone is ready to engage with the curriculum's depth and contribute to the community.</p>
-            </div>
-            
-            <p>Applications are now open. We are accepting submissions until August 31, 2025.</p>
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfhpGHpLPeHTMsxBwYp08_PwLRjTyAw3sYp9n2y8OUMnwBVVw/viewform" target="_blank" rel="noopener noreferrer" class="btn">Begin Your Application</a>
-        </div>
-    </section>
-    
-    <section id="metrics">
-        <div class="container">
-            <h2>Measuring Success</h2>
-            <div class="metrics-grid">
-                <div class="metric-card animate-on-scroll">
-                    <h4>Individual Success</h4>
-                    <p>Increased political confidence, development of practical skills, and implementation of a personal political micro-experiment.</p>
-                </div>
-                <div class="metric-card animate-on-scroll">
-                    <h4>Cohort Success</h4>
-                    <p>High retention (85%+), formation of a mutual support network, and collaborative resource creation.</p>
-                </div>
-                <div class="metric-card animate-on-scroll">
-                    <h4>Project Success</h4>
-                    <p>An effective, replicable curriculum model and documentary evidence of political evolution in action.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-</main>
-
-<footer>
-    <div class="container">
-        <p>&copy; 2025 The Political Evolution Project. All Rights Reserved.<br>carrie@politicalevolutionproject.org</p>
-    </div>
-</footer>
-
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        // Mobile menu toggle logic
+    <script>
         const menuToggle = document.getElementById('menu-toggle');
         const mainNav = document.querySelector('.main-nav');
-        if (menuToggle && mainNav) {
-            menuToggle.addEventListener('click', () => {
-                mainNav.classList.toggle('active');
-            });
-        }
 
-        // Scroll animation logic
-        const animatedElements = document.querySelectorAll('.animate-on-scroll');
-        if ('IntersectionObserver' in window) {
-            const observer = new IntersectionObserver((entries, observer) => {
+        menuToggle.addEventListener('click', () => {
+            mainNav.classList.toggle('active');
+        });
+
+        // Add scroll animations
+        const observeElements = () => {
+            const elements = document.querySelectorAll('.phase, .metric-card');
+            const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        entry.target.classList.add('is-visible');
-                        observer.unobserve(entry.target); // Stop observing once animated
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
                     }
                 });
-            }, {
-                threshold: 0.1 // Animate when 10% of the element is visible
-            });
+            }, { threshold: 0.1 });
 
-            animatedElements.forEach(el => {
+            elements.forEach(el => {
                 observer.observe(el);
             });
-        }
-    });
-</script>
+        };
+
+        document.addEventListener('DOMContentLoaded', observeElements);
+    </script>
 
 </body>
 </html>
